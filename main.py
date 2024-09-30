@@ -7,6 +7,7 @@ def main():
 	# Automatically set CAN0 port to activate for data transmission
 	try:
 		os.system("sudo ip link set can0 up type can bitrate 500000")
+		# Interesting bug where it makes it through even without sudo privilages
 		print("CAN0 port is active")
 	except Exception as e:
 		print(f"MAIN::can_set_up::error {e}")
@@ -30,7 +31,7 @@ def main():
 	# Determine CAN network status
 	elif args.status:
 		print(f"Found CAN network? {can_receiver.get_status()}")
-	# Automatically take in process and display data in the terminal 
+	# Automatically take in process and display data in the terminal
 	elif args.file:
 		# Get the input file path
 		input_file_path = input("Enter the input file path: ")
@@ -51,8 +52,8 @@ def main():
 			if message == None:
 				break
 			# print and log the data
+			message = can_receiver.clean_data(message)
 			print(Parser.parse_can_line(message, False))
-	
 
 if __name__ == '__main__':
 	main()
