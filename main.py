@@ -6,7 +6,7 @@ def main():
 	# User inputs defined parameters to get to desired mode: auto/manual
 	arg_parse = argparse.ArgumentParser(description="Process, log, and display CAN data")
 	arg_parse.add_argument("--manual", action="store_true", help="Manual CAN line input on command line")
-
+	arg_parse.add_argument("--status", action="store_true", help="Determine pCAN connection status")
 	# Determine what the users arguments are --manual or nothing
 	args = arg_parse.parse_args()
 
@@ -16,6 +16,8 @@ def main():
 			data: str = input("Enter CAN data line: ")
 			print(Parser.parse_can_line(data))
 			running = input("Continue? (y/n) ") == 'y'
+	if args.status:
+		print(f"Found CAN network? {can_receiver.get_status()}")
 	else:
 		# Initialize Socket CAN to read from the correct bus
 		bus = can_receiver.get_data_bus()

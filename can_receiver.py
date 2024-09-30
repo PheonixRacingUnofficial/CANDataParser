@@ -12,9 +12,27 @@ def get_data_bus():
 		print(f"CAN_RECEIVER::get_data_bus::unknown exception: {e}")
 	return None
 
+# Get and return a CAN message
 def get_can_line(bus):
 	try:
-		return bus.recv()
+		return bus.recv(0.1)
 	except AttributeError as e:
 		print(f"Error: {e}")
 		return None
+
+# Simply detect if the network has been found and has been bound to an address
+def get_status():
+	try:
+		bus = can.Bus(channel='can0', interface='socketcan')
+		print("First")
+		return True
+	except Exception as e:
+		print("CAN_RECEIVER::get_status::CAN network not found")
+
+	try:
+		bus = can.Bus(channel='PCAN_USBBUS1', interface='pcan')
+		print("Second")
+		return True
+	except Exception as e:
+		print("CAN_RECEIVER::get_status::CAN network not found")
+	return False
