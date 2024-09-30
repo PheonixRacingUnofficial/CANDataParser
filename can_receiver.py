@@ -36,10 +36,10 @@ def get_status():
 # Clean the data given by python-can
 def clean_message(message):
 	# Extract information using regular expressions
-	timestamp = re.search(r'Timestamp:\s*([\d.]+)', input_string).group(1)
-	id_value = re.search(r'ID:\s*(\d+)', input_string).group(1)
-	data = re.search(r'DL:\s*\d+\s*((?:[a-f0-9]{2}\s*)+)', input_string).group(1)
-	channel = re.search(r'Channel:\s*(\w+)', input_string).group(1)
+	timestamp = re.search(r'Timestamp:\s*([\d.]+)', str(message)).group(1)
+	id_value = re.search(r'ID:\s*(\d+)', str(message)).group(1)
+	data = re.search(r'DL:\s*\d+\s*((?:[a-f0-9]{2}\s*)+)', str(message)).group(1)
+	channel = re.search(r'Channel:\s*(\w+)', str(message)).group(1)
 
 	# Format the output
 	formatted_output = f"({timestamp}) {channel} {id_value}#{data.replace(' ', '')}"
