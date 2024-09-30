@@ -65,7 +65,7 @@ def parse_cmu_sensor(sensor_id: int, sensor_data: str) -> str:
 def parse_can_line(data: str) -> str:
     # Bad Error Handling :)
     if data == "no data":
-        return "0"
+        return None
     # data: str = input("Enter CAN data line: ")
     timestamp: str = data[1:18]
     data: str = trim_can_input(data)

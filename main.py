@@ -7,7 +7,7 @@ def main():
 	arg_parse = argparse.ArgumentParser(description="Process, log, and display CAN data")
 	arg_parse.add_argument("--manual", action="store_true", help="Manual CAN line input on command line")
 
-	# Determine what the users arguments are
+	# Determine what the users arguments are --manual or nothing
 	args = arg_parse.parse_args()
 
 	if args.manual:
@@ -21,10 +21,13 @@ def main():
 		bus = can_receiver.get_data_bus()
 		# Continuously dump the data into parser
 		while (True):
+			# Should attempt to connect to the CAN network
+			if bus == None:
+				break
 			# retrieve data from the CAN network
 			message = can_receiver.get_can_line(bus)
 			# failed to receive message break from loop
-			if message == "0":
+			if message == None:
 				break
 			# print and log the data
 			print(Parser.parse_can_line(message))
