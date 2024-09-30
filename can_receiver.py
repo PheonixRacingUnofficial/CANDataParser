@@ -2,6 +2,7 @@ import can
 
 def get_data_bus():
 	try:
+		# Get and bind the CAN network on the usb port
 		bus = can.interface.Bus(channel='can0', bustype='socketcan')
 		return bus
 	except OSError as e:
@@ -15,7 +16,8 @@ def get_data_bus():
 # Get and return a CAN message
 def get_can_line(bus):
 	try:
-		return bus.recv(0.1)
+		# Message format is different from can-utils candump can0 (the log file we tested on)
+		return bus.recv(timeout=1.0)
 	except AttributeError as e:
 		print(f"Error: {e}")
 		return None
@@ -25,13 +27,6 @@ def get_status():
 	try:
 		bus = can.Bus(channel='can0', interface='socketcan')
 		print("First")
-		return True
-	except Exception as e:
-		print("CAN_RECEIVER::get_status::CAN network not found")
-
-	try:
-		bus = can.Bus(channel='PCAN_USBBUS1', interface='pcan')
-		print("Second")
 		return True
 	except Exception as e:
 		print("CAN_RECEIVER::get_status::CAN network not found")
