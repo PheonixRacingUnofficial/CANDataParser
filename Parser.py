@@ -1,44 +1,42 @@
+import datetime
 import struct
 
-def process_file(input_file_path, output_file_path):
-    with open(output_file_path, 'w') as file_handle:
-        with open(input_file_path, 'r') as file:
-            for line in file:
-                file_handle.write(parse_can_line(line) + '\n')
-
 def hex_to_int8(hex_str):
-    return struct.unpack('>b', bytes.fromhex(hex_str))[0]
+    return struct.unpack('>b', bytes.fromhex(hex_inverter(hex_str)))[0]
 
 def hex_to_uint8(hex_str):
-    return struct.unpack('>B', bytes.fromhex(hex_str))[0]
+    return struct.unpack('>B', bytes.fromhex(hex_inverter(hex_str)))[0]
 
 def hex_to_int16(hex_str):
-    return struct.unpack('>h', bytes.fromhex(hex_str))[0]
+    return struct.unpack('>h', bytes.fromhex(hex_inverter(hex_str)))[0]
 
 def hex_to_uint16(hex_str):
-    return struct.unpack('>H', bytes.fromhex(hex_str))[0]
+    return struct.unpack('>H', bytes.fromhex(hex_inverter(hex_str)))[0]
 
 def hex_to_int32(hex_str):
-    return struct.unpack('>i', bytes.fromhex(hex_str))[0]
+    return struct.unpack('>i', bytes.fromhex(hex_inverter(hex_str)))[0]
 
 def hex_to_uint32(hex_str):
-    return struct.unpack('>I', bytes.fromhex(hex_str))[0]
+    return struct.unpack('>I', bytes.fromhex(hex_inverter(hex_str)))[0]
 
 def hex_to_float(hex_str):
-    # convert hex_str into an array of 2 chars
-    hex_str = [hex_str[i:i+2] for i in range(0, len(hex_str), 2)]
-    hex_str = hex_str[::-1]  # reverse the array
-    hex_str = "".join(hex_str)  # convert the array back to a string
-    return struct.unpack('>f', bytes.fromhex(hex_str))[0]
+    return struct.unpack('>f', bytes.fromhex(hex_inverter(hex_str)))[0]
 
-def parse_cmu_sensor(sensor_id: int, sensor_data: str) -> str:
+def hex_inverter(hex_str) -> str:
+    """ Invert the hex string by converting it into a list of 2 character strings, reversing the list, and joining it back together """
+    hex_str = [hex_str[i:i+2] for i in range(0, len(hex_str), 2)]
+    hex_str = hex_str[::-1]
+    hex_str = "".join(hex_str)
+    return hex_str
+
+def parse_cmu_sensor(sensor_id: int, sensor_data: str, time: str) -> str:
     base_id = 0x301
     sensor_index = (sensor_id - base_id) // 3 + 1  # Determine which sensor (e.g., 1, 2, 3...)
 
     # Determine which part of the CMU data this is (e.g., Serial & Temp, Cell Voltages 0-3, Cell Voltages 4-7)
     part = (sensor_id - base_id) % 3
 
-    out = f"CMU Sensor {sensor_index}; "
+    out = f"{time}CMU Sensor {sensor_index}; "
 
     if part == 0:  # Serial number and temperatures
         cmu_serial_number = hex_to_uint32(sensor_data[:8])
@@ -62,31 +60,35 @@ def parse_cmu_sensor(sensor_id: int, sensor_data: str) -> str:
 
     return out
 
-def parse_can_line(data: str) -> str:
+def parse_can_line(data: str, show_data: bool) -> str:
     # Bad Error Handling :)
     if data == "no data":
         return "0"
     # data: str = input("Enter CAN data line: ")
-    timestamp: str = data[1:18]
+    timestamp = data[1:18]
     data: str = trim_can_input(data)
     sensor_id: str = get_sensor_id(data)
     sensor_id_int: int = int(sensor_id, 16)
     sensor_data: str = get_sensor_data(data)
-    print(f"Timestamp: {timestamp}")
-    print(f"Sensor ID: {sensor_id}")
-    print(f"Sensor ID (int): {sensor_id_int}")
-    print(f"Sensor Data: {sensor_data}")
+    if show_data:
+        print(f"Timestamp: {timestamp}")
+        print(f"Sensor ID: {sensor_id}")
+        print(f"Sensor ID (int): {sensor_id_int}")
+        print(f"Sensor Data: {sensor_data}")
+
+    # convert timestamp from unix time to human readable time
+    out = f'[{str(datetime.datetime.fromtimestamp(float(timestamp)))}] '
 
     # CMU Sensor are parsed differently here due to the range of values that they can have
     # that all have the same exact code
     if 0x301 <= sensor_id_int <= 0x3F3:
         # print("This should be a CMU sensor")
-        return parse_cmu_sensor(sensor_id_int, sensor_data)
+        return parse_cmu_sensor(sensor_id_int, sensor_data, out)
 
     match sensor_id_int:
         # Heartbeat Sensor
         case 0x300:
-            out: str = "BMU Heartbeat Sensor; "
+            out += "BMU Heartbeat Sensor; "
             hb_id = hex_to_uint32(sensor_data[:8])
             hb_serial_number = hex_to_uint32(sensor_data[8:16])
             out += f"Device ID: {hb_id}; Serial Number: {hb_serial_number}"
@@ -94,7 +96,7 @@ def parse_can_line(data: str) -> str:
             return out
 
         case 0x3F4:
-            out: str = "Pack SoC; "
+            out += "Pack SoC; "
             pack_soc = hex_to_float(sensor_data[:8])
             pack_soc_percent = hex_to_float(sensor_data[8:16])
             out += f"Pack SoC: {pack_soc}aH; Pack SoC Percent: {pack_soc_percent}"
@@ -102,7 +104,7 @@ def parse_can_line(data: str) -> str:
             return out
 
         case 0x3F5:
-            out: str = "Pack Balance SoC; "
+            out += "Pack Balance SoC; "
             pack_balance_soc = hex_to_float(sensor_data[:8])
             pack_balance_soc_percent = hex_to_float(sensor_data[8:16])
             out += f"Pack Balance SoC: {pack_balance_soc}aH; Pack Balance SoC Percent: {pack_balance_soc_percent}"
@@ -112,7 +114,7 @@ def parse_can_line(data: str) -> str:
         case 0x3F6:
             # Note, data comes through this channel 10x as fast as other channels
             # Values are calculated based on preconfigured values, may result in errors with sample data?
-            out: str = "Charger Control Info; "
+            out += "Charger Control Info; "
             charging_cell_voltage_error = hex_to_int16(sensor_data[:4])
             charging_cell_temp_margin = hex_to_int16(sensor_data[4:8]) / 10 # should error on a zero value
             discharge_cell_voltage_error = hex_to_int16(sensor_data[8:12])
@@ -123,7 +125,7 @@ def parse_can_line(data: str) -> str:
 
         case 0x3F7:
             # print(sensor_data)
-            out: str = "Precharge Status; "
+            out += "Precharge Status; "
             precharge_contactor_status = hex_to_uint8(sensor_data[:2])
             precharge_state = hex_to_uint8(sensor_data[2:4])
             match precharge_state:
@@ -155,7 +157,7 @@ def parse_can_line(data: str) -> str:
 
         case 0x3F8:
             # Note that this is a 10x faster channel
-            out: str = "Min / Max Cell Voltage; "
+            out += "Min / Max Cell Voltage; "
             min_cell_voltage = hex_to_uint16(sensor_data[:4])
             max_cell_voltage = hex_to_uint16(sensor_data[4:8])
             cmu_with_min_voltage = hex_to_uint8(sensor_data[8:10])
@@ -167,7 +169,7 @@ def parse_can_line(data: str) -> str:
             return out
 
         case 0x3F9:
-            out: str = "Min / Max Cell Temp; "
+            out += "Min / Max Cell Temp; "
             min_cell_temp = hex_to_uint16(sensor_data[:4]) / 10
             max_cell_temp = hex_to_uint16(sensor_data[4:8]) / 10
             cmu_with_min_temp = hex_to_uint8(sensor_data[8:10])
@@ -179,7 +181,7 @@ def parse_can_line(data: str) -> str:
             return out
 
         case 0x3FA:
-            out: str = "Battery Pack Info; "
+            out += "Battery Pack Info; "
             pack_voltage = hex_to_uint32(sensor_data[:8])
             pack_current = hex_to_int32(sensor_data[8:16])
             out += f"Pack Voltage: {pack_voltage}mV; Pack Current: {pack_current}mA"
@@ -187,7 +189,7 @@ def parse_can_line(data: str) -> str:
             return out
 
         case 0x3FB:
-            out: str = "Battery Pack Status; "
+            out += "Battery Pack Status; "
             balance_voltage_threshold_rising = hex_to_uint16(sensor_data[:4])
             balance_voltage_threshold_falling = hex_to_uint16(sensor_data[4:8])
             pack_status = hex_to_uint8(sensor_data[8:10]) # unused potentially?
@@ -198,7 +200,7 @@ def parse_can_line(data: str) -> str:
             return out
 
         case 0x3FC:
-            out: str = "Battery Pack Fan Status; "
+            out += "Battery Pack Fan Status; "
             fan_0_speed = hex_to_uint16(sensor_data[:4])
             fan_1_speed = hex_to_uint16(sensor_data[4:8])
             current_consumption_fans_and_contactors = hex_to_uint16(sensor_data[8:12])
@@ -208,7 +210,7 @@ def parse_can_line(data: str) -> str:
             return out
 
         case 0x3FD:
-            out: str = "Extended Battery Pack Info; "
+            out += "Extended Battery Pack Info; "
             pack_status = hex_to_uint32(sensor_data[:8])
             bmu_hardware_version = hex_to_uint8(sensor_data[8:10])
             bmu_model_id = hex_to_uint8(sensor_data[10:12])
