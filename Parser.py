@@ -63,6 +63,9 @@ def parse_cmu_sensor(sensor_id: int, sensor_data: str) -> str:
     return out
 
 def parse_can_line(data: str) -> str:
+    # Bad Error Handling :)
+    if data == "no data":
+        return "0"
     # data: str = input("Enter CAN data line: ")
     timestamp: str = data[1:18]
     data: str = trim_can_input(data)
@@ -235,18 +238,18 @@ def get_sensor_data(data: str) -> str:
     data = data.split('#')
     return data[1]
 
-def main():
-    running: bool = True
-    while running:
-        data: str = input("Enter CAN data line: ")
-        print(parse_can_line(data))
-        running = input("Continue? (y/n) ") == 'y'
+# def main():
+#     running: bool = True
+#     while running:
+#         data: str = input("Enter CAN data line: ")
+#         print(parse_can_line(data))
+#         running = input("Continue? (y/n) ") == 'y'
 
 
     # print(parse_can_line("(1727120881.736674) can0 3F4#364BCB410CF5F03E"))
     # process_file('C:/Users/chase/OneDrive/Desktop/Solar Car/Programming/CANDataParser/sample_can_data.log', 'C:/Users/chase/OneDrive/Desktop/Solar Car/Programming/CANDataParser/output.log')
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
 
 
