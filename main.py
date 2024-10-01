@@ -8,7 +8,6 @@ def main():
 	try:
 		os.system("sudo ip link set can0 up type can bitrate 500000")
 		# Interesting bug where it makes it through even without sudo privilages
-		print("CAN0 port is active")
 	except Exception as e:
 		print(f"MAIN::can_set_up::error {e}")
 
@@ -18,11 +17,13 @@ def main():
 	arg_parse.add_argument("--status", action="store_true", help="Determine pCAN connection status")
 	arg_parse.add_argument("--file", action="store_true", help="Read CAN data from file")
 	arg_parse.add_argument("--debug" , action="store_true", help="Debug mode for CAN data")
-
+	arg_parse.add_argument("--log", action="store_true", help="Logs data")
 	# Determine what the users arguments are
 	args = arg_parse.parse_args()
 
 	is_debug: bool = args.debug
+
+	is_log: bool = args.log
 
 	# Manual User Input for CAN data
 	if args.manual:
@@ -51,11 +52,15 @@ def main():
 		while True:
 			# retrieve data from the CAN network
 			message = can_receiver.get_can_line(bus)
+			print("TYPE: ", type(message), ' ', str(message))
 			# failed to receive message break from loop
 			if message == None:
 				break
 			# print and log the data
-			message = can_receiver.clean_data(message)
+			if is_log:
+				file = open("log.txt", "a")
+				file.write(str(message) + '\n')
+			message = can_receiver.clean_message(message)
 			print(Parser.parse_can_line(message, is_debug))
 
 if __name__ == '__main__':
