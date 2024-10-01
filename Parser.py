@@ -262,23 +262,23 @@ def parse_can_line(data: str, debug: bool) -> str:
                 return out
 
             case 0x600:
-                out += "MPPT Input; "
+                out += "MPPT 1 Input; "
                 mppt_input_voltage = hex_to_float(sensor_data[:8])
                 mppt_input_current = hex_to_float(sensor_data[8:16])
-                out += f"MPPT Input Voltage: {mppt_input_voltage}V; MPPT Input Current: {mppt_input_current}A"
+                out += f"MPPT 1 Input Voltage: {mppt_input_voltage}V; MPPT 1 Input Current: {mppt_input_current}A"
 
                 return out
 
             case 0x601:
-                out += "MPPT Output; "
+                out += "MPPT 1 Output; "
                 mppt_output_voltage = hex_to_float(sensor_data[:8])
                 mppt_output_current = hex_to_float(sensor_data[8:16])
-                out += f"MPPT Output Voltage: {mppt_output_voltage}V; MPPT Output Current: {mppt_output_current}A"
+                out += f"MPPT 1 Output Voltage: {mppt_output_voltage}V; MPPT 1 Output Current: {mppt_output_current}A"
 
                 return out
 
             case 0x602:
-                out += "MPPT Temperature; "
+                out += "MPPT 1  Temperature; "
                 mosfet_temp = hex_to_float(sensor_data[:8])
                 controller_temp = hex_to_float(sensor_data[8:16])
                 out += f"MOSFET Temp: {mosfet_temp}°C; Controller Temp: {controller_temp}°C"
@@ -286,7 +286,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 return out
 
             case 0x603:
-                out += "MPPT Auxiliary Power Supply; "
+                out += "MPPT 1 Auxiliary Power Supply; "
                 v12 = hex_to_float(sensor_data[:8])
                 v3 = hex_to_float(sensor_data[8:16])
                 out += f"12V: {v12}V; 3V: {v3}V"
@@ -294,7 +294,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 return out
 
             case 0x604:
-                out += "MPPT Limits; "
+                out += "MPPT 1 Limits; "
                 max_output_voltage = hex_to_float(sensor_data[:8])
                 max_input_current = hex_to_float(sensor_data[8:16])
                 out += f"Max Output Voltage: {max_output_voltage}V; Max Input Current: {max_input_current}A"
@@ -302,7 +302,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 return out
 
             case 0x605:
-                out += "MPPT Status; "
+                out += "MPPT 1 Status; "
                 can_rx_error_count = hex_to_uint8(sensor_data[:2])
                 can_tx_error_count = hex_to_uint8(sensor_data[2:4])
                 can_tx_overflow_count = hex_to_uint8(sensor_data[4:6])
@@ -323,7 +323,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 return out
 
             case 0x606:
-                out += "MPPT Power Connector; "
+                out += "MPPT 1 Power Connector; "
                 output_voltage = hex_to_float(sensor_data[:8])
                 connector_temp = hex_to_float(sensor_data[8:16])
                 out += f"Output Voltage: {output_voltage}V; Connector Temp: {connector_temp}°C"
@@ -331,7 +331,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 return out
 
             case 0x608:
-                out += "MPPT Mode (Send)"
+                out += "MPPT 1 Mode (Send)"
                 mode = hex_to_uint8(sensor_data[:2])
                 # 2 : 16 garbage
                 out += f"Mode (send): {mode}"
@@ -339,7 +339,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 return out
 
             case 0x60A:
-                out += "Maximum Output Voltage (send); "
+                out += "MPPT 1 Maximum Output Voltage (send); "
                 max_output_voltage = hex_to_float(sensor_data[:8])
                 # 8 : 16 garbage
                 out += f"Max Output Voltage (send): {max_output_voltage}V"
@@ -347,7 +347,100 @@ def parse_can_line(data: str, debug: bool) -> str:
                 return out
 
             case 0x60B:
-                out += "Maximum Input Current (send); "
+                out += "MPPT 1 Maximum Input Current (send); "
+                max_input_current = hex_to_float(sensor_data[:8])
+                # 8 : 16 garbage
+                out += f"Max Input Current (send): {max_input_current}A"
+
+                return out
+
+            case 0x610:
+                out += "MPPT 2 Input; "
+                mppt_input_voltage = hex_to_float(sensor_data[:8])
+                mppt_input_current = hex_to_float(sensor_data[8:16])
+                out += f"MPPT 2 Input Voltage: {mppt_input_voltage}V; MPPT 2 Input Current: {mppt_input_current}A"
+
+                return out
+
+            case 0x611:
+                out += "MPPT 2 Output; "
+                mppt_output_voltage = hex_to_float(sensor_data[:8])
+                mppt_output_current = hex_to_float(sensor_data[8:16])
+                out += f"MPPT 2 Output Voltage: {mppt_output_voltage}V; MPPT 2 Output Current: {mppt_output_current}A"
+
+                return out
+
+            case 0x612:
+                out += "MPPT 2  Temperature; "
+                mosfet_temp = hex_to_float(sensor_data[:8])
+                controller_temp = hex_to_float(sensor_data[8:16])
+                out += f"MOSFET Temp: {mosfet_temp}°C; Controller Temp: {controller_temp}°C"
+
+                return out
+
+            case 0x613:
+                out += "MPPT 2 Auxiliary Power Supply; "
+                v12 = hex_to_float(sensor_data[:8])
+                v3 = hex_to_float(sensor_data[8:16])
+                out += f"12V: {v12}V; 3V: {v3}V"
+
+                return out
+
+            case 0x614:
+                out += "MPPT 2 Limits; "
+                max_output_voltage = hex_to_float(sensor_data[:8])
+                max_input_current = hex_to_float(sensor_data[8:16])
+                out += f"Max Output Voltage: {max_output_voltage}V; Max Input Current: {max_input_current}A"
+
+                return out
+
+            case 0x615:
+                out += "MPPT 2 Status; "
+                can_rx_error_count = hex_to_uint8(sensor_data[:2])
+                can_tx_error_count = hex_to_uint8(sensor_data[2:4])
+                can_tx_overflow_count = hex_to_uint8(sensor_data[4:6])
+                error_flag = hex_to_uint8(sensor_data[6:8])
+                limit_flag = hex_to_uint8(sensor_data[8:10])
+                mode = hex_to_uint8(sensor_data[10:12])
+                match mode:
+                    case 0:
+                        mode = "Standby (0)"
+                    case 1:
+                        mode = "On (1)"
+                    case _:
+                        mode = "Unknown"
+                # 12 : 14 garbage
+                test_counter = hex_to_uint8(sensor_data[14:16])  # unsure of what this is for?
+                out += f"CAN RX Error Count: {can_rx_error_count}; CAN TX Error Count: {can_tx_error_count}; CAN TX Overflow Count: {can_tx_overflow_count}; Error Flag: {error_flag}; Limit Flag: {limit_flag}; Mode: {mode}; Test Counter: {test_counter}"
+
+                return out
+
+            case 0x616:
+                out += "MPPT 2 Power Connector; "
+                output_voltage = hex_to_float(sensor_data[:8])
+                connector_temp = hex_to_float(sensor_data[8:16])
+                out += f"Output Voltage: {output_voltage}V; Connector Temp: {connector_temp}°C"
+
+                return out
+
+            case 0x618:
+                out += "MPPT 2 Mode (Send)"
+                mode = hex_to_uint8(sensor_data[:2])
+                # 2 : 16 garbage
+                out += f"Mode (send): {mode}"
+
+                return out
+
+            case 0x61A:
+                out += "MPPT 2 Maximum Output Voltage (send); "
+                max_output_voltage = hex_to_float(sensor_data[:8])
+                # 8 : 16 garbage
+                out += f"Max Output Voltage (send): {max_output_voltage}V"
+
+                return out
+
+            case 0x61B:
+                out += "MPPT 2 Maximum Input Current (send); "
                 max_input_current = hex_to_float(sensor_data[:8])
                 # 8 : 16 garbage
                 out += f"Max Input Current (send): {max_input_current}A"
