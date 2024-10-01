@@ -17,16 +17,19 @@ def main():
 	arg_parse.add_argument("--manual", action="store_true", help="Manual CAN line input on command line")
 	arg_parse.add_argument("--status", action="store_true", help="Determine pCAN connection status")
 	arg_parse.add_argument("--file", action="store_true", help="Read CAN data from file")
+	arg_parse.add_argument("--debug" , action="store_true", help="Debug mode for CAN data")
 
 	# Determine what the users arguments are
 	args = arg_parse.parse_args()
+
+	is_debug: bool = args.debug
 
 	# Manual User Input for CAN data
 	if args.manual:
 		running: bool = True
 		while running:
 			data: str = input("Enter CAN data line: ")
-			print(Parser.parse_can_line(data, True))
+			print(Parser.parse_can_line(data, is_debug))
 			running = input("Continue? (y/n) ") == 'y'
 	# Determine CAN network status
 	elif args.status:
@@ -40,7 +43,7 @@ def main():
 		with open(output_file_path, 'w') as file_handle:
 			with open(input_file_path, 'r') as file:
 				for line in file:
-					file_handle.write(Parser.parse_can_line(line, False) + '\n')
+					file_handle.write(Parser.parse_can_line(line, is_debug) + '\n')
 	else:
 		# Initialize Socket CAN to read from the correct bus
 		bus = can_receiver.get_data_bus()
@@ -53,7 +56,7 @@ def main():
 				break
 			# print and log the data
 			message = can_receiver.clean_data(message)
-			print(Parser.parse_can_line(message, False))
+			print(Parser.parse_can_line(message, is_debug))
 
 if __name__ == '__main__':
 	main()

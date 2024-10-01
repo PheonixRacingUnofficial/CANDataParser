@@ -58,22 +58,28 @@ def parse_cmu_sensor(sensor_id: int, sensor_data: str, time: str) -> str:
         c6_voltage = hex_to_int16(sensor_data[8:12])
         c7_voltage = hex_to_int16(sensor_data[12:16])
         out += f"Cell 4 Voltage: {c4_voltage}mV; Cell 5 Voltage: {c5_voltage}mV; Cell 6 Voltage: {c6_voltage}mV; Cell 7 Voltage: {c7_voltage}mV"
+    else:
+        print("What happen:(?")
+        return f"CMU Sensor {sensor_index} part {part} not recognized; Data: {sensor_data[:-1]}"
 
     return out
 
-def parse_can_line(data: str, show_data: bool) -> str:
+def parse_can_line(data: str, debug: bool) -> str:
     # Better error handling
     if data[0] == '(':
         # Normal CAN data, continue as normal
-        # print("This is a CAN log line")
+        if debug:
+            print("This is a CAN log line")
         ...
     elif data[0] == ';':
         # TRC Header Data, ignore for now, can be used for finding timestamps, but I don't wanna
-        # print("This is a trc data header line")
-        ...
+        if debug:
+            print("This is a trc data header line")
+        return "TRC Header Data"
     elif bool(re.search(r'\d+\)', data)):
         # TRC Log Data, translate to CAN data before processing
-        # print("This is a trc log line")
+        if debug:
+            print("This is a trc log line")
 
         can = "(0000000000.000000) can0 "
         data = data[33:]
@@ -91,7 +97,8 @@ def parse_can_line(data: str, show_data: bool) -> str:
         sensor_id: str = get_sensor_id(data)
         sensor_id_int: int = int(sensor_id, 16)
         sensor_data: str = get_sensor_data(data)
-        if show_data:
+        if debug:
+            print(f"Data: {data}")
             print(f"Timestamp: {timestamp}")
             print(f"Sensor ID: {sensor_id}")
             print(f"Sensor ID (int): {sensor_id_int}")
@@ -103,7 +110,8 @@ def parse_can_line(data: str, show_data: bool) -> str:
         # CMU Sensor are parsed differently here due to the range of values that they can have
         # that all have the same exact code
         if 0x301 <= sensor_id_int <= 0x3F3:
-            # print("This should be a CMU sensor")
+            if debug:
+                print("This should be a CMU sensor")
             return parse_cmu_sensor(sensor_id_int, sensor_data, out)
 
         match sensor_id_int:
@@ -264,18 +272,5 @@ def get_sensor_data(data: str) -> str:
     data = data.split('#')
     return data[1]
 
-# def main():
-#     running: bool = True
-#     while running:
-#         data: str = input("Enter CAN data line: ")
-#         print(parse_can_line(data))
-#         running = input("Continue? (y/n) ") == 'y'
-
-
-    # print(parse_can_line("(1727120881.736674) can0 3F4#364BCB410CF5F03E"))
-    # process_file('C:/Users/chase/OneDrive/Desktop/Solar Car/Programming/CANDataParser/sample_can_data.log', 'C:/Users/chase/OneDrive/Desktop/Solar Car/Programming/CANDataParser/output.log')
-
-# if __name__ == '__main__':
-#     main()
 
 
