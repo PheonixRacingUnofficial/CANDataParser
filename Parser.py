@@ -65,29 +65,33 @@ def parse_cmu_sensor(sensor_id: int, sensor_data: str, time: str) -> str:
     return out
 
 def parse_can_line(data: str, debug: bool) -> str:
-    # Better error handling
+    trc_timestamp: datetime = datetime.datetime.fromtimestamp(float('0000000000.000000'))
     if data[0] == '(':
         # Normal CAN data, continue as normal
         if debug:
             print("This is a CAN log line")
-        ...
     elif data[0] == ';':
         # TRC Header Data, ignore for now, can be used for finding timestamps, but I don't wanna
         if debug:
             print("This is a trc data header line")
+        if data.__contains__('TIMESTAMP'):
+            trc_timestamp += datetime.datetime.fromtimestamp(float(data.split('TIMESTAMP')[1]))
         return "TRC Header Data"
     elif bool(re.search(r'\d+\)', data)):
         # TRC Log Data, translate to CAN data before processing
         if debug:
             print("This is a trc log line")
 
+        print(f'Original Timestamp: {trc_timestamp}')
+        offset_timestamp: datetime = datetime.datetime.fromtimestamp(float(re.findall(r'\d*\.?\d', data)[0]))
+        trc_timestamp.__add__(offset_timestamp)
+        print(f'Offset Timestamp: {offset_timestamp}')
         can = "(0000000000.000000) can0 "
         data = data[33:]
         can += data[:3] + '#' + data[6:].replace(' ', '')
         data = can
 
         # print(can)
-        ...
     else:
         return f"Unsupported data format; line: {data}"
 
