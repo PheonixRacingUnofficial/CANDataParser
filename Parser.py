@@ -92,6 +92,15 @@ def parse_can_line(data: str, debug: bool) -> str:
         data = can
 
         # print(can)
+    elif data.startswith('Timestamp'):
+        if debug:
+            print("This is a PCAN log line")
+        can = f'({data.split('Timestamp')[1].split(' ')[1]}) can0 '
+        sensor = data.split('ID:')[1][:9].replace(' ', '')
+        data = data.split('DL:  8')[1][:102-75].replace(' ', '')
+        can += sensor + '#' + data
+        # print(can)
+        data = can
     else:
         return f"Unsupported data format; line: {data}"
 
