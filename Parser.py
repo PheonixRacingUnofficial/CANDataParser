@@ -92,7 +92,7 @@ def parse_can_line(data: str, debug: bool) -> str:
         return f"Unsupported data format; line: {data}"
 
     try:
-        timestamp = data[1:18]
+        timestamp = re.findall(r'\(([^)]+)\)', data)[0]
         data: str = trim_can_input(data)
         sensor_id: str = get_sensor_id(data)
         sensor_id_int: int = int(sensor_id, 16)
