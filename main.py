@@ -4,26 +4,28 @@ import argparse
 import os
 
 def main():
-	# Automatically set CAN0 port to activate for data transmission
-	try:
-		os.system("sudo ip link set can0 up type can bitrate 500000")
-		# Interesting bug where it makes it through even without sudo privilages
-	except Exception as e:
-		print(f"MAIN::can_set_up::error {e}")
-
 	# User inputs defined parameters to get to desired mode: auto/manual
 	arg_parse = argparse.ArgumentParser(description="Process, log, and display CAN data")
 	arg_parse.add_argument("--manual", action="store_true", help="Manual CAN line input on command line")
 	arg_parse.add_argument("--status", action="store_true", help="Determine pCAN connection status")
 	arg_parse.add_argument("--file", action="store_true", help="Read CAN data from file")
 	arg_parse.add_argument("--debug" , action="store_true", help="Debug mode for CAN data")
-	arg_parse.add_argument("--log", action="store_true", help="Logs data")
+	arg_parse.add_argument("--log", action="store_true", help="Logs data in log.txt is local directory")
+	arg_parse.add_argument("--setup", action="store_true", help="Sets CAN0 interface to active")
 	# Determine what the users arguments are
 	args = arg_parse.parse_args()
 
 	is_debug: bool = args.debug
 
 	is_log: bool = args.log
+
+	if args.setup:
+		 # Automatically set CAN0 port to activate for data transmission
+       		try:
+                	os.system("sudo ip link set can0 up type can bitrate 500000")
+                # Interesting bug where it makes it through even without sudo privilages
+        	except Exception as e:
+                	print(f"MAIN::can_set_up::error {e}")
 
 	# Manual User Input for CAN data
 	if args.manual:
