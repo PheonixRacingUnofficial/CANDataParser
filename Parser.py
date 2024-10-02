@@ -23,6 +23,12 @@ def hex_to_uint32(hex_str):
 def hex_to_float(hex_str):
     return struct.unpack('>f', bytes.fromhex(hex_inverter(hex_str)))[0]
 
+def hex_to_bits(hex_str):
+    # convert a string of hex values to its equivalent binary string then fill in the missing 0s
+
+    print(hex_str)
+    return bin(int(hex_inverter(hex_str), 16))[2:].zfill(len(hex_str) * 4)
+
 def hex_inverter(hex_str) -> str:
     """ Invert the hex string by converting it into a list of 2 character strings, reversing the list, and joining it back together """
     hex_str = [hex_str[i:i+2] for i in range(0, len(hex_str), 2)]
@@ -168,7 +174,16 @@ def parse_can_line(data: str, debug: bool) -> str:
             case 0x3F7:
                 # print(sensor_data)
                 out += "Precharge Status; "
-                precharge_contactor_status = hex_to_uint8(sensor_data[:2])
+                precharge_contactor_status = hex_to_bits(sensor_data[:2])[::-1]
+                if debug:
+                    print(f'Bits for data_u8[0]: {precharge_contactor_status}')
+                precharge_contactor_status = f'Contactor 1 Driver Error [{bool(int(precharge_contactor_status[0]))}] ' + \
+                                            f'Contactor 2 Driver Error [{bool(int(precharge_contactor_status[1]))}] ' + \
+                                            f'Contactor 3 Driver Error [{bool(int(precharge_contactor_status[5]))}] ' + \
+                                            f'Contactor 1 Status [{bool(int(precharge_contactor_status[2]))}] ' + \
+                                            f'Contactor 2 Status [{bool(int(precharge_contactor_status[3]))}] ' + \
+                                            f'Contactor 3 Status [{bool(int(precharge_contactor_status[6]))}] ' + \
+                                            f'12V Contactor Supply Voltage [{bool(int(precharge_contactor_status[4]))}] '
                 precharge_state = hex_to_uint8(sensor_data[2:4])
                 match precharge_state:
                     case 0:
@@ -186,12 +201,7 @@ def parse_can_line(data: str, debug: bool) -> str:
 
                 contactor_supply_voltage = hex_to_uint16(sensor_data[4:8]) # could be useless?
                 # 8 : 12 garbage
-                precharge_timer_status = hex_to_uint8(sensor_data[12:14]) # ignore if timeout is disabled
-                match precharge_timer_status:
-                    case 0:
-                        precharge_timer_status = f"Disabled ({precharge_timer_status})"
-                    case 1:
-                        precharge_timer_status = f"Enabled ({precharge_timer_status})"
+                precharge_timer_status = hex_to_bits(sensor_data[12:14]) # ignore if timeout is disabled
                 precharge_timer_value = hex_to_uint8(sensor_data[14:16]) * 10
                 out += f"Precharge Contactor Status: {precharge_contactor_status}; Precharge State: {precharge_state}; Contactor Supply Voltage: {contactor_supply_voltage}mV; Precharge Timer Status: {precharge_timer_status}; Precharge Timer Value: {precharge_timer_value}ms"
 
@@ -253,7 +263,22 @@ def parse_can_line(data: str, debug: bool) -> str:
 
             case 0x3FD:
                 out += "Extended Battery Pack Info; "
-                pack_status = hex_to_uint32(sensor_data[:8])
+                pack_status = hex_to_bits(sensor_data[:8])
+                if debug:
+                    print(f'Bits for data_u32[0]: {pack_status}')
+                pack_status = f'Cell Over Voltage [{bool(int(pack_status[0]))}] ' + \
+                                f'Cell Under Voltage [{bool(int(pack_status[1]))}] ' + \
+                                f'Cell Over Temp [{bool(int(pack_status[2]))}] ' + \
+                                f'Measurement Untrusted (channel mismatch) [{bool(int(pack_status[3]))}] ' + \
+                                f'CMU Communications Timeout (lost CMU) [{bool(int(pack_status[4]))}] ' + \
+                                f'Vehicle Communications Timeout (lost EVDC) [{bool(int(pack_status[5]))}] ' + \
+                                f'BMU Setup Mode [{bool(int(pack_status[6]))}] ' + \
+                                f'CMU CAN Bus Power Status [{bool(int(pack_status[7]))}] ' + \
+                                f'Pack Isolation Test Failure [{bool(int(pack_status[8]))}] ' + \
+                                f'SoC Measurement Invalid [{bool(int(pack_status[9]))}] ' + \
+                                f'CAN 12V Supply Low [{bool(int(pack_status[10]))}] ' + \
+                                f'Contactor Stuck or Disenganged [{bool(int(pack_status[11]))}] ' + \
+                                f'CMU Detected Extra Cell Present [{bool(int(pack_status[12]))}] '
                 bmu_hardware_version = hex_to_uint8(sensor_data[8:10])
                 bmu_model_id = hex_to_uint8(sensor_data[10:12])
                 # 12 : 16 garbage
