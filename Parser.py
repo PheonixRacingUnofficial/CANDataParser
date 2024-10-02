@@ -25,8 +25,6 @@ def hex_to_float(hex_str):
 
 def hex_to_bits(hex_str):
     # convert a string of hex values to its equivalent binary string then fill in the missing 0s
-
-    print(hex_str)
     return bin(int(hex_inverter(hex_str), 16))[2:].zfill(len(hex_str) * 4)
 
 def hex_inverter(hex_str) -> str:
