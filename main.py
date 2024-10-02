@@ -20,12 +20,12 @@ def main():
     is_log: bool = args.log
 
     if args.setup:
-         # Automatically set CAN0 port to activate for data transmission
+            # Automatically set CAN0 port to activate for data transmission
             try:
-                    os.system("sudo ip link set can0 up type can bitrate 500000")
-                # Interesting bug where it makes it through even without sudo privilages
+                os.system("sudo ip link set can0 up type can bitrate 500000")
+            # Interesting bug where it makes it through even without sudo privilages
             except Exception as e:
-                    print(f"MAIN::can_set_up::error {e}")
+                print(f"MAIN::can_set_up::error {e}")
 
     # Manual User Input for CAN data
     if args.manual:
@@ -35,8 +35,9 @@ def main():
             print(Parser.parse_can_line(data, is_debug))
             running = input("Continue? (y/n) ") == 'y'
     # Determine CAN network status
-    elif args.status:
-        print(f"Found CAN network? {can_receiver.get_status()}")
+    if args.status:
+        if not can_receiver.get_status():
+            return
     # Automatically take in process and display data in the terminal
     elif args.file:
         # Get the input file path
