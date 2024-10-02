@@ -47,7 +47,7 @@ def main():
         with open(output_file_path, 'w') as file_handle:
             with open(input_file_path, 'r') as file:
                 for line in file:
-                    file_handle.write(Parser.parse_can_line(line, is_debug) + '\n')
+                    file_handle.write(Parser.parse_can_line(line, is_debug))
     else:
         # Initialize Socket CAN to read from the correct bus
         bus = can_receiver.get_data_bus()

@@ -66,7 +66,7 @@ def parse_cmu_sensor(sensor_id: int, sensor_data: str, time: str) -> str:
         print("What happen:(?")
         return f"CMU Sensor {sensor_index} part {part} not recognized; Data: {sensor_data[:-1]}"
 
-    return out
+    return out + '\n'
 
 def parse_can_line(data: str, debug: bool) -> str:
     trc_timestamp: datetime = datetime.datetime.fromtimestamp(float('0000000000.000000'))
@@ -80,7 +80,7 @@ def parse_can_line(data: str, debug: bool) -> str:
             print("This is a trc data header line")
         if data.__contains__('TIMESTAMP'):
             trc_timestamp += datetime.datetime.fromtimestamp(float(data.split('TIMESTAMP')[1]))
-        return "TRC Header Data"
+        return "TRC Header Data" + '\n'
     elif bool(re.search(r'\d+\)', data)):
         # TRC Log Data, translate to CAN data before processing
         if debug:
@@ -106,7 +106,7 @@ def parse_can_line(data: str, debug: bool) -> str:
         # print(can)
         data = can
     else:
-        return f"Unsupported data format; line: {data}"
+        return f"Unsupported data format; line: {data}" + '\n'
 
     try:
         timestamp = re.findall(r'\(([^)]+)\)', data)[0]
@@ -139,7 +139,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 hb_serial_number = hex_to_uint32(sensor_data[8:16])
                 out += f"Device ID: {hb_id}; Serial Number: {hb_serial_number}"
 
-                return out
+                return out + '\n'
 
             case 0x3F4:
                 out += "Pack SoC; "
@@ -147,7 +147,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 pack_soc_percent = round(hex_to_float(sensor_data[8:16]) * 100, 3)
                 out += f"Pack SoC: {pack_soc}Ah; Pack SoC Percent: {pack_soc_percent}%"
 
-                return out
+                return out + '\n'
 
             case 0x3F5:
                 out += "Pack Balance SoC; "
@@ -155,7 +155,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 pack_balance_soc_percent = round(hex_to_float(sensor_data[8:16]) * 100, 3)
                 out += f"Pack Balance SoC: {pack_balance_soc}Ah; Pack Balance SoC Percent: {pack_balance_soc_percent}%"
 
-                return out
+                return out + '\n'
 
             case 0x3F6:
                 # Note, data comes through this channel 10x as fast as other channels
@@ -168,7 +168,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 out += f"Charging Cell Voltage Error: {charging_cell_voltage_error}mV; Charging Cell Temp Margin: {charging_cell_temp_margin}°C; Discharge Cell Voltage Error: {discharge_cell_voltage_error}mV; Total Pack Capacity: {total_pack_capacity}Ah"
 
                 # Configuration data, ignore
-                return None
+                return ""
 
             case 0x3F7:
                 # print(sensor_data)
@@ -204,7 +204,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 precharge_timer_value = round(hex_to_uint8(sensor_data[14:16]) * 10 / 1000, 3)
                 out += f"Precharge Contactor Status: {precharge_contactor_status}; Precharge State: {precharge_state}; Contactor Supply Voltage: {contactor_supply_voltage}V; Precharge Timer Status: {precharge_timer_status}; Precharge Timer Value: {precharge_timer_value}s"
 
-                return out
+                return out + '\n'
 
             case 0x3F8:
                 # Note that this is a 10x faster channel
@@ -217,7 +217,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 cell_with_max_voltage = hex_to_uint8(sensor_data[14:16])
                 out += f"Min Cell Voltage: {min_cell_voltage}V; Max Cell Voltage: {max_cell_voltage}V; CMU with Min Voltage: {cmu_with_min_voltage}; Cell with Min Voltage: {cell_with_min_voltage}; CMU with Max Voltage: {cmu_with_max_voltage}; Cell with Max Voltage: {cell_with_max_voltage}"
 
-                return out
+                return out + '\n'
 
             case 0x3F9:
                 out += "Min / Max Cell Temp; "
@@ -229,7 +229,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 cell_with_max_temp = hex_to_uint8(sensor_data[14:16]) # unused
                 out += f"Min Cell Temp: {min_cell_temp}°C; Max Cell Temp: {max_cell_temp}°C; CMU with Min Temp: {cmu_with_min_temp}; CMU with Max Temp: {cmu_with_max_temp};"
 
-                return out
+                return out + '\n'
 
             case 0x3FA:
                 out += "Battery Pack Info; "
@@ -237,7 +237,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 pack_current = round(hex_to_int32(sensor_data[8:16]) / 1000, 3)
                 out += f"Pack Voltage: {pack_voltage}V; Pack Current: {pack_current}A"
 
-                return out
+                return out + '\n'
 
             case 0x3FB:
                 out += "Battery Pack Status; "
@@ -248,7 +248,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 bmu_firmware_build_number = hex_to_uint16(sensor_data[12:16])
                 out += f"Balance Voltage Threshold Rising: {balance_voltage_threshold_rising}mV; Balance Voltage Threshold Falling: {balance_voltage_threshold_falling}mV; CMU Count: {cmu_count}; BMU Firmware Build Number: {bmu_firmware_build_number}"
 
-                return out
+                return out + '\n'
 
             case 0x3FC:
                 out += "Battery Pack Fan Status; "
@@ -258,7 +258,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 current_consumption_cmus = round(hex_to_uint16(sensor_data[12:16]) / 1000, 3)
                 out += f"Fan 0 Speed: {fan_0_speed}rpm; Fan 1 Speed: {fan_1_speed}rpm; Current Consumption Fans and Contactors: {current_consumption_fans_and_contactors}A; Current Consumption CMUs: {current_consumption_cmus}A"
 
-                return out
+                return out + '\n'
 
             case 0x3FD:
                 out += "Extended Battery Pack Info; "
@@ -283,7 +283,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 # 12 : 16 garbage
                 out += f"Pack Status: {pack_status}; BMU Hardware Version: {bmu_hardware_version}; BMU Model ID: {bmu_model_id}"
 
-                return out
+                return out + '\n'
 
             case 0x600:
                 out += "MPPT 1 Input; "
@@ -291,7 +291,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 mppt_input_current = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"MPPT 1 Input Voltage: {mppt_input_voltage}V; MPPT 1 Input Current: {mppt_input_current}A"
 
-                return out
+                return out + '\n'
 
             case 0x601:
                 out += "MPPT 1 Output; "
@@ -299,7 +299,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 mppt_output_current = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"MPPT 1 Output Voltage: {mppt_output_voltage}V; MPPT 1 Output Current: {mppt_output_current}A"
 
-                return out
+                return out + '\n'
 
             case 0x602:
                 out += "MPPT 1  Temperature; "
@@ -307,7 +307,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 controller_temp = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"MOSFET Temp: {mosfet_temp}°C; Controller Temp: {controller_temp}°C"
 
-                return out
+                return out + '\n'
 
             case 0x603:
                 out += "MPPT 1 Auxiliary Power Supply; "
@@ -315,7 +315,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 v3 = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"12V: {v12}V; 3V: {v3}V"
 
-                return out
+                return out + '\n'
 
             case 0x604:
                 out += "MPPT 1 Limits; "
@@ -323,7 +323,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 max_input_current = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"Max Output Voltage: {max_output_voltage}V; Max Input Current: {max_input_current}A"
 
-                return out
+                return out + '\n'
 
             case 0x605:
                 out += "MPPT 1 Status; "
@@ -344,7 +344,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 test_counter = hex_to_uint8(sensor_data[14:16]) # unsure of what this is for?
                 out += f"CAN RX Error Count: {can_rx_error_count}; CAN TX Error Count: {can_tx_error_count}; CAN TX Overflow Count: {can_tx_overflow_count}; Error Flag: {error_flag}; Limit Flag: {limit_flag}; Mode: {mode}; Test Counter: {test_counter}"
 
-                return out
+                return out + '\n'
 
             case 0x606:
                 out += "MPPT 1 Power Connector; "
@@ -352,7 +352,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 connector_temp = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"Output Voltage: {output_voltage}V; Connector Temp: {connector_temp}°C"
 
-                return out
+                return out + '\n'
 
             case 0x608:
                 out += "MPPT 1 Mode (Send)"
@@ -360,7 +360,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 # 2 : 16 garbage
                 out += f"Mode (send): {mode}"
 
-                return out
+                return out + '\n'
 
             case 0x60A:
                 out += "MPPT 1 Maximum Output Voltage (send); "
@@ -368,7 +368,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 # 8 : 16 garbage
                 out += f"Max Output Voltage (send): {max_output_voltage}V"
 
-                return out
+                return out + '\n'
 
             case 0x60B:
                 out += "MPPT 1 Maximum Input Current (send); "
@@ -376,7 +376,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 # 8 : 16 garbage
                 out += f"Max Input Current (send): {max_input_current}A"
 
-                return out
+                return out + '\n'
 
             case 0x610:
                 out += "MPPT 2 Input; "
@@ -384,7 +384,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 mppt_input_current = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"MPPT 2 Input Voltage: {mppt_input_voltage}V; MPPT 2 Input Current: {mppt_input_current}A"
 
-                return out
+                return out + '\n'
 
             case 0x611:
                 out += "MPPT 2 Output; "
@@ -392,7 +392,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 mppt_output_current = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"MPPT 2 Output Voltage: {mppt_output_voltage}V; MPPT 2 Output Current: {mppt_output_current}A"
 
-                return out
+                return out + '\n'
 
             case 0x612:
                 out += "MPPT 2  Temperature; "
@@ -400,7 +400,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 controller_temp = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"MOSFET Temp: {mosfet_temp}°C; Controller Temp: {controller_temp}°C"
 
-                return out
+                return out + '\n'
 
             case 0x613:
                 out += "MPPT 2 Auxiliary Power Supply; "
@@ -408,7 +408,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 v3 = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"12V: {v12}V; 3V: {v3}V"
 
-                return out
+                return out + '\n'
 
             case 0x614:
                 out += "MPPT 2 Limits; "
@@ -416,7 +416,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 max_input_current = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"Max Output Voltage: {max_output_voltage}V; Max Input Current: {max_input_current}A"
 
-                return out
+                return out + '\n'
 
             case 0x615:
                 out += "MPPT 2 Status; "
@@ -437,7 +437,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 test_counter = hex_to_uint8(sensor_data[14:16])  # unsure of what this is for?
                 out += f"CAN RX Error Count: {can_rx_error_count}; CAN TX Error Count: {can_tx_error_count}; CAN TX Overflow Count: {can_tx_overflow_count}; Error Flag: {error_flag}; Limit Flag: {limit_flag}; Mode: {mode}; Test Counter: {test_counter}"
 
-                return out
+                return out + '\n'
 
             case 0x616:
                 out += "MPPT 2 Power Connector; "
@@ -445,7 +445,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 connector_temp = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"Output Voltage: {output_voltage}V; Connector Temp: {connector_temp}°C"
 
-                return out
+                return out + '\n'
 
             case 0x618:
                 out += "MPPT 2 Mode (Send)"
@@ -453,7 +453,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 # 2 : 16 garbage
                 out += f"Mode (send): {mode}"
 
-                return out
+                return out + '\n'
 
             case 0x61A:
                 out += "MPPT 2 Maximum Output Voltage (send); "
@@ -461,7 +461,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 # 8 : 16 garbage
                 out += f"Max Output Voltage (send): {max_output_voltage}V"
 
-                return out
+                return out + '\n'
 
             case 0x61B:
                 out += "MPPT 2 Maximum Input Current (send); "
@@ -469,7 +469,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 # 8 : 16 garbage
                 out += f"Max Input Current (send): {max_input_current}A"
 
-                return out
+                return out + '\n'
             case _:
                 return f"Sensor ID {sensor_id} not recognized; Data: {sensor_data[:-1]}"
 
