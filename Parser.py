@@ -45,23 +45,23 @@ def parse_cmu_sensor(sensor_id: int, sensor_data: str, time: str) -> str:
 
     if part == 0:  # Serial number and temperatures
         cmu_serial_number = hex_to_uint32(sensor_data[:8])
-        cmu_pcb_temp = hex_to_int16(sensor_data[8:12]) / 10
-        cmu_cell_temp = hex_to_int16(sensor_data[12:16]) / 10
+        cmu_pcb_temp = round(hex_to_int16(sensor_data[8:12]) / 10, 3)
+        cmu_cell_temp = round(hex_to_int16(sensor_data[12:16]) / 10, 3)
         out += f"Serial Number: {cmu_serial_number}; PCB Temp: {cmu_pcb_temp}°C; Cell Temp: {cmu_cell_temp}°C"
 
     elif part == 1:  # Cell voltages 0-3
-        c0_voltage = hex_to_int16(sensor_data[:4])
-        c1_voltage = hex_to_int16(sensor_data[4:8])
-        c2_voltage = hex_to_int16(sensor_data[8:12])
-        c3_voltage = hex_to_int16(sensor_data[12:16])
-        out += f"Cell 0 Voltage: {c0_voltage}mV; Cell 1 Voltage: {c1_voltage}mV; Cell 2 Voltage: {c2_voltage}mV; Cell 3 Voltage: {c3_voltage}mV"
+        c0_voltage = round(hex_to_int16(sensor_data[:4]) / 1000, 3)
+        c1_voltage = round(hex_to_int16(sensor_data[4:8]) / 1000, 3)
+        c2_voltage = round(hex_to_int16(sensor_data[8:12]) / 1000, 3)
+        c3_voltage = round(hex_to_int16(sensor_data[12:16]) / 1000, 3)
+        out += f"Cell 0 Voltage: {c0_voltage}V; Cell 1 Voltage: {c1_voltage}V; Cell 2 Voltage: {c2_voltage}V; Cell 3 Voltage: {c3_voltage}V"
 
     elif part == 2:  # Cell voltages 4-7
-        c4_voltage = hex_to_int16(sensor_data[:4])
-        c5_voltage = hex_to_int16(sensor_data[4:8])
-        c6_voltage = hex_to_int16(sensor_data[8:12])
-        c7_voltage = hex_to_int16(sensor_data[12:16])
-        out += f"Cell 4 Voltage: {c4_voltage}mV; Cell 5 Voltage: {c5_voltage}mV; Cell 6 Voltage: {c6_voltage}mV; Cell 7 Voltage: {c7_voltage}mV"
+        c4_voltage = round(hex_to_int16(sensor_data[:4]) / 1000, 3)
+        c5_voltage = round(hex_to_int16(sensor_data[4:8]) / 1000, 3)
+        c6_voltage = round(hex_to_int16(sensor_data[8:12]) / 1000, 3)
+        c7_voltage = round(hex_to_int16(sensor_data[12:16]) / 1000, 3)
+        out += f"Cell 4 Voltage: {c4_voltage}V; Cell 5 Voltage: {c5_voltage}V; Cell 6 Voltage: {c6_voltage}V; Cell 7 Voltage: {c7_voltage}V"
     else:
         print("What happen:(?")
         return f"CMU Sensor {sensor_index} part {part} not recognized; Data: {sensor_data[:-1]}"
@@ -143,17 +143,17 @@ def parse_can_line(data: str, debug: bool) -> str:
 
             case 0x3F4:
                 out += "Pack SoC; "
-                pack_soc = hex_to_float(sensor_data[:8])
-                pack_soc_percent = hex_to_float(sensor_data[8:16])
-                out += f"Pack SoC: {pack_soc}aH; Pack SoC Percent: {pack_soc_percent}"
+                pack_soc = round(hex_to_float(sensor_data[:8]), 3)
+                pack_soc_percent = round(hex_to_float(sensor_data[8:16]) * 100, 3)
+                out += f"Pack SoC: {pack_soc}Ah; Pack SoC Percent: {pack_soc_percent}%"
 
                 return out
 
             case 0x3F5:
                 out += "Pack Balance SoC; "
-                pack_balance_soc = hex_to_float(sensor_data[:8])
-                pack_balance_soc_percent = hex_to_float(sensor_data[8:16])
-                out += f"Pack Balance SoC: {pack_balance_soc}aH; Pack Balance SoC Percent: {pack_balance_soc_percent}"
+                pack_balance_soc = round(hex_to_float(sensor_data[:8]), 3)
+                pack_balance_soc_percent = round(hex_to_float(sensor_data[8:16]) * 100, 3)
+                out += f"Pack Balance SoC: {pack_balance_soc}Ah; Pack Balance SoC Percent: {pack_balance_soc_percent}%"
 
                 return out
 
@@ -161,13 +161,14 @@ def parse_can_line(data: str, debug: bool) -> str:
                 # Note, data comes through this channel 10x as fast as other channels
                 # Values are calculated based on preconfigured values, may result in errors with sample data?
                 out += "Charger Control Info; "
-                charging_cell_voltage_error = hex_to_int16(sensor_data[:4])
+                charging_cell_voltage_error = round(hex_to_int16(sensor_data[:4]) * 1000, 3)
                 charging_cell_temp_margin = hex_to_int16(sensor_data[4:8]) / 10 # should error on a zero value
                 discharge_cell_voltage_error = hex_to_int16(sensor_data[8:12])
                 total_pack_capacity = hex_to_uint16(sensor_data[12:16]) # preset value?
                 out += f"Charging Cell Voltage Error: {charging_cell_voltage_error}mV; Charging Cell Temp Margin: {charging_cell_temp_margin}°C; Discharge Cell Voltage Error: {discharge_cell_voltage_error}mV; Total Pack Capacity: {total_pack_capacity}Ah"
 
-                return out
+                # Configuration data, ignore
+                return None
 
             case 0x3F7:
                 # print(sensor_data)
@@ -197,24 +198,24 @@ def parse_can_line(data: str, debug: bool) -> str:
                     case 5:
                         precharge_state = f"Enable Pack ({precharge_state})"
 
-                contactor_supply_voltage = hex_to_uint16(sensor_data[4:8]) # could be useless?
+                contactor_supply_voltage = round(hex_to_uint16(sensor_data[4:8]) * 1000, 3) # could be useless?
                 # 8 : 12 garbage
                 precharge_timer_status = hex_to_bits(sensor_data[12:14]) # ignore if timeout is disabled
-                precharge_timer_value = hex_to_uint8(sensor_data[14:16]) * 10
-                out += f"Precharge Contactor Status: {precharge_contactor_status}; Precharge State: {precharge_state}; Contactor Supply Voltage: {contactor_supply_voltage}mV; Precharge Timer Status: {precharge_timer_status}; Precharge Timer Value: {precharge_timer_value}ms"
+                precharge_timer_value = round(hex_to_uint8(sensor_data[14:16]) * 10 / 1000, 3)
+                out += f"Precharge Contactor Status: {precharge_contactor_status}; Precharge State: {precharge_state}; Contactor Supply Voltage: {contactor_supply_voltage}V; Precharge Timer Status: {precharge_timer_status}; Precharge Timer Value: {precharge_timer_value}s"
 
                 return out
 
             case 0x3F8:
                 # Note that this is a 10x faster channel
                 out += "Min / Max Cell Voltage; "
-                min_cell_voltage = hex_to_uint16(sensor_data[:4])
-                max_cell_voltage = hex_to_uint16(sensor_data[4:8])
+                min_cell_voltage = round(hex_to_uint16(sensor_data[:4]) / 1000, 3)
+                max_cell_voltage = round(hex_to_uint16(sensor_data[4:8]) / 1000, 3)
                 cmu_with_min_voltage = hex_to_uint8(sensor_data[8:10])
                 cell_with_min_voltage = hex_to_uint8(sensor_data[10:12])
                 cmu_with_max_voltage = hex_to_uint8(sensor_data[12:14])
                 cell_with_max_voltage = hex_to_uint8(sensor_data[14:16])
-                out += f"Min Cell Voltage: {min_cell_voltage}mV; Max Cell Voltage: {max_cell_voltage}mV; CMU with Min Voltage: {cmu_with_min_voltage}; Cell with Min Voltage: {cell_with_min_voltage}; CMU with Max Voltage: {cmu_with_max_voltage}; Cell with Max Voltage: {cell_with_max_voltage}"
+                out += f"Min Cell Voltage: {min_cell_voltage}V; Max Cell Voltage: {max_cell_voltage}V; CMU with Min Voltage: {cmu_with_min_voltage}; Cell with Min Voltage: {cell_with_min_voltage}; CMU with Max Voltage: {cmu_with_max_voltage}; Cell with Max Voltage: {cell_with_max_voltage}"
 
                 return out
 
@@ -232,9 +233,9 @@ def parse_can_line(data: str, debug: bool) -> str:
 
             case 0x3FA:
                 out += "Battery Pack Info; "
-                pack_voltage = hex_to_uint32(sensor_data[:8])
-                pack_current = hex_to_int32(sensor_data[8:16])
-                out += f"Pack Voltage: {pack_voltage}mV; Pack Current: {pack_current}mA"
+                pack_voltage = round(hex_to_uint32(sensor_data[:8]) / 1000, 3)
+                pack_current = round(hex_to_int32(sensor_data[8:16]) / 1000, 3)
+                out += f"Pack Voltage: {pack_voltage}V; Pack Current: {pack_current}A"
 
                 return out
 
@@ -242,7 +243,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 out += "Battery Pack Status; "
                 balance_voltage_threshold_rising = hex_to_uint16(sensor_data[:4])
                 balance_voltage_threshold_falling = hex_to_uint16(sensor_data[4:8])
-                pack_status = hex_to_uint8(sensor_data[8:10]) # unused potentially?
+                pack_status = hex_to_uint8(sensor_data[8:10]) # deprecated by 0x3FD[0]
                 cmu_count = hex_to_uint8(sensor_data[10:12])
                 bmu_firmware_build_number = hex_to_uint16(sensor_data[12:16])
                 out += f"Balance Voltage Threshold Rising: {balance_voltage_threshold_rising}mV; Balance Voltage Threshold Falling: {balance_voltage_threshold_falling}mV; CMU Count: {cmu_count}; BMU Firmware Build Number: {bmu_firmware_build_number}"
@@ -253,9 +254,9 @@ def parse_can_line(data: str, debug: bool) -> str:
                 out += "Battery Pack Fan Status; "
                 fan_0_speed = hex_to_uint16(sensor_data[:4])
                 fan_1_speed = hex_to_uint16(sensor_data[4:8])
-                current_consumption_fans_and_contactors = hex_to_uint16(sensor_data[8:12])
-                current_consumption_cmus = hex_to_uint16(sensor_data[12:16])
-                out += f"Fan 0 Speed: {fan_0_speed}rpm; Fan 1 Speed: {fan_1_speed}rpm; Current Consumption Fans and Contactors: {current_consumption_fans_and_contactors}mA; Current Consumption CMUs: {current_consumption_cmus}mA"
+                current_consumption_fans_and_contactors = round(hex_to_uint16(sensor_data[8:12]) / 1000, 3)
+                current_consumption_cmus = round(hex_to_uint16(sensor_data[12:16]) / 1000, 3)
+                out += f"Fan 0 Speed: {fan_0_speed}rpm; Fan 1 Speed: {fan_1_speed}rpm; Current Consumption Fans and Contactors: {current_consumption_fans_and_contactors}A; Current Consumption CMUs: {current_consumption_cmus}A"
 
                 return out
 
@@ -286,40 +287,40 @@ def parse_can_line(data: str, debug: bool) -> str:
 
             case 0x600:
                 out += "MPPT 1 Input; "
-                mppt_input_voltage = hex_to_float(sensor_data[:8])
-                mppt_input_current = hex_to_float(sensor_data[8:16])
+                mppt_input_voltage = round(hex_to_float(sensor_data[:8]), 3)
+                mppt_input_current = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"MPPT 1 Input Voltage: {mppt_input_voltage}V; MPPT 1 Input Current: {mppt_input_current}A"
 
                 return out
 
             case 0x601:
                 out += "MPPT 1 Output; "
-                mppt_output_voltage = hex_to_float(sensor_data[:8])
-                mppt_output_current = hex_to_float(sensor_data[8:16])
+                mppt_output_voltage = round(hex_to_float(sensor_data[:8]), 3)
+                mppt_output_current = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"MPPT 1 Output Voltage: {mppt_output_voltage}V; MPPT 1 Output Current: {mppt_output_current}A"
 
                 return out
 
             case 0x602:
                 out += "MPPT 1  Temperature; "
-                mosfet_temp = hex_to_float(sensor_data[:8])
-                controller_temp = hex_to_float(sensor_data[8:16])
+                mosfet_temp = round(hex_to_float(sensor_data[:8]), 3)
+                controller_temp = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"MOSFET Temp: {mosfet_temp}°C; Controller Temp: {controller_temp}°C"
 
                 return out
 
             case 0x603:
                 out += "MPPT 1 Auxiliary Power Supply; "
-                v12 = hex_to_float(sensor_data[:8])
-                v3 = hex_to_float(sensor_data[8:16])
+                v12 = round(hex_to_float(sensor_data[:8]), 3)
+                v3 = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"12V: {v12}V; 3V: {v3}V"
 
                 return out
 
             case 0x604:
                 out += "MPPT 1 Limits; "
-                max_output_voltage = hex_to_float(sensor_data[:8])
-                max_input_current = hex_to_float(sensor_data[8:16])
+                max_output_voltage = round(hex_to_float(sensor_data[:8]), 3)
+                max_input_current = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"Max Output Voltage: {max_output_voltage}V; Max Input Current: {max_input_current}A"
 
                 return out
@@ -347,8 +348,8 @@ def parse_can_line(data: str, debug: bool) -> str:
 
             case 0x606:
                 out += "MPPT 1 Power Connector; "
-                output_voltage = hex_to_float(sensor_data[:8])
-                connector_temp = hex_to_float(sensor_data[8:16])
+                output_voltage = round(hex_to_float(sensor_data[:8]), 3)
+                connector_temp = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"Output Voltage: {output_voltage}V; Connector Temp: {connector_temp}°C"
 
                 return out
@@ -379,40 +380,40 @@ def parse_can_line(data: str, debug: bool) -> str:
 
             case 0x610:
                 out += "MPPT 2 Input; "
-                mppt_input_voltage = hex_to_float(sensor_data[:8])
-                mppt_input_current = hex_to_float(sensor_data[8:16])
+                mppt_input_voltage = round(hex_to_float(sensor_data[:8]), 3)
+                mppt_input_current = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"MPPT 2 Input Voltage: {mppt_input_voltage}V; MPPT 2 Input Current: {mppt_input_current}A"
 
                 return out
 
             case 0x611:
                 out += "MPPT 2 Output; "
-                mppt_output_voltage = hex_to_float(sensor_data[:8])
-                mppt_output_current = hex_to_float(sensor_data[8:16])
+                mppt_output_voltage = round(hex_to_float(sensor_data[:8]), 3)
+                mppt_output_current = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"MPPT 2 Output Voltage: {mppt_output_voltage}V; MPPT 2 Output Current: {mppt_output_current}A"
 
                 return out
 
             case 0x612:
                 out += "MPPT 2  Temperature; "
-                mosfet_temp = hex_to_float(sensor_data[:8])
-                controller_temp = hex_to_float(sensor_data[8:16])
+                mosfet_temp = round(hex_to_float(sensor_data[:8]), 3)
+                controller_temp = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"MOSFET Temp: {mosfet_temp}°C; Controller Temp: {controller_temp}°C"
 
                 return out
 
             case 0x613:
                 out += "MPPT 2 Auxiliary Power Supply; "
-                v12 = hex_to_float(sensor_data[:8])
-                v3 = hex_to_float(sensor_data[8:16])
+                v12 = round(hex_to_float(sensor_data[:8]), 3)
+                v3 = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"12V: {v12}V; 3V: {v3}V"
 
                 return out
 
             case 0x614:
                 out += "MPPT 2 Limits; "
-                max_output_voltage = hex_to_float(sensor_data[:8])
-                max_input_current = hex_to_float(sensor_data[8:16])
+                max_output_voltage = round(hex_to_float(sensor_data[:8]), 3)
+                max_input_current = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"Max Output Voltage: {max_output_voltage}V; Max Input Current: {max_input_current}A"
 
                 return out
@@ -440,8 +441,8 @@ def parse_can_line(data: str, debug: bool) -> str:
 
             case 0x616:
                 out += "MPPT 2 Power Connector; "
-                output_voltage = hex_to_float(sensor_data[:8])
-                connector_temp = hex_to_float(sensor_data[8:16])
+                output_voltage = round(hex_to_float(sensor_data[:8]), 3)
+                connector_temp = round(hex_to_float(sensor_data[8:16]), 3)
                 out += f"Output Voltage: {output_voltage}V; Connector Temp: {connector_temp}°C"
 
                 return out
