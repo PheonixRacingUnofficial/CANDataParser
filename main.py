@@ -55,7 +55,7 @@ def main():
         while True:
             # retrieve data from the CAN network
             message = can_receiver.get_can_line(bus)
-            print("TYPE: ", type(message), ' ', str(message))
+            # print("TYPE: ", type(message), ' ', str(message))
             # failed to receive message break from loop
             if message == None:
                 break
@@ -63,7 +63,7 @@ def main():
             if is_log:
                 file = open("log.txt", "a")
                 file.write(str(message) + '\n')
-            message = can_receiver.clean_message(message)
+            # message = can_receiver.clean_message(message)
             print(Parser.parse_can_line(message, is_debug))
 
 if __name__ == '__main__':
