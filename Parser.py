@@ -330,8 +330,23 @@ def parse_can_line(data: str, debug: bool) -> str:
                 can_rx_error_count = hex_to_uint8(sensor_data[:2])
                 can_tx_error_count = hex_to_uint8(sensor_data[2:4])
                 can_tx_overflow_count = hex_to_uint8(sensor_data[4:6])
-                error_flag = hex_to_uint8(sensor_data[6:8])
-                limit_flag = hex_to_uint8(sensor_data[8:10])
+                error_flag = hex_to_bits(sensor_data[6:8])
+                error_flag = f'Low Array Power [{bool(int(error_flag[0]))}] ' + \
+                             f'MOSFET Overheat [{bool(int(error_flag[1]))}] ' + \
+                             f'Battery Low [{bool(int(error_flag[2]))}] ' + \
+                             f'Battery Full [{bool(int(error_flag[3]))}] ' + \
+                             f'12V Under Voltage [{bool(int(error_flag[4]))}] ' + \
+                             f'HW Over Current [{bool(int(error_flag[6]))}] ' + \
+                             f'HW Over Voltage [{bool(int(error_flag[7]))}] '
+                limit_flag = hex_to_bits(sensor_data[8:10])
+                limit_flag = f'Input Current Minimum [{bool(int(limit_flag[0]))}] ' + \
+                             f'Input Current Maximum [{bool(int(limit_flag[1]))}] ' + \
+                             f'Output Voltage Maximum [{bool(int(limit_flag[2]))}] ' + \
+                             f'MOSFET Temperature [{bool(int(limit_flag[3]))}] ' + \
+                             f'Duty Cycle Minimum [{bool(int(limit_flag[4]))}] ' + \
+                             f'Duty Cycle Maximum [{bool(int(limit_flag[5]))}] ' + \
+                             f'Local MPPT [{bool(int(limit_flag[6]))}] ' + \
+                             f'Global MPPT [{bool(int(limit_flag[7]))}] '
                 mode = hex_to_uint8(sensor_data[10:12])
                 match mode:
                     case 0:
@@ -423,8 +438,23 @@ def parse_can_line(data: str, debug: bool) -> str:
                 can_rx_error_count = hex_to_uint8(sensor_data[:2])
                 can_tx_error_count = hex_to_uint8(sensor_data[2:4])
                 can_tx_overflow_count = hex_to_uint8(sensor_data[4:6])
-                error_flag = hex_to_uint8(sensor_data[6:8])
-                limit_flag = hex_to_uint8(sensor_data[8:10])
+                error_flag = hex_to_bits(sensor_data[6:8])
+                error_flag = f'Low Array Power [{bool(int(error_flag[0]))}] ' + \
+                                f'MOSFET Overheat [{bool(int(error_flag[1]))}] ' + \
+                                f'Battery Low [{bool(int(error_flag[2]))}] ' + \
+                                f'Battery Full [{bool(int(error_flag[3]))}] ' + \
+                                f'12V Under Voltage [{bool(int(error_flag[4]))}] ' + \
+                                f'HW Over Current [{bool(int(error_flag[6]))}] ' + \
+                                f'HW Over Voltage [{bool(int(error_flag[7]))}] '
+                limit_flag = hex_to_bits(sensor_data[8:10])
+                limit_flag = f'Input Current Minimum [{bool(int(limit_flag[0]))}] ' + \
+                                f'Input Current Maximum [{bool(int(limit_flag[1]))}] ' + \
+                                f'Output Voltage Maximum [{bool(int(limit_flag[2]))}] ' + \
+                                f'MOSFET Temperature [{bool(int(limit_flag[3]))}] ' + \
+                                f'Duty Cycle Minimum [{bool(int(limit_flag[4]))}] ' + \
+                                f'Duty Cycle Maximum [{bool(int(limit_flag[5]))}] ' + \
+                                f'Local MPPT [{bool(int(limit_flag[6]))}] ' + \
+                                f'Global MPPT [{bool(int(limit_flag[7]))}] '
                 mode = hex_to_uint8(sensor_data[10:12])
                 match mode:
                     case 0:
