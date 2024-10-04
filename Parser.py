@@ -594,5 +594,12 @@ class Console:
         else:
             print(f"[ERROR] {message}")
 
+    def sensor_error(self, message):
+        if type(message) == list:
+            for msg in message:
+                print(f"[SENSOR ERROR / {msg}")
+        else:
+            print(f"[SENSOR ERROR /  {message}")
+
 
 
