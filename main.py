@@ -32,7 +32,7 @@ def main():
         running: bool = True
         while running:
             data: str = input("Enter CAN data line: ")
-            print(Parser.parse_can_line(data, is_debug))
+            Parser.parse_can_line(data, is_debug)
             running = input("Continue? (y/n) ") == 'y'
     # Determine CAN network status
     if args.status:
@@ -64,7 +64,7 @@ def main():
                 file = open("log.txt", "a")
                 file.write(str(message) + '\n')
             # message = can_receiver.clean_message(message)
-            print(Parser.parse_can_line(message, is_debug))
+            Parser.parse_can_line(message, is_debug)
 
 if __name__ == '__main__':
     main()
