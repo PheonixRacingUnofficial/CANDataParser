@@ -542,8 +542,8 @@ def parse_can_line(data: str, debug: bool) -> str:
                 return msg
 
     except Exception as e:
-        console.error(f"{e}")
-        return f"Error: {e}"
+        console.error(f"Unknown error happened; Stacktrace: {e.with_traceback()}")
+        return f"Error: {e.with_traceback()}"
 
 def trim_can_input(data: str) -> str:
     """ Trim the CAN data input to only the data portion """
