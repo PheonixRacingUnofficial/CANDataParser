@@ -1,7 +1,15 @@
+import serial
+
 import can_receiver
 import Parser
 import argparse
 import os
+import threading
+import time
+import queue
+from gui import start_gui
+
+
 
 def main():
     # User inputs defined parameters to get to desired mode: auto/manual
@@ -12,6 +20,8 @@ def main():
     arg_parse.add_argument("--debug" , action="store_true", help="Debug mode for CAN data")
     arg_parse.add_argument("--log", action="store_true", help="Logs data in log.txt is local directory")
     arg_parse.add_argument("--setup", action="store_true", help="Sets CAN0 interface to active")
+    arg_parse.add_argument("--nogui", action="store_true", help="Run without GUI")
+    arg_parse.add_argument("--serial", action="store_true", help="Run with serial connection")
     # Determine what the users arguments are
     args = arg_parse.parse_args()
 
@@ -27,6 +37,18 @@ def main():
             except Exception as e:
                 print(f"MAIN::can_set_up::error {e}")
 
+    if not args.nogui:
+        data_queue = queue.Queue()
+        gui_thread = threading.Thread(target=start_gui, args=(data_queue,), daemon=True)
+        gui_thread.start()
+
+    if args.serial:
+        ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+        ser.reset_input_buffer()
+        while True:
+            if ser.in_waiting > 0:
+                line = ser.readline().decode('utf-8').rstrip()
+                print(line)
     # Manual User Input for CAN data
     if args.manual:
         running: bool = True
@@ -34,6 +56,7 @@ def main():
             data: str = input("Enter CAN data line: ")
             Parser.parse_can_line(data, is_debug)
             running = input("Continue? (y/n) ") == 'y'
+            # data_queue.put({'text1': 'test', 'text2': 'test', 'text3': 'test'})
     # Determine CAN network status
     if args.status:
         if not can_receiver.get_status():
