@@ -46,13 +46,18 @@ def main():
                     except UnicodeDecodeError:
                         print("Error: Could not decode the data")
                     try:
+
                         time_value, voltage_value = map(float, line.split(','))
+                        if voltage_value < 1:
+                            voltage_value = 0.0
+                        if voltage_value > 4:
+                            voltage_value = 5.0
                     except ValueError:
                         print(f"Invalid data format: {line}")
                         time_value, voltage_value = 0, 0
 
                     print(f"Time: {time_value}, Voltage: {voltage_value}")
-                    # write to a file named 'serial_data.txt' if it doesnt exist create
+
                     with open('serial_data.txt', 'a') as file:
                         file.write(f"{time_value}, {voltage_value}\n")
 
