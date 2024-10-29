@@ -1,18 +1,14 @@
-import serial
-
-import can_receiver
-import Parser
 import argparse
 import os
-import threading
-import time
-import queue
-from gui import start_gui
+import platform
 
+import serial
+
+import Parser
+import can_receiver
 
 
 def main():
-    # User inputs defined parameters to get to desired mode: auto/manual
     arg_parse = argparse.ArgumentParser(description="Process, log, and display CAN data")
     arg_parse.add_argument("--manual", action="store_true", help="Manual CAN line input on command line")
     arg_parse.add_argument("--status", action="store_true", help="Determine pCAN connection status")
@@ -22,11 +18,10 @@ def main():
     arg_parse.add_argument("--setup", action="store_true", help="Sets CAN0 interface to active")
     arg_parse.add_argument("--nogui", action="store_true", help="Run without GUI")
     arg_parse.add_argument("--serial", action="store_true", help="Run with serial connection")
-    # Determine what the users arguments are
+
     args = arg_parse.parse_args()
 
     is_debug: bool = args.debug
-
     is_log: bool = args.log
 
     if args.setup:
@@ -38,39 +33,23 @@ def main():
                 print(f"MAIN::can_set_up::error {e}")
 
     if not args.nogui:
-        data_queue = queue.Queue()
-        gui_thread = threading.Thread(target=start_gui, args=(data_queue,), daemon=True)
-        gui_thread.start()
+        ...
 
     if args.serial:
-        ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
-        ser.reset_input_buffer()
-        while True:
-            if ser.in_waiting > 0:
-                line = ser.readline().decode('utf-8').rstrip()
-                print(line)
-    # Manual User Input for CAN data
+        try:
+            ser = get_serial_port()
+            print(f"Connected to serial port: {ser.port}")
+
+        except Exception as e:
+            print(f"Error: {e}")
+
     if args.manual:
-        running: bool = True
-        while running:
-            data: str = input("Enter CAN data line: ")
-            Parser.parse_can_line(data, is_debug)
-            running = input("Continue? (y/n) ") == 'y'
-            # data_queue.put({'text1': 'test', 'text2': 'test', 'text3': 'test'})
-    # Determine CAN network status
+        manual_loop(is_debug)
     if args.status:
         if not can_receiver.get_status():
             return
-    # Automatically take in process and display data in the terminal
     elif args.file:
-        # Get the input file path
-        input_file_path = input("Enter the input file path: ")
-        # Get the output file path
-        output_file_path = input("Enter the output file path: ")
-        with open(output_file_path, 'w') as file_handle:
-            with open(input_file_path, 'r') as file:
-                for line in file:
-                    file_handle.write(Parser.parse_can_line(line, is_debug))
+        run_file(is_debug)
     else:
         # Initialize Socket CAN to read from the correct bus
         bus = can_receiver.get_data_bus()
@@ -89,5 +68,33 @@ def main():
             # message = can_receiver.clean_message(message)
             Parser.parse_can_line(message, is_debug)
 
+def get_serial_port():
+    """Detect OS and bind the corresponding serial port."""
+    os_name = platform.system()
+    if os_name == "Linux":
+        return serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
+    elif os_name == "Windows":
+        return serial.Serial('COM6', 9600, timeout=1)  # Adjust the COM port as needed
+    else:
+        raise OSError(f"Unsupported OS: {os_name}")
+
+def manual_loop(is_debug: bool) -> None:
+    """ Manual input loop for CAN data. """
+    running: bool = True
+    while running:
+        data: str = input("Enter CAN data line: ")
+        Parser.parse_can_line(data, is_debug)
+        running = input("Continue? (y/n) ") == 'y'
+
+def run_file(is_debug: bool) -> None:
+    """ Read CAN data from a file and process it. """
+    input_file_path = input("Enter the input file path: ")
+    output_file_path = input("Enter the output file path: ")
+    with open(output_file_path, 'w') as file_handle:
+        with open(input_file_path, 'r') as file:
+            for line in file:
+                file_handle.write(Parser.parse_can_line(line, is_debug))
+
 if __name__ == '__main__':
     main()
+

@@ -1,0 +1,479 @@
+[2024-09-23 15:48:00.024582] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:00.024582] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.427A
+[[2024-09-23 15:48:00.095308] MPPT 2 Input; MPPT 2 Input Voltage: 61.956V; MPPT 2 Input Current: 0.016A
+[2024-09-23 15:48:00.095309] MPPT 1 Input; MPPT 1 Input Voltage: 54.945V; MPPT 1 Input Current: 0.017A
+[2024-09-23 15:48:00.125127] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:00.125128] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.432A
+[[2024-09-23 15:48:00.175605] MPPT 2 Output; MPPT 2 Output Voltage: 113.612V; MPPT 2 Output Current: 0.009A
+[2024-09-23 15:48:00.175606] MPPT 1 Output; MPPT 1 Output Voltage: 113.487V; MPPT 1 Output Current: 0.008A
+[2024-09-23 15:48:00.225746] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:00.225747] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.423A
+[[2024-09-23 15:48:00.255946] MPPT 2  Temperature; MOSFET Temp: 25.694°C; Controller Temp: 32.097°C
+[2024-09-23 15:48:00.255947] MPPT 1  Temperature; MOSFET Temp: 25.683°C; Controller Temp: 27.885°C
+[2024-09-23 15:48:00.326343] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:00.326345] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.418A
+[[2024-09-23 15:48:00.336296] MPPT 2 Auxiliary Power Supply; 12V: 10.97V; 3V: 3.026V
+[2024-09-23 15:48:00.336297] MPPT 1 Auxiliary Power Supply; 12V: 11.094V; 3V: 2.984V
+[2024-09-23 15:48:00.416600] MPPT 2 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:00.416602] MPPT 1 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:00.426920] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:00.426921] Battery Pack Info; Pack Voltage: 96.823V; Pack Current: -0.423A
+[[2024-09-23 15:48:00.456301] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:00.456302] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
+[2024-09-23 15:48:00.458205] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
+[2024-09-23 15:48:00.458205] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:00.460165] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
+[2024-09-23 15:48:00.460166] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.612V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
+[2024-09-23 15:48:00.462109] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.0°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:00.462109] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
+[2024-09-23 15:48:00.464110] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:00.476888] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:00.476889] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
+[2024-09-23 15:48:00.478829] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:00.496934] MPPT 2 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 58
+[2024-09-23 15:48:00.496935] MPPT 1 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 58
+[2024-09-23 15:48:00.527521] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:00.527521] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.421A
+[[2024-09-23 15:48:00.577285] MPPT 2 Power Connector; Output Voltage: 113.685V; Connector Temp: 24.334°C
+[2024-09-23 15:48:00.577285] MPPT 1 Power Connector; Output Voltage: 113.585V; Connector Temp: 24.395°C
+[2024-09-23 15:48:00.628111] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:00.628112] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.413A
+[[2024-09-23 15:48:00.729541] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:00.729541] Battery Pack Info; Pack Voltage: 96.823V; Pack Current: -0.418A
+[[2024-09-23 15:48:00.729542] Min / Max Cell Temp; Min Cell Temp: 23.7°C; Max Cell Temp: 23.8°C; CMU with Min Temp: 3; CMU with Max Temp: 1;
+[2024-09-23 15:48:00.730751] BMU Heartbeat Sensor; Device ID: 20485; Serial Number: 3499
+[2024-09-23 15:48:00.730751] Battery Pack Status; Balance Voltage Threshold Rising: 4050mV; Balance Voltage Threshold Falling: 4000mV; CMU Count: 4; BMU Firmware Build Number: 967
+[2024-09-23 15:48:00.730752] Precharge Status; Precharge Contactor Status: Contactor 1 Driver Error [False] Contactor 2 Driver Error [False] Contactor 3 Driver Error [False] Contactor 1 Status [True] Contactor 2 Status [True] Contactor 3 Status [True] 12V Contactor Supply Voltage [True] ; Precharge State: Run (4); Contactor Supply Voltage: 0V; Precharge Timer Status: 00000001; Precharge Timer Value: 0.0s
+[2024-09-23 15:48:00.730752] Pack SoC; Pack SoC: 25.255Ah; Pack SoC Percent: 47.385%
+[2024-09-23 15:48:00.731971] Pack Balance SoC; Pack Balance SoC: 0.0Ah; Pack Balance SoC Percent: 0.0%
+[2024-09-23 15:48:00.731972] Battery Pack Fan Status; Fan 0 Speed: 2640rpm; Fan 1 Speed: 2730rpm; Current Consumption Fans and Contactors: 0.903A; Current Consumption CMUs: 0.035A
+[2024-09-23 15:48:00.731972] Extended Battery Pack Info; Pack Status: Cell Over Voltage [False] Cell Under Voltage [False] Cell Over Temp [False] Measurement Untrusted (channel mismatch) [False] CMU Communications Timeout (lost CMU) [False] Vehicle Communications Timeout (lost EVDC) [False] BMU Setup Mode [False] CMU CAN Bus Power Status [False] Pack Isolation Test Failure [False] SoC Measurement Invalid [False] CAN 12V Supply Low [False] Contactor Stuck or Disenganged [False] CMU Detected Extra Cell Present [False] ; BMU Hardware Version: 0; BMU Model ID: 0
+[2024-09-23 15:48:00.829302] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:00.829303] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.433A
+[[2024-09-23 15:48:00.898533] MPPT 2 Input; MPPT 2 Input Voltage: 61.955V; MPPT 2 Input Current: 0.016A
+[2024-09-23 15:48:00.898533] MPPT 1 Input; MPPT 1 Input Voltage: 56.462V; MPPT 1 Input Current: 0.016A
+[2024-09-23 15:48:00.929906] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:00.929906] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.421A
+[[2024-09-23 15:48:00.978865] MPPT 2 Output; MPPT 2 Output Voltage: 113.452V; MPPT 2 Output Current: 0.009A
+[2024-09-23 15:48:00.978866] MPPT 1 Output; MPPT 1 Output Voltage: 113.329V; MPPT 1 Output Current: 0.008A
+[2024-09-23 15:48:01.030477] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:01.030477] Battery Pack Info; Pack Voltage: 96.823V; Pack Current: -0.417A
+[[2024-09-23 15:48:01.059261] MPPT 2  Temperature; MOSFET Temp: 25.696°C; Controller Temp: 32.11°C
+[2024-09-23 15:48:01.059262] MPPT 1  Temperature; MOSFET Temp: 25.685°C; Controller Temp: 27.873°C
+[2024-09-23 15:48:01.131080] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:01.131081] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.421A
+[[2024-09-23 15:48:01.139527] MPPT 2 Auxiliary Power Supply; 12V: 10.937V; 3V: 3.025V
+[2024-09-23 15:48:01.139527] MPPT 1 Auxiliary Power Supply; 12V: 11.063V; 3V: 2.983V
+[2024-09-23 15:48:01.219882] MPPT 2 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:01.219883] MPPT 1 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:01.231660] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:01.231661] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.419A
+[[2024-09-23 15:48:01.300251] MPPT 2 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 59
+[2024-09-23 15:48:01.300251] MPPT 1 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [True] Local MPPT [False] Global MPPT [True] ; Mode: On (1); Test Counter: 59
+[2024-09-23 15:48:01.332247] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:01.332248] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.409A
+[[2024-09-23 15:48:01.344922] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.6°C
+[2024-09-23 15:48:01.344923] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
+[2024-09-23 15:48:01.346827] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
+[2024-09-23 15:48:01.346827] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:01.348786] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
+[2024-09-23 15:48:01.349836] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.613V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
+[2024-09-23 15:48:01.349836] CMU Sensor 4; Serial Number: 4063; PCB Temp: 21.9°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:01.351668] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
+[2024-09-23 15:48:01.352691] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:01.365526] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.4°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:01.365527] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
+[2024-09-23 15:48:01.367507] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:01.380511] MPPT 2 Power Connector; Output Voltage: 113.531V; Connector Temp: 24.332°C
+[2024-09-23 15:48:01.380512] MPPT 1 Power Connector; Output Voltage: 113.432V; Connector Temp: 24.392°C
+[2024-09-23 15:48:01.432843] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:01.432844] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.422A
+[[2024-09-23 15:48:01.533434] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:01.533434] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.424A
+[[2024-09-23 15:48:01.634007] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:01.634008] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.408A
+[[2024-09-23 15:48:01.701819] MPPT 2 Input; MPPT 2 Input Voltage: 61.953V; MPPT 2 Input Current: 0.016A
+[2024-09-23 15:48:01.701820] MPPT 1 Input; MPPT 1 Input Voltage: 54.803V; MPPT 1 Input Current: 0.017A
+[2024-09-23 15:48:01.735443] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:01.735444] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.419A
+[[2024-09-23 15:48:01.735445] Min / Max Cell Temp; Min Cell Temp: 23.6°C; Max Cell Temp: 23.8°C; CMU with Min Temp: 2; CMU with Max Temp: 1;
+[2024-09-23 15:48:01.736672] BMU Heartbeat Sensor; Device ID: 20485; Serial Number: 3499
+[2024-09-23 15:48:01.736672] Battery Pack Status; Balance Voltage Threshold Rising: 4050mV; Balance Voltage Threshold Falling: 4000mV; CMU Count: 4; BMU Firmware Build Number: 967
+[2024-09-23 15:48:01.736673] Precharge Status; Precharge Contactor Status: Contactor 1 Driver Error [False] Contactor 2 Driver Error [False] Contactor 3 Driver Error [False] Contactor 1 Status [True] Contactor 2 Status [True] Contactor 3 Status [True] 12V Contactor Supply Voltage [True] ; Precharge State: Run (4); Contactor Supply Voltage: 0V; Precharge Timer Status: 00000001; Precharge Timer Value: 0.0s
+[2024-09-23 15:48:01.736674] Pack SoC; Pack SoC: 25.255Ah; Pack SoC Percent: 47.385%
+[2024-09-23 15:48:01.737873] Pack Balance SoC; Pack Balance SoC: 0.0Ah; Pack Balance SoC Percent: 0.0%
+[2024-09-23 15:48:01.737873] Battery Pack Fan Status; Fan 0 Speed: 2670rpm; Fan 1 Speed: 2730rpm; Current Consumption Fans and Contactors: 0.917A; Current Consumption CMUs: 0.033A
+[2024-09-23 15:48:01.737874] Extended Battery Pack Info; Pack Status: Cell Over Voltage [False] Cell Under Voltage [False] Cell Over Temp [False] Measurement Untrusted (channel mismatch) [False] CMU Communications Timeout (lost CMU) [False] Vehicle Communications Timeout (lost EVDC) [False] BMU Setup Mode [False] CMU CAN Bus Power Status [False] Pack Isolation Test Failure [False] SoC Measurement Invalid [False] CAN 12V Supply Low [False] Contactor Stuck or Disenganged [False] CMU Detected Extra Cell Present [False] ; BMU Hardware Version: 0; BMU Model ID: 0
+[2024-09-23 15:48:01.782130] MPPT 2 Output; MPPT 2 Output Voltage: 113.565V; MPPT 2 Output Current: 0.009A
+[2024-09-23 15:48:01.782131] MPPT 1 Output; MPPT 1 Output Voltage: 113.439V; MPPT 1 Output Current: 0.008A
+[2024-09-23 15:48:01.835223] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:01.835224] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.411A
+[[2024-09-23 15:48:01.862456] MPPT 2  Temperature; MOSFET Temp: 25.697°C; Controller Temp: 32.11°C
+[2024-09-23 15:48:01.862456] MPPT 1  Temperature; MOSFET Temp: 25.691°C; Controller Temp: 27.865°C
+[2024-09-23 15:48:01.935801] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:01.935801] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.427A
+[[2024-09-23 15:48:01.942798] MPPT 2 Auxiliary Power Supply; 12V: 10.969V; 3V: 3.026V
+[2024-09-23 15:48:01.942799] MPPT 1 Auxiliary Power Supply; 12V: 11.092V; 3V: 2.983V
+[2024-09-23 15:48:02.023119] MPPT 2 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:02.023119] MPPT 1 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:02.036391] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:02.036392] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.418A
+[[2024-09-23 15:48:02.103461] MPPT 2 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 60
+[2024-09-23 15:48:02.103461] MPPT 1 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 60
+[2024-09-23 15:48:02.136992] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:02.136993] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.416A
+[[2024-09-23 15:48:02.183778] MPPT 2 Power Connector; Output Voltage: 113.645V; Connector Temp: 24.333°C
+[2024-09-23 15:48:02.183778] MPPT 1 Power Connector; Output Voltage: 113.537V; Connector Temp: 24.393°C
+[2024-09-23 15:48:02.233543] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:02.233544] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
+[2024-09-23 15:48:02.235454] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
+[2024-09-23 15:48:02.235454] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:02.237582] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
+[2024-09-23 15:48:02.237582] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:02.237583] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.426A
+[[2024-09-23 15:48:02.238773] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.613V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
+[2024-09-23 15:48:02.238774] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.0°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:02.240289] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
+[2024-09-23 15:48:02.241328] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:02.254205] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:02.254205] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
+[2024-09-23 15:48:02.256203] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:02.338202] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:02.338202] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.421A
+[[2024-09-23 15:48:02.438778] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:02.438779] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.429A
+[[2024-09-23 15:48:02.505087] MPPT 2 Input; MPPT 2 Input Voltage: 61.957V; MPPT 2 Input Current: 0.016A
+[2024-09-23 15:48:02.505087] MPPT 1 Input; MPPT 1 Input Voltage: 56.499V; MPPT 1 Input Current: 0.016A
+[2024-09-23 15:48:02.539384] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:02.539385] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.427A
+[[2024-09-23 15:48:02.585411] MPPT 2 Output; MPPT 2 Output Voltage: 113.409V; MPPT 2 Output Current: 0.009A
+[2024-09-23 15:48:02.585412] MPPT 1 Output; MPPT 1 Output Voltage: 113.28V; MPPT 1 Output Current: 0.008A
+[2024-09-23 15:48:02.639957] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:02.639958] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.416A
+[[2024-09-23 15:48:02.665732] MPPT 2  Temperature; MOSFET Temp: 25.692°C; Controller Temp: 32.097°C
+[2024-09-23 15:48:02.665733] MPPT 1  Temperature; MOSFET Temp: 25.689°C; Controller Temp: 27.856°C
+[2024-09-23 15:48:02.741393] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:02.741393] Battery Pack Info; Pack Voltage: 96.823V; Pack Current: -0.43A
+[[2024-09-23 15:48:02.741394] Min / Max Cell Temp; Min Cell Temp: 23.7°C; Max Cell Temp: 23.8°C; CMU with Min Temp: 3; CMU with Max Temp: 1;
+[2024-09-23 15:48:02.742604] BMU Heartbeat Sensor; Device ID: 20485; Serial Number: 3499
+[2024-09-23 15:48:02.742605] Battery Pack Status; Balance Voltage Threshold Rising: 4050mV; Balance Voltage Threshold Falling: 4000mV; CMU Count: 4; BMU Firmware Build Number: 967
+[2024-09-23 15:48:02.742605] Precharge Status; Precharge Contactor Status: Contactor 1 Driver Error [False] Contactor 2 Driver Error [False] Contactor 3 Driver Error [False] Contactor 1 Status [True] Contactor 2 Status [True] Contactor 3 Status [True] 12V Contactor Supply Voltage [True] ; Precharge State: Run (4); Contactor Supply Voltage: 0V; Precharge Timer Status: 00000001; Precharge Timer Value: 0.0s
+[2024-09-23 15:48:02.742605] Pack SoC; Pack SoC: 25.255Ah; Pack SoC Percent: 47.384%
+[2024-09-23 15:48:02.743824] Pack Balance SoC; Pack Balance SoC: 0.0Ah; Pack Balance SoC Percent: 0.0%
+[2024-09-23 15:48:02.743824] Battery Pack Fan Status; Fan 0 Speed: 2640rpm; Fan 1 Speed: 2700rpm; Current Consumption Fans and Contactors: 0.915A; Current Consumption CMUs: 0.033A
+[2024-09-23 15:48:02.743824] Extended Battery Pack Info; Pack Status: Cell Over Voltage [False] Cell Under Voltage [False] Cell Over Temp [False] Measurement Untrusted (channel mismatch) [False] CMU Communications Timeout (lost CMU) [False] Vehicle Communications Timeout (lost EVDC) [False] BMU Setup Mode [False] CMU CAN Bus Power Status [False] Pack Isolation Test Failure [False] SoC Measurement Invalid [False] CAN 12V Supply Low [False] Contactor Stuck or Disenganged [False] CMU Detected Extra Cell Present [False] ; BMU Hardware Version: 0; BMU Model ID: 0
+[2024-09-23 15:48:02.746064] MPPT 2 Auxiliary Power Supply; 12V: 10.936V; 3V: 3.025V
+[2024-09-23 15:48:02.746065] MPPT 1 Auxiliary Power Supply; 12V: 11.062V; 3V: 2.983V
+[2024-09-23 15:48:02.826380] MPPT 2 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:02.826380] MPPT 1 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:02.841175] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:02.841176] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.423A
+[[2024-09-23 15:48:02.906723] MPPT 2 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 61
+[2024-09-23 15:48:02.906724] MPPT 1 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [True] Local MPPT [False] Global MPPT [True] ; Mode: On (1); Test Counter: 61
+[2024-09-23 15:48:02.941768] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:02.941769] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.418A
+[[2024-09-23 15:48:02.987052] MPPT 2 Power Connector; Output Voltage: 113.48V; Connector Temp: 24.335°C
+[2024-09-23 15:48:02.987052] MPPT 1 Power Connector; Output Voltage: 113.391V; Connector Temp: 24.397°C
+[2024-09-23 15:48:03.042343] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:03.042344] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.419A
+[[2024-09-23 15:48:03.122158] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:03.122159] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.621V
+[2024-09-23 15:48:03.124161] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
+[2024-09-23 15:48:03.124162] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:03.126034] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
+[2024-09-23 15:48:03.126035] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.613V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
+[2024-09-23 15:48:03.127959] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.0°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:03.127960] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
+[2024-09-23 15:48:03.129979] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:03.143035] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:03.143035] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:03.143036] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.42A
+[[2024-09-23 15:48:03.144215] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
+[2024-09-23 15:48:03.144216] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:03.243542] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:03.243543] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.424A
+[[2024-09-23 15:48:03.308328] MPPT 2 Input; MPPT 2 Input Voltage: 61.959V; MPPT 2 Input Current: 0.016A
+[2024-09-23 15:48:03.308328] MPPT 1 Input; MPPT 1 Input Voltage: 54.866V; MPPT 1 Input Current: 0.018A
+[2024-09-23 15:48:03.344151] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:03.344151] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.412A
+[[2024-09-23 15:48:03.388692] MPPT 2 Output; MPPT 2 Output Voltage: 113.537V; MPPT 2 Output Current: 0.009A
+[2024-09-23 15:48:03.388692] MPPT 1 Output; MPPT 1 Output Voltage: 113.417V; MPPT 1 Output Current: 0.009A
+[2024-09-23 15:48:03.444725] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:03.444725] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.428A
+[[2024-09-23 15:48:03.469023] MPPT 2  Temperature; MOSFET Temp: 25.695°C; Controller Temp: 32.083°C
+[2024-09-23 15:48:03.469024] MPPT 1  Temperature; MOSFET Temp: 25.69°C; Controller Temp: 27.87°C
+[2024-09-23 15:48:03.545342] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:03.545344] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.421A
+[[2024-09-23 15:48:03.549340] MPPT 2 Auxiliary Power Supply; 12V: 10.97V; 3V: 3.026V
+[2024-09-23 15:48:03.549341] MPPT 1 Auxiliary Power Supply; 12V: 11.093V; 3V: 2.983V
+[2024-09-23 15:48:03.629665] MPPT 2 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:03.629666] MPPT 1 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:03.645927] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:03.645929] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.413A
+[[2024-09-23 15:48:03.709998] MPPT 2 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 62
+[2024-09-23 15:48:03.709999] MPPT 1 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 62
+[2024-09-23 15:48:03.747353] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:03.747354] Battery Pack Info; Pack Voltage: 96.823V; Pack Current: -0.419A
+[[2024-09-23 15:48:03.747357] Min / Max Cell Temp; Min Cell Temp: 23.7°C; Max Cell Temp: 23.8°C; CMU with Min Temp: 3; CMU with Max Temp: 1;
+[2024-09-23 15:48:03.748561] BMU Heartbeat Sensor; Device ID: 20485; Serial Number: 3499
+[2024-09-23 15:48:03.748562] Battery Pack Status; Balance Voltage Threshold Rising: 4050mV; Balance Voltage Threshold Falling: 4000mV; CMU Count: 4; BMU Firmware Build Number: 967
+[2024-09-23 15:48:03.748563] Precharge Status; Precharge Contactor Status: Contactor 1 Driver Error [False] Contactor 2 Driver Error [False] Contactor 3 Driver Error [False] Contactor 1 Status [True] Contactor 2 Status [True] Contactor 3 Status [True] 12V Contactor Supply Voltage [True] ; Precharge State: Run (4); Contactor Supply Voltage: 0V; Precharge Timer Status: 00000001; Precharge Timer Value: 0.0s
+[2024-09-23 15:48:03.748565] Pack SoC; Pack SoC: 25.256Ah; Pack SoC Percent: 47.384%
+[2024-09-23 15:48:03.749782] Pack Balance SoC; Pack Balance SoC: 0.0Ah; Pack Balance SoC Percent: 0.0%
+[2024-09-23 15:48:03.749784] Battery Pack Fan Status; Fan 0 Speed: 2670rpm; Fan 1 Speed: 2730rpm; Current Consumption Fans and Contactors: 0.917A; Current Consumption CMUs: 0.033A
+[2024-09-23 15:48:03.749785] Extended Battery Pack Info; Pack Status: Cell Over Voltage [False] Cell Under Voltage [False] Cell Over Temp [False] Measurement Untrusted (channel mismatch) [False] CMU Communications Timeout (lost CMU) [False] Vehicle Communications Timeout (lost EVDC) [False] BMU Setup Mode [False] CMU CAN Bus Power Status [False] Pack Isolation Test Failure [False] SoC Measurement Invalid [False] CAN 12V Supply Low [False] Contactor Stuck or Disenganged [False] CMU Detected Extra Cell Present [False] ; BMU Hardware Version: 0; BMU Model ID: 0
+[2024-09-23 15:48:03.790332] MPPT 2 Power Connector; Output Voltage: 113.615V; Connector Temp: 24.334°C
+[2024-09-23 15:48:03.790334] MPPT 1 Power Connector; Output Voltage: 113.513V; Connector Temp: 24.394°C
+[2024-09-23 15:48:03.847135] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:03.847136] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.417A
+[[2024-09-23 15:48:03.947701] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:03.947702] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.417A
+[[2024-09-23 15:48:04.010793] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.7°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:04.010795] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
+[2024-09-23 15:48:04.012713] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
+[2024-09-23 15:48:04.012714] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:04.014636] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
+[2024-09-23 15:48:04.014638] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.613V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
+[2024-09-23 15:48:04.016551] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.1°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:04.016553] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
+[2024-09-23 15:48:04.018568] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:04.031484] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:04.031486] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
+[2024-09-23 15:48:04.033452] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:04.048316] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:04.048318] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.413A
+[[2024-09-23 15:48:04.111632] MPPT 2 Input; MPPT 2 Input Voltage: 61.963V; MPPT 2 Input Current: 0.016A
+[2024-09-23 15:48:04.111633] MPPT 1 Input; MPPT 1 Input Voltage: 56.58V; MPPT 1 Input Current: 0.016A
+[2024-09-23 15:48:04.148893] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:04.148894] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.418A
+[[2024-09-23 15:48:04.191952] MPPT 2 Output; MPPT 2 Output Voltage: 113.379V; MPPT 2 Output Current: 0.009A
+[2024-09-23 15:48:04.191953] MPPT 1 Output; MPPT 1 Output Voltage: 113.243V; MPPT 1 Output Current: 0.008A
+[2024-09-23 15:48:04.249513] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:04.249514] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.423A
+[[2024-09-23 15:48:04.272267] MPPT 2  Temperature; MOSFET Temp: 25.698°C; Controller Temp: 32.104°C
+[2024-09-23 15:48:04.272268] MPPT 1  Temperature; MOSFET Temp: 25.692°C; Controller Temp: 27.841°C
+[2024-09-23 15:48:04.350108] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:04.350110] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.416A
+[[2024-09-23 15:48:04.352621] MPPT 2 Auxiliary Power Supply; 12V: 10.936V; 3V: 3.026V
+[2024-09-23 15:48:04.352622] MPPT 1 Auxiliary Power Supply; 12V: 11.063V; 3V: 2.983V
+[2024-09-23 15:48:04.432960] MPPT 2 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:04.432962] MPPT 1 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:04.450682] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:04.450685] Battery Pack Info; Pack Voltage: 96.823V; Pack Current: -0.423A
+[[2024-09-23 15:48:04.513278] MPPT 2 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [True] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 63
+[2024-09-23 15:48:04.513280] MPPT 1 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [True] Local MPPT [False] Global MPPT [True] ; Mode: On (1); Test Counter: 63
+[2024-09-23 15:48:04.551295] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:04.551296] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.42A
+[[2024-09-23 15:48:04.593601] MPPT 2 Power Connector; Output Voltage: 113.445V; Connector Temp: 24.333°C
+[2024-09-23 15:48:04.593603] MPPT 1 Power Connector; Output Voltage: 113.359V; Connector Temp: 24.396°C
+[2024-09-23 15:48:04.651878] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:04.651880] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.422A
+[[2024-09-23 15:48:04.753313] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:04.753315] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.426A
+[[2024-09-23 15:48:04.753318] Min / Max Cell Temp; Min Cell Temp: 23.7°C; Max Cell Temp: 23.8°C; CMU with Min Temp: 3; CMU with Max Temp: 1;
+[2024-09-23 15:48:04.754534] BMU Heartbeat Sensor; Device ID: 20485; Serial Number: 3499
+[2024-09-23 15:48:04.754536] Battery Pack Status; Balance Voltage Threshold Rising: 4050mV; Balance Voltage Threshold Falling: 4000mV; CMU Count: 4; BMU Firmware Build Number: 967
+[2024-09-23 15:48:04.754537] Precharge Status; Precharge Contactor Status: Contactor 1 Driver Error [False] Contactor 2 Driver Error [False] Contactor 3 Driver Error [False] Contactor 1 Status [True] Contactor 2 Status [True] Contactor 3 Status [True] 12V Contactor Supply Voltage [True] ; Precharge State: Run (4); Contactor Supply Voltage: 0V; Precharge Timer Status: 00000001; Precharge Timer Value: 0.0s
+[2024-09-23 15:48:04.754538] Pack SoC; Pack SoC: 25.256Ah; Pack SoC Percent: 47.384%
+[2024-09-23 15:48:04.755743] Pack Balance SoC; Pack Balance SoC: 0.0Ah; Pack Balance SoC Percent: 0.0%
+[2024-09-23 15:48:04.755744] Battery Pack Fan Status; Fan 0 Speed: 2640rpm; Fan 1 Speed: 2700rpm; Current Consumption Fans and Contactors: 0.936A; Current Consumption CMUs: 0.033A
+[2024-09-23 15:48:04.755746] Extended Battery Pack Info; Pack Status: Cell Over Voltage [False] Cell Under Voltage [False] Cell Over Temp [False] Measurement Untrusted (channel mismatch) [False] CMU Communications Timeout (lost CMU) [False] Vehicle Communications Timeout (lost EVDC) [False] BMU Setup Mode [False] CMU CAN Bus Power Status [False] Pack Isolation Test Failure [False] SoC Measurement Invalid [False] CAN 12V Supply Low [False] Contactor Stuck or Disenganged [False] CMU Detected Extra Cell Present [False] ; BMU Hardware Version: 0; BMU Model ID: 0
+[2024-09-23 15:48:04.853087] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:04.853089] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.416A
+[[2024-09-23 15:48:04.899406] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:04.899408] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
+[2024-09-23 15:48:04.901331] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
+[2024-09-23 15:48:04.901332] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:04.903277] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
+[2024-09-23 15:48:04.903280] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.613V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
+[2024-09-23 15:48:04.905205] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.0°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:04.905207] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
+[2024-09-23 15:48:04.907215] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:04.920082] MPPT 2 Input; MPPT 2 Input Voltage: 61.872V; MPPT 2 Input Current: 0.016A
+[2024-09-23 15:48:04.920083] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:04.920085] MPPT 1 Input; MPPT 1 Input Voltage: 54.956V; MPPT 1 Input Current: 0.018A
+[2024-09-23 15:48:04.921095] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
+[2024-09-23 15:48:04.921097] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:04.953670] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:04.953671] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.425A
+[[2024-09-23 15:48:05.000377] MPPT 2 Output; MPPT 2 Output Voltage: 113.515V; MPPT 2 Output Current: 0.009A
+[2024-09-23 15:48:05.000378] MPPT 1 Output; MPPT 1 Output Voltage: 113.404V; MPPT 1 Output Current: 0.009A
+[2024-09-23 15:48:05.054287] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:05.054289] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.429A
+[[2024-09-23 15:48:05.080682] MPPT 2  Temperature; MOSFET Temp: 25.694°C; Controller Temp: 32.104°C
+[2024-09-23 15:48:05.080684] MPPT 1  Temperature; MOSFET Temp: 25.69°C; Controller Temp: 27.878°C
+[2024-09-23 15:48:05.154872] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:05.154874] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.419A
+[[2024-09-23 15:48:05.161077] MPPT 2 Auxiliary Power Supply; 12V: 10.967V; 3V: 3.026V
+[2024-09-23 15:48:05.161080] MPPT 1 Auxiliary Power Supply; 12V: 11.092V; 3V: 2.983V
+[2024-09-23 15:48:05.241369] MPPT 2 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:05.241371] MPPT 1 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:05.255509] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:05.255511] Battery Pack Info; Pack Voltage: 96.823V; Pack Current: -0.424A
+[[2024-09-23 15:48:05.321689] MPPT 2 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 64
+[2024-09-23 15:48:05.321690] MPPT 1 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 64
+[2024-09-23 15:48:05.356152] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:05.356156] Battery Pack Info; Pack Voltage: 96.823V; Pack Current: -0.419A
+[[2024-09-23 15:48:05.402086] MPPT 2 Power Connector; Output Voltage: 113.598V; Connector Temp: 24.336°C
+[2024-09-23 15:48:05.402089] MPPT 1 Power Connector; Output Voltage: 113.501V; Connector Temp: 24.397°C
+[2024-09-23 15:48:05.456682] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:05.456684] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.424A
+[[2024-09-23 15:48:05.557287] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:05.557288] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.424A
+[[2024-09-23 15:48:05.657868] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:05.657870] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.421A
+[[2024-09-23 15:48:05.723321] MPPT 2 Input; MPPT 2 Input Voltage: 61.956V; MPPT 2 Input Current: 0.016A
+[2024-09-23 15:48:05.723322] MPPT 1 Input; MPPT 1 Input Voltage: 56.6V; MPPT 1 Input Current: 0.016A
+[2024-09-23 15:48:05.759304] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:05.759305] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.418A
+[[2024-09-23 15:48:05.759308] Min / Max Cell Temp; Min Cell Temp: 23.7°C; Max Cell Temp: 23.8°C; CMU with Min Temp: 3; CMU with Max Temp: 1;
+[2024-09-23 15:48:05.760522] BMU Heartbeat Sensor; Device ID: 20485; Serial Number: 3499
+[2024-09-23 15:48:05.760524] Battery Pack Status; Balance Voltage Threshold Rising: 4050mV; Balance Voltage Threshold Falling: 4000mV; CMU Count: 4; BMU Firmware Build Number: 967
+[2024-09-23 15:48:05.760525] Precharge Status; Precharge Contactor Status: Contactor 1 Driver Error [False] Contactor 2 Driver Error [False] Contactor 3 Driver Error [False] Contactor 1 Status [True] Contactor 2 Status [True] Contactor 3 Status [True] 12V Contactor Supply Voltage [True] ; Precharge State: Run (4); Contactor Supply Voltage: 0V; Precharge Timer Status: 00000001; Precharge Timer Value: 0.0s
+[2024-09-23 15:48:05.760526] Pack SoC; Pack SoC: 25.256Ah; Pack SoC Percent: 47.384%
+[2024-09-23 15:48:05.761733] Pack Balance SoC; Pack Balance SoC: 0.0Ah; Pack Balance SoC Percent: 0.0%
+[2024-09-23 15:48:05.761734] Battery Pack Fan Status; Fan 0 Speed: 2640rpm; Fan 1 Speed: 2730rpm; Current Consumption Fans and Contactors: 0.93A; Current Consumption CMUs: 0.033A
+[2024-09-23 15:48:05.761735] Extended Battery Pack Info; Pack Status: Cell Over Voltage [False] Cell Under Voltage [False] Cell Over Temp [False] Measurement Untrusted (channel mismatch) [False] CMU Communications Timeout (lost CMU) [False] Vehicle Communications Timeout (lost EVDC) [False] BMU Setup Mode [False] CMU CAN Bus Power Status [False] Pack Isolation Test Failure [False] SoC Measurement Invalid [False] CAN 12V Supply Low [False] Contactor Stuck or Disenganged [False] CMU Detected Extra Cell Present [False] ; BMU Hardware Version: 0; BMU Model ID: 0
+[2024-09-23 15:48:05.788038] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:05.788040] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
+[2024-09-23 15:48:05.789961] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.634V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
+[2024-09-23 15:48:05.789963] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:05.791898] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
+[2024-09-23 15:48:05.791900] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.612V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
+[2024-09-23 15:48:05.793837] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.1°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:05.793838] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
+[2024-09-23 15:48:05.795836] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:05.803637] MPPT 2 Output; MPPT 2 Output Voltage: 113.375V; MPPT 2 Output Current: 0.009A
+[2024-09-23 15:48:05.803639] MPPT 1 Output; MPPT 1 Output Voltage: 113.23V; MPPT 1 Output Current: 0.008A
+[2024-09-23 15:48:05.808788] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:05.808790] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.61V
+[2024-09-23 15:48:05.810751] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:05.859066] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.634V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:05.859067] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.414A
+[[2024-09-23 15:48:05.884038] MPPT 2  Temperature; MOSFET Temp: 25.694°C; Controller Temp: 32.087°C
+[2024-09-23 15:48:05.884040] MPPT 1  Temperature; MOSFET Temp: 25.694°C; Controller Temp: 27.82°C
+[2024-09-23 15:48:05.959680] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.634V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:05.959682] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.418A
+[[2024-09-23 15:48:05.964289] MPPT 2 Auxiliary Power Supply; 12V: 10.934V; 3V: 3.026V
+[2024-09-23 15:48:05.964291] MPPT 1 Auxiliary Power Supply; 12V: 11.061V; 3V: 2.983V
+[2024-09-23 15:48:06.044672] MPPT 2 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:06.044674] MPPT 1 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:06.060278] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.634V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:06.060281] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.414A
+[[2024-09-23 15:48:06.125024] MPPT 2 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [True] Local MPPT [False] Global MPPT [True] ; Mode: On (1); Test Counter: 65
+[2024-09-23 15:48:06.125025] MPPT 1 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [True] Local MPPT [False] Global MPPT [True] ; Mode: On (1); Test Counter: 65
+[2024-09-23 15:48:06.160861] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.634V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:06.160862] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.419A
+[[2024-09-23 15:48:06.205270] MPPT 2 Power Connector; Output Voltage: 113.444V; Connector Temp: 24.332°C
+[2024-09-23 15:48:06.205272] MPPT 1 Power Connector; Output Voltage: 113.336V; Connector Temp: 24.399°C
+[2024-09-23 15:48:06.261461] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.634V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:06.261463] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.419A
+[[2024-09-23 15:48:06.362053] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.634V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:06.362055] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.418A
+[[2024-09-23 15:48:06.462665] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.634V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:06.462667] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.419A
+[[2024-09-23 15:48:06.526584] MPPT 2 Input; MPPT 2 Input Voltage: 60.758V; MPPT 2 Input Current: 0.018A
+[2024-09-23 15:48:06.526585] MPPT 1 Input; MPPT 1 Input Voltage: 55.053V; MPPT 1 Input Current: 0.017A
+[2024-09-23 15:48:06.563253] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.634V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:06.563254] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.417A
+[[2024-09-23 15:48:06.606915] MPPT 2 Output; MPPT 2 Output Voltage: 113.96V; MPPT 2 Output Current: 0.01A
+[2024-09-23 15:48:06.606917] MPPT 1 Output; MPPT 1 Output Voltage: 113.832V; MPPT 1 Output Current: 0.008A
+[2024-09-23 15:48:06.663835] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.634V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:06.663837] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.417A
+[[2024-09-23 15:48:06.676650] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:06.676652] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
+[2024-09-23 15:48:06.678574] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
+[2024-09-23 15:48:06.678575] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:06.680513] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
+[2024-09-23 15:48:06.680515] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.612V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
+[2024-09-23 15:48:06.682457] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.0°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:06.682459] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
+[2024-09-23 15:48:06.684458] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:06.687245] MPPT 2  Temperature; MOSFET Temp: 25.696°C; Controller Temp: 32.086°C
+[2024-09-23 15:48:06.687247] MPPT 1  Temperature; MOSFET Temp: 25.693°C; Controller Temp: 27.818°C
+[2024-09-23 15:48:06.697419] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:06.697421] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
+[2024-09-23 15:48:06.699388] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:06.765275] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:06.765276] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.418A
+[[2024-09-23 15:48:06.765280] Min / Max Cell Temp; Min Cell Temp: 23.7°C; Max Cell Temp: 23.8°C; CMU with Min Temp: 3; CMU with Max Temp: 1;
+[2024-09-23 15:48:06.766491] BMU Heartbeat Sensor; Device ID: 20485; Serial Number: 3499
+[2024-09-23 15:48:06.766493] Battery Pack Status; Balance Voltage Threshold Rising: 4050mV; Balance Voltage Threshold Falling: 4000mV; CMU Count: 4; BMU Firmware Build Number: 967
+[2024-09-23 15:48:06.766494] Precharge Status; Precharge Contactor Status: Contactor 1 Driver Error [False] Contactor 2 Driver Error [False] Contactor 3 Driver Error [False] Contactor 1 Status [True] Contactor 2 Status [True] Contactor 3 Status [True] 12V Contactor Supply Voltage [True] ; Precharge State: Run (4); Contactor Supply Voltage: 0V; Precharge Timer Status: 00000001; Precharge Timer Value: 0.0s
+[2024-09-23 15:48:06.766495] Pack SoC; Pack SoC: 25.256Ah; Pack SoC Percent: 47.383%
+[2024-09-23 15:48:06.767614] MPPT 2 Auxiliary Power Supply; 12V: 10.963V; 3V: 3.026V
+[2024-09-23 15:48:06.767616] Pack Balance SoC; Pack Balance SoC: 0.0Ah; Pack Balance SoC Percent: 0.0%
+[2024-09-23 15:48:06.767617] Battery Pack Fan Status; Fan 0 Speed: 2670rpm; Fan 1 Speed: 2730rpm; Current Consumption Fans and Contactors: 0.911A; Current Consumption CMUs: 0.033A
+[2024-09-23 15:48:06.767618] MPPT 1 Auxiliary Power Supply; 12V: 11.089V; 3V: 2.983V
+[2024-09-23 15:48:06.768644] Extended Battery Pack Info; Pack Status: Cell Over Voltage [False] Cell Under Voltage [False] Cell Over Temp [False] Measurement Untrusted (channel mismatch) [False] CMU Communications Timeout (lost CMU) [False] Vehicle Communications Timeout (lost EVDC) [False] BMU Setup Mode [False] CMU CAN Bus Power Status [False] Pack Isolation Test Failure [False] SoC Measurement Invalid [False] CAN 12V Supply Low [False] Contactor Stuck or Disenganged [False] CMU Detected Extra Cell Present [False] ; BMU Hardware Version: 0; BMU Model ID: 0
+[2024-09-23 15:48:06.847883] MPPT 2 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:06.847884] MPPT 1 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:06.865036] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:06.865038] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.415A
+[[2024-09-23 15:48:06.928247] MPPT 2 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 66
+[2024-09-23 15:48:06.928249] MPPT 1 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 66
+[2024-09-23 15:48:06.965650] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:06.965652] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.419A
+[[2024-09-23 15:48:07.008551] MPPT 2 Power Connector; Output Voltage: 114.025V; Connector Temp: 24.331°C
+[2024-09-23 15:48:07.008552] MPPT 1 Power Connector; Output Voltage: 113.925V; Connector Temp: 24.4°C
+[2024-09-23 15:48:07.066230] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:07.066231] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.411A
+[[2024-09-23 15:48:07.166854] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:07.166856] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.424A
+[[2024-09-23 15:48:07.267422] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:07.267423] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.419A
+[[2024-09-23 15:48:07.329840] MPPT 2 Input; MPPT 2 Input Voltage: 61.914V; MPPT 2 Input Current: 0.015A
+[2024-09-23 15:48:07.329842] MPPT 1 Input; MPPT 1 Input Voltage: 56.607V; MPPT 1 Input Current: 0.016A
+[2024-09-23 15:48:07.368031] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:07.368033] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.419A
+[[2024-09-23 15:48:07.410180] MPPT 2 Output; MPPT 2 Output Voltage: 113.803V; MPPT 2 Output Current: 0.008A
+[2024-09-23 15:48:07.410182] MPPT 1 Output; MPPT 1 Output Voltage: 113.662V; MPPT 1 Output Current: 0.008A
+[2024-09-23 15:48:07.468616] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:07.468617] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.419A
+[[2024-09-23 15:48:07.490505] MPPT 2  Temperature; MOSFET Temp: 25.703°C; Controller Temp: 32.096°C
+[2024-09-23 15:48:07.490507] MPPT 1  Temperature; MOSFET Temp: 25.694°C; Controller Temp: 27.832°C
+[2024-09-23 15:48:07.565283] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:07.565284] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
+[2024-09-23 15:48:07.567184] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
+[2024-09-23 15:48:07.567187] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
+[2024-09-23 15:48:07.569213] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:07.569214] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.425A
+[[2024-09-23 15:48:07.569217] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
+[2024-09-23 15:48:07.570423] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.612V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
+[2024-09-23 15:48:07.570424] MPPT 2 Auxiliary Power Supply; 12V: 10.927V; 3V: 3.026V
+[2024-09-23 15:48:07.570426] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.0°C; Cell Temp: 23.8°C
+[2024-09-23 15:48:07.571519] MPPT 1 Auxiliary Power Supply; 12V: 11.06V; 3V: 2.983V
+[2024-09-23 15:48:07.571520] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
+[2024-09-23 15:48:07.573075] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:07.586087] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.9°C
+[2024-09-23 15:48:07.586089] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
+[2024-09-23 15:48:07.588041] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+[2024-09-23 15:48:07.651152] MPPT 2 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:07.651154] MPPT 1 Limits; Max Output Voltage: 113.4V; Max Input Current: 7.0A
+[2024-09-23 15:48:07.669804] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:07.669806] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.421A
+[[2024-09-23 15:48:07.731493] MPPT 2 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 67
+[2024-09-23 15:48:07.731495] MPPT 1 Status; CAN RX Error Count: 0; CAN TX Error Count: 0; CAN TX Overflow Count: 0; Error Flag: Low Array Power [False] MOSFET Overheat [False] Battery Low [False] Battery Full [False] 12V Under Voltage [True] HW Over Current [False] HW Over Voltage [False] ; Limit Flag: Input Current Minimum [False] Input Current Maximum [False] Output Voltage Maximum [False] MOSFET Temperature [False] Duty Cycle Minimum [False] Duty Cycle Maximum [False] Local MPPT [False] Global MPPT [False] ; Mode: On (1); Test Counter: 67
+[2024-09-23 15:48:07.771264] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:07.771265] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.413A
+[[2024-09-23 15:48:07.771269] Min / Max Cell Temp; Min Cell Temp: 23.7°C; Max Cell Temp: 23.9°C; CMU with Min Temp: 3; CMU with Max Temp: 1;
+[2024-09-23 15:48:07.772469] BMU Heartbeat Sensor; Device ID: 20485; Serial Number: 3499
+[2024-09-23 15:48:07.772471] Battery Pack Status; Balance Voltage Threshold Rising: 4050mV; Balance Voltage Threshold Falling: 4000mV; CMU Count: 4; BMU Firmware Build Number: 967
+[2024-09-23 15:48:07.772472] Precharge Status; Precharge Contactor Status: Contactor 1 Driver Error [False] Contactor 2 Driver Error [False] Contactor 3 Driver Error [False] Contactor 1 Status [True] Contactor 2 Status [True] Contactor 3 Status [True] 12V Contactor Supply Voltage [True] ; Precharge State: Run (4); Contactor Supply Voltage: 0V; Precharge Timer Status: 00000001; Precharge Timer Value: 0.0s
+[2024-09-23 15:48:07.772473] Pack SoC; Pack SoC: 25.256Ah; Pack SoC Percent: 47.383%
+[2024-09-23 15:48:07.773690] Pack Balance SoC; Pack Balance SoC: 0.0Ah; Pack Balance SoC Percent: 0.0%
+[2024-09-23 15:48:07.773691] Battery Pack Fan Status; Fan 0 Speed: 2640rpm; Fan 1 Speed: 2700rpm; Current Consumption Fans and Contactors: 0.917A; Current Consumption CMUs: 0.033A
+[2024-09-23 15:48:07.773692] Extended Battery Pack Info; Pack Status: Cell Over Voltage [False] Cell Under Voltage [False] Cell Over Temp [False] Measurement Untrusted (channel mismatch) [False] CMU Communications Timeout (lost CMU) [False] Vehicle Communications Timeout (lost EVDC) [False] BMU Setup Mode [False] CMU CAN Bus Power Status [False] Pack Isolation Test Failure [False] SoC Measurement Invalid [False] CAN 12V Supply Low [False] Contactor Stuck or Disenganged [False] CMU Detected Extra Cell Present [False] ; BMU Hardware Version: 0; BMU Model ID: 0
+[2024-09-23 15:48:07.811813] MPPT 2 Power Connector; Output Voltage: 113.864V; Connector Temp: 24.335°C
+[2024-09-23 15:48:07.811816] MPPT 1 Power Connector; Output Voltage: 113.774V; Connector Temp: 24.399°C
+[2024-09-23 15:48:07.871014] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:07.871015] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.413A
+[[2024-09-23 15:48:07.971617] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:07.971619] Battery Pack Info; Pack Voltage: 96.839V; Pack Current: -0.418A
+[[2024-09-23 15:48:08.072231] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:08.072232] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.41A
+[[2024-09-23 15:48:08.133104] MPPT 2 Input; MPPT 2 Input Voltage: 61.911V; MPPT 2 Input Current: 0.015A
+[2024-09-23 15:48:08.133106] MPPT 1 Input; MPPT 1 Input Voltage: 57.031V; MPPT 1 Input Current: 0.016A
+[2024-09-23 15:48:08.172811] Min / Max Cell Voltage; Min Cell Voltage: 3.597V; Max Cell Voltage: 3.635V; CMU with Min Voltage: 2; Cell with Min Voltage: 6; CMU with Max Voltage: 2; Cell with Max Voltage: 5
+[2024-09-23 15:48:08.172813] Battery Pack Info; Pack Voltage: 96.807V; Pack Current: -0.41A
+[
