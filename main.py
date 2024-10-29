@@ -39,9 +39,26 @@ def main():
         try:
             ser = get_serial_port()
             print(f"Connected to serial port: {ser.port}")
+            while True:
+                if ser.in_waiting > 0:
+                    try:
+                        line = ser.readline().decode('utf-8').strip()
+                    except UnicodeDecodeError:
+                        print("Error: Could not decode the data")
+                    try:
+                        time_value, voltage_value = map(float, line.split(','))
+                    except ValueError:
+                        print(f"Invalid data format: {line}")
+                        time_value, voltage_value = 0, 0
+
+                    print(f"Time: {time_value}, Voltage: {voltage_value}")
+                    # write to a file named 'serial_data.txt' if it doesnt exist create
+                    with open('serial_data.txt', 'a') as file:
+                        file.write(f"{time_value}, {voltage_value}\n")
+
 
         except Exception as e:
-            print(f"Error: {e}")
+            print(f"Error: Could not connect to serial port: {e}")
 
     if args.manual:
         manual_loop(is_debug)
@@ -72,9 +89,9 @@ def get_serial_port():
     """Detect OS and bind the corresponding serial port."""
     os_name = platform.system()
     if os_name == "Linux":
-        return serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
+        return serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
     elif os_name == "Windows":
-        return serial.Serial('COM6', 9600, timeout=1)  # Adjust the COM port as needed
+        return serial.Serial('COM4', 115200, timeout=1)  # Adjust the COM port as needed
     else:
         raise OSError(f"Unsupported OS: {os_name}")
 
