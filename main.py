@@ -1,11 +1,16 @@
 import argparse
 import os
 import platform
+import queue
+import threading
 
 import serial
 
 import Parser
 import can_receiver
+import gui
+
+data_queue = queue.Queue()
 
 
 def main():
@@ -17,12 +22,13 @@ def main():
     arg_parse.add_argument("--log", action="store_true", help="Logs data in log.txt is local directory")
     arg_parse.add_argument("--setup", action="store_true", help="Sets CAN0 interface to active")
     arg_parse.add_argument("--nogui", action="store_true", help="Run without GUI")
-    arg_parse.add_argument("--serial", action="store_true", help="Run with serial connection")
+    arg_parse.add_argument("--serial", type=str, help="Run with serial connection")
 
     args = arg_parse.parse_args()
 
     is_debug: bool = args.debug
     is_log: bool = args.log
+
 
     if args.setup:
             # Automatically set CAN0 port to activate for data transmission
@@ -33,40 +39,13 @@ def main():
                 print(f"MAIN::can_set_up::error {e}")
 
     if not args.nogui:
-        ...
-
+        gui_thread = threading.Thread(target=gui.start_gui, args=(data_queue,), daemon=True)
+        gui_thread.start()
     if args.serial:
-        try:
-            ser = get_serial_port()
-            print(f"Connected to serial port: {ser.port}")
-            while True:
-                if ser.in_waiting > 0:
-                    try:
-                        line = ser.readline().decode('utf-8').strip()
-                    except UnicodeDecodeError:
-                        print("Error: Could not decode the data")
-                    try:
-
-                        time_value, voltage_value = map(float, line.split(','))
-                        if voltage_value < 1:
-                            voltage_value = 0.0
-                        if voltage_value > 4:
-                            voltage_value = 5.0
-                    except ValueError:
-                        print(f"Invalid data format: {line}")
-                        time_value, voltage_value = 0, 0
-
-                    print(f"Time: {time_value}, Voltage: {voltage_value}")
-
-                    with open('serial_data.txt', 'a') as file:
-                        file.write(f"{time_value}, {voltage_value}\n")
-
-
-        except Exception as e:
-            print(f"Error: Could not connect to serial port: {e}")
-
+        serial_thread = threading.Thread(target=run_serial, args=(is_debug, is_log, args.serial), daemon=True)
+        serial_thread.start()
     if args.manual:
-        manual_loop(is_debug)
+        run_manual(is_debug)
     if args.status:
         if not can_receiver.get_status():
             return
@@ -90,17 +69,17 @@ def main():
             # message = can_receiver.clean_message(message)
             Parser.parse_can_line(message, is_debug)
 
-def get_serial_port():
+def get_serial_port(port: str) -> serial.Serial:
     """Detect OS and bind the corresponding serial port."""
     os_name = platform.system()
     if os_name == "Linux":
-        return serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
+        return serial.Serial(f'/dev/tty{port}', 115200, timeout=1)
     elif os_name == "Windows":
-        return serial.Serial('COM4', 115200, timeout=1)  # Adjust the COM port as needed
+        return serial.Serial(port, 115200, timeout=1)
     else:
         raise OSError(f"Unsupported OS: {os_name}")
 
-def manual_loop(is_debug: bool) -> None:
+def run_manual(is_debug: bool) -> None:
     """ Manual input loop for CAN data. """
     running: bool = True
     while running:
@@ -116,6 +95,34 @@ def run_file(is_debug: bool) -> None:
         with open(input_file_path, 'r') as file:
             for line in file:
                 file_handle.write(Parser.parse_can_line(line, is_debug))
+
+def run_serial(is_debug: bool, is_log: bool, port: str) -> None:
+    try:
+        ser = get_serial_port(port)
+        print(f"Connected to serial port: {ser.port}")
+        while True:
+            if ser.in_waiting > 0:
+                try:
+                    line = ser.readline().decode('utf-8').strip()
+                except UnicodeDecodeError:
+                    print("Error: Could not decode the data")
+                    line = ""
+                try:
+
+                    mph = line.split(' ')[1]
+                except ValueError:
+                    print(f"Invalid data format: {line}")
+                    mph = 0
+                data_queue.put({'speed': f"Speed: {mph} MPH"})
+                if is_debug:
+                    print(f"MPH: {mph}")
+                if is_log:
+                    with open('serial_data.txt', 'a') as file:
+                        file.write(f"MPH: {mph}\n")
+
+
+    except Exception as e:
+        print(f"Error: Could not connect to serial port: {e}")
 
 if __name__ == '__main__':
     main()

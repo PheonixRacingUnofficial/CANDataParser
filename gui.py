@@ -8,10 +8,16 @@ def start_gui(data_queue):
     def update_data():
         try:
             # Try to get data from the queue (non-blocking)
-            new_data = data_queue.get_nowait()
+            new_data: dict = data_queue.get_nowait()
+
+            if new_data.__contains__('speed'):
+                # Update text fields with new data
+                speed_text.set(f"Speed: {new_data['speed']} MPH")
+
+
 
             # Update text fields with new data
-            text1.set(new_data['text1'])
+            speed_text.set(new_data['text1'])
             text2.set(new_data['text2'])
             text3.set(new_data['text3'])
 
@@ -26,22 +32,22 @@ def start_gui(data_queue):
     root.title("Live Data Display")
 
     # Variables to hold text
-    text1 = tk.StringVar()
+    speed_text = tk.StringVar()
     text2 = tk.StringVar()
     text3 = tk.StringVar()
 
     # Set initial text
-    text1.set("Initial text 1")
+    speed_text.set("Speed: 0 MPH")
     text2.set("Initial text 2")
     text3.set("Initial text 3")
 
     # Create labels to display the text fields
-    label1 = tk.Label(root, textvariable=text1, font=("Helvetica", 14))
+    speed_label = tk.Label(root, textvariable=speed_text, font=("Helvetica", 14))
     label2 = tk.Label(root, textvariable=text2, font=("Helvetica", 14))
     label3 = tk.Label(root, textvariable=text3, font=("Helvetica", 14))
 
     # Pack the labels into the window
-    label1.pack(pady=10)
+    speed_label.pack(pady=10)
     label2.pack(pady=10)
     label3.pack(pady=10)
 
