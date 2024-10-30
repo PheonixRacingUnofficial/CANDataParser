@@ -1,5 +1,7 @@
 import datetime
 import re
+from typing import Any
+
 from parser import *
 from parser.logger import Logger
 
@@ -40,8 +42,8 @@ def parse_cmu_sensor(sensor_id: int, sensor_data: str, time: str, console) -> st
     console.info(out)
     return out + '\n'
 
-def parse_can_line(data: str, debug: bool) -> str:
-    console: Logger = Logger(debug)
+def parse_can_line(data: str, debug: bool, log: bool) -> dict[str, Any] | str:
+    console: Logger = Logger(debug, log)
     trc_timestamp: datetime = datetime.datetime.fromtimestamp(float('0000000000.000000'))
     if data[0] == '(':
         # Normal CAN data, continue as normal
@@ -115,12 +117,12 @@ def parse_can_line(data: str, debug: bool) -> str:
 
             case 0x3F4:
                 out += "Pack SoC; "
-                pack_soc = round(hex_helper.hex_to_float(sensor_data[:8]), 3)
-                pack_soc_percent = round(hex_helper.hex_to_float(sensor_data[8:16]) * 100, 3)
+                pack_soc = -round(hex_helper.hex_to_float(sensor_data[:8]), 3)
+                pack_soc_percent = 100 - round(hex_helper.hex_to_float(sensor_data[8:16]) * 100, 3)
                 out += f"Pack SoC: {pack_soc}Ah; Pack SoC Percent: {pack_soc_percent}%"
 
                 console.info(out)
-                return out + '\n'
+                return {'pack_soc': pack_soc, 'pack_soc_percentage': pack_soc_percent}
 
             case 0x3F5:
                 out += "Pack Balance SoC; "
@@ -272,7 +274,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 out += f"MPPT 1 Input Voltage: {mppt_input_voltage}V; MPPT 1 Input Current: {mppt_input_current}A"
 
                 console.info(out)
-                return out + '\n'
+                return {'mppt1_i_v': mppt_input_voltage, 'mppt1_i_c': mppt_input_current}
 
             case 0x601:
                 out += "MPPT 1 Output; "
@@ -394,7 +396,7 @@ def parse_can_line(data: str, debug: bool) -> str:
                 out += f"MPPT 2 Input Voltage: {mppt_input_voltage}V; MPPT 2 Input Current: {mppt_input_current}A"
 
                 console.info(out)
-                return out + '\n'
+                return {'mppt2_i_v': mppt_input_voltage, 'mppt2_i_c': mppt_input_current}
 
             case 0x611:
                 out += "MPPT 2 Output; "

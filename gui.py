@@ -11,15 +11,21 @@ def start_gui(data_queue):
             new_data: dict = data_queue.get_nowait()
 
             if new_data.__contains__('speed'):
-                # Update text fields with new data
                 speed_text.set(f"Speed: {new_data['speed']} MPH")
+            if new_data.__contains__('mppt1_i_v'):
+                mppt1_input_voltage.set(f"MPPT1 Input Voltage: {new_data['mppt1_i_v']} V")
+            if new_data.__contains__('mppt1_i_c'):
+                mppt1_input_current.set(f"MPPT1 Input Current: {new_data['mppt1_i_c']} A")
+            if new_data.__contains__('mppt2_i_v'):
+                mppt2_input_voltage.set(f"MPPT2 Input Voltage: {new_data['mppt2_i_v']} V")
+            if new_data.__contains__('mppt2_i_c'):
+                mppt2_input_current.set(f"MPPT2 Input Current: {new_data['mppt2_i_c']} A")
+            if new_data.__contains__('pack_soc'):
+                pack_soc_text.set(f"Pack SOC: {new_data['pack_soc']} Ah")
+            if new_data.__contains__('pack_soc_percentage'):
+                pack_soc_percentage_text.set(f"Pack SOC Percentage: {new_data['pack_soc_percentage']}%")
 
 
-
-            # Update text fields with new data
-            speed_text.set(new_data['text1'])
-            text2.set(new_data['text2'])
-            text3.set(new_data['text3'])
 
         except queue.Empty:
             pass
@@ -33,23 +39,39 @@ def start_gui(data_queue):
 
     # Variables to hold text
     speed_text = tk.StringVar()
-    text2 = tk.StringVar()
-    text3 = tk.StringVar()
+    pack_soc_text = tk.StringVar()
+    pack_soc_percentage_text = tk.StringVar()
+    mppt1_input_voltage = tk.StringVar()
+    mppt1_input_current = tk.StringVar()
+    mppt2_input_voltage = tk.StringVar()
+    mppt2_input_current = tk.StringVar()
 
     # Set initial text
     speed_text.set("Speed: 0 MPH")
-    text2.set("Initial text 2")
-    text3.set("Initial text 3")
+    pack_soc_text.set("Pack SOC: 0 Ah")
+    pack_soc_percentage_text.set("Pack SOC Percentage: 0%")
+    mppt1_input_voltage.set("MPPT1 Input Voltage: 0 V")
+    mppt1_input_current.set("MPPT1 Input Current: 0 A")
+    mppt2_input_voltage.set("MPPT2 Input Voltage: 0 V")
+    mppt2_input_current.set("MPPT2 Input Current: 0 A")
 
     # Create labels to display the text fields
     speed_label = tk.Label(root, textvariable=speed_text, font=("Helvetica", 14))
-    label2 = tk.Label(root, textvariable=text2, font=("Helvetica", 14))
-    label3 = tk.Label(root, textvariable=text3, font=("Helvetica", 14))
+    pack_soc_label = tk.Label(root, textvariable=pack_soc_text, font=("Helvetica", 14))
+    pack_soc_percentage_label = tk.Label(root, textvariable=pack_soc_percentage_text, font=("Helvetica", 14))
+    mppt1_input_v_label = tk.Label(root, textvariable=mppt1_input_voltage, font=("Helvetica", 14))
+    mppt1_input_c_label = tk.Label(root, textvariable=mppt1_input_current, font=("Helvetica", 14))
+    mppt2_input_v_label = tk.Label(root, textvariable=mppt2_input_voltage, font=("Helvetica", 14))
+    mppt2_input_c_label = tk.Label(root, textvariable=mppt2_input_current, font=("Helvetica", 14))
 
     # Pack the labels into the window
     speed_label.pack(pady=10)
-    label2.pack(pady=10)
-    label3.pack(pady=10)
+    pack_soc_label.pack(pady=10)
+    pack_soc_percentage_label.pack(pady=10)
+    mppt1_input_v_label.pack(pady=10)
+    mppt1_input_c_label.pack(pady=10)
+    mppt2_input_v_label.pack(pady=10)
+    mppt2_input_c_label.pack(pady=10)
 
     # Start the data update loop
     update_data()

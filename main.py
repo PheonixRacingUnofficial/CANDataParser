@@ -45,12 +45,12 @@ def main():
         serial_thread = threading.Thread(target=run_serial, args=(is_debug, is_log, args.serial), daemon=True)
         serial_thread.start()
     if args.manual:
-        run_manual(is_debug)
+        run_manual(is_debug, is_log)
     if args.status:
         if not can_receiver.get_status():
             return
     elif args.file:
-        run_file(is_debug)
+        run_file(is_debug, is_log)
     else:
         # Initialize Socket CAN to read from the correct bus
         bus = can_receiver.get_data_bus()
@@ -67,7 +67,7 @@ def main():
                 file = open("log.txt", "a")
                 file.write(str(message) + '\n')
             # message = can_receiver.clean_message(message)
-            Parser.parse_can_line(message, is_debug)
+            Parser.parse_can_line(message, is_debug, is_log)
 
 def get_serial_port(port: str) -> serial.Serial:
     """Detect OS and bind the corresponding serial port."""
@@ -79,22 +79,27 @@ def get_serial_port(port: str) -> serial.Serial:
     else:
         raise OSError(f"Unsupported OS: {os_name}")
 
-def run_manual(is_debug: bool) -> None:
+def run_manual(is_debug: bool, is_log: bool) -> None:
     """ Manual input loop for CAN data. """
     running: bool = True
     while running:
         data: str = input("Enter CAN data line: ")
-        Parser.parse_can_line(data, is_debug)
+        return_data = Parser.parse_can_line(data, is_debug, is_log)
+        if type(return_data) == dict:
+            data_queue.put(return_data)
         running = input("Continue? (y/n) ") == 'y'
 
-def run_file(is_debug: bool) -> None:
+def run_file(is_debug: bool, is_log: bool) -> None:
     """ Read CAN data from a file and process it. """
     input_file_path = input("Enter the input file path: ")
     output_file_path = input("Enter the output file path: ")
     with open(output_file_path, 'w') as file_handle:
         with open(input_file_path, 'r') as file:
             for line in file:
-                file_handle.write(Parser.parse_can_line(line, is_debug))
+                return_data = Parser.parse_can_line(line, is_debug, is_log)
+                if type(return_data) == dict:
+                    data_queue.put(return_data)
+                file_handle.write(return_data)
 
 def run_serial(is_debug: bool, is_log: bool, port: str) -> None:
     try:
