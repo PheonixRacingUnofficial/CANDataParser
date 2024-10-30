@@ -22,7 +22,7 @@ def main():
     arg_parse.add_argument("--log", action="store_true", help="Logs data in log.txt is local directory")
     arg_parse.add_argument("--setup", action="store_true", help="Sets CAN0 interface to active")
     arg_parse.add_argument("--nogui", action="store_true", help="Run without GUI")
-    arg_parse.add_argument("--serial", type=str, help="Run with serial connection")
+    arg_parse.add_argument("--serial", type=str, help="Run with serial connection, needs port as argument")
 
     args = arg_parse.parse_args()
 
