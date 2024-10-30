@@ -1,7 +1,5 @@
 class Logger:
 
-    is_debug: bool = False
-
     def __init__(self, is_debug: bool, is_log: bool):
         self.is_debug = is_debug
         self.is_log = is_log
