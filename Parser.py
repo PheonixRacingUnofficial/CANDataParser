@@ -45,6 +45,7 @@ def parse_cmu_sensor(sensor_id: int, sensor_data: str, time: str, console) -> st
 def parse_can_line(data: str, debug: bool, log: bool) -> dict[str, Any] | str:
     console: Logger = Logger(debug, log)
     trc_timestamp: datetime = datetime.datetime.fromtimestamp(float('0000000000.000000'))
+    data = str(data)
     if data[0] == '(':
         # Normal CAN data, continue as normal
         console.debug("This is a CAN log line")
@@ -118,7 +119,7 @@ def parse_can_line(data: str, debug: bool, log: bool) -> dict[str, Any] | str:
             case 0x3F4:
                 out += "Pack SoC; "
                 pack_soc = -round(hex_helper.hex_to_float(sensor_data[:8]), 3)
-                pack_soc_percent = 100 - round(hex_helper.hex_to_float(sensor_data[8:16]) * 100, 3)
+                pack_soc_percent = round(hex_helper.hex_to_float(sensor_data[8:16]) * 100, 3)
                 out += f"Pack SoC: {pack_soc}Ah; Pack SoC Percent: {pack_soc_percent}%"
 
                 console.info(out)

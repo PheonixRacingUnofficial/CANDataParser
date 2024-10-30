@@ -67,7 +67,10 @@ def main():
                 file = open("log.txt", "a")
                 file.write(str(message) + '\n')
             # message = can_receiver.clean_message(message)
-            Parser.parse_can_line(message, is_debug, is_log)
+            return_data = Parser.parse_can_line(message, is_debug, is_log)
+            if type(return_data) == dict:
+                data_queue.put(return_data)
+
 
 def get_serial_port(port: str) -> serial.Serial:
     """Detect OS and bind the corresponding serial port."""
@@ -118,7 +121,7 @@ def run_serial(is_debug: bool, is_log: bool, port: str) -> None:
                 except ValueError:
                     print(f"Invalid data format: {line}")
                     mph = 0
-                data_queue.put({'speed': f"Speed: {mph} MPH"})
+                data_queue.put({'speed': f"Speed: {mph}"})
                 if is_debug:
                     print(f"MPH: {mph}")
                 if is_log:
