@@ -8,7 +8,7 @@ import serial
 
 import Parser
 import can_receiver
-import gui
+import gui.gui as gui
 
 data_queue = queue.Queue()
 
