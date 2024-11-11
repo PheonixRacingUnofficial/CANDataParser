@@ -6,9 +6,8 @@ import threading
 
 import serial
 
-import Parser
-import can_receiver
-import gui.gui as gui
+from fpu_can_parser import can_receiver, Parser
+from fpu_can_parser.gui import gui as gui
 
 data_queue = queue.Queue()
 
