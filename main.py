@@ -99,9 +99,10 @@ def run_file(is_debug: bool, is_log: bool) -> None:
         with open(input_file_path, 'r') as file:
             for line in file:
                 return_data = Parser.parse_can_line(line, is_debug, is_log)
+                # print(f"Parsed data: {return_data}")
+                file_handle.write(return_data + '\n')
                 if type(return_data) == dict:
                     data_queue.put(return_data)
-                file_handle.write(return_data)
 
 def run_serial(is_debug: bool, is_log: bool, port: str) -> None:
     try:

@@ -1,9 +1,14 @@
 import datetime
+import os.path
 import re
 from typing import Any
 
 from fpu_can_parser.parser import *
 from fpu_can_parser.parser.logger import Logger
+
+from fpu_can_parser.parser.SensorManager import SensorManager
+
+sensor_manager = SensorManager(os.path.abspath('current_sensors_file.txt'))
 
 
 def parse_cmu_sensor(sensor_id: int, sensor_data: str, time: str, console) -> str:
@@ -40,7 +45,7 @@ def parse_cmu_sensor(sensor_id: int, sensor_data: str, time: str, console) -> st
         return msg
 
     console.info(out)
-    return out + '\n'
+    return out
 
 def parse_can_line(data: str, debug: bool, log: bool) -> dict[str, Any] | str:
     console: Logger = Logger(debug, log)
@@ -105,6 +110,12 @@ def parse_can_line(data: str, debug: bool, log: bool) -> dict[str, Any] | str:
             console.debug("This should be a CMU sensor")
             return parse_cmu_sensor(sensor_id_int, sensor_data, out, console)
 
+        # print(f"Sensor ID: {hex(sensor_id_int)}; Sensor Data: {str(sensor_manager.pass_to_sensor(sensor_id_int, sensor_data))}")
+        return str(sensor_manager.pass_to_sensor(sensor_id_int, sensor_data))
+
+
+
+        '''
         match sensor_id_int:
             # Heartbeat Sensor
             case 0x300:
@@ -513,6 +524,7 @@ def parse_can_line(data: str, debug: bool, log: bool) -> dict[str, Any] | str:
                 msg = f"Sensor ID {sensor_id} not recognized; Data: {sensor_data[:-1]}"
                 console.data_error(msg)
                 return msg
+                '''
 
     except Exception as e:
         console.python_error(f"Unknown error happened; Stacktrace: {e.with_traceback()}")
