@@ -28,10 +28,6 @@ Example:
 - **sensor_data_description_code**: Codes describing the meaning of each data part.
 
 
-```sh
-pip install -r requirements.txt  # If dependencies exist
-```
-
 ## Usage
 To use the `SensorManager`, run the script and provide the path to a valid sensor file:
 
