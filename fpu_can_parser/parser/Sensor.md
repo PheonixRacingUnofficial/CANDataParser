@@ -6,23 +6,23 @@ This module defines the `Sensor` class, which represents a sensor with an ID, na
 ## Data Format Codes
 A dictionary `data_format_code_dict` maps sensor data format codes to corresponding conversion functions or byte length values:
 
-| Format Code | Function/Value |
-|------------|----------------|
-| `ui8`  | `hh.hex_to_uint8`  |
-| `i8`   | `hh.hex_to_int8`   |
-| `ui16` | `hh.hex_to_uint16` |
-| `i16`  | `hh.hex_to_int16`  |
-| `ui32` | `hh.hex_to_uint32` |
-| `i32`  | `hh.hex_to_int32`  |
-| `f32`  | `hh.hex_to_float`  |
-| `b8`   | `hh.hex_to_bits`   |
-| `b16`  | `hh.hex_to_bits`   |
-| `b32`  | `hh.hex_to_bits`   |
-| `b64`  | `hh.hex_to_bits`   |
-| `g8`   | `2`               |
-| `g16`  | `4`               |
-| `g32`  | `8`               |
-| `g64`  | `16`              |
+| Format Code | Function/Value     |
+|-------------|--------------------|
+| `ui8`       | `hh.hex_to_uint8`  |
+| `i8`        | `hh.hex_to_int8`   |
+| `ui16`      | `hh.hex_to_uint16` |
+| `i16`       | `hh.hex_to_int16`  |
+| `ui32`      | `hh.hex_to_uint32` |
+| `i32`       | `hh.hex_to_int32`  |
+| `f32`       | `hh.hex_to_float`  |
+| `b8`        | `hh.hex_to_bits`   |
+| `b16`       | `hh.hex_to_bits`   |
+| `b32`       | `hh.hex_to_bits`   |
+| `b64`       | `hh.hex_to_bits`   |
+| `g8`        | `2`                |
+| `g16`       | `4`                |
+| `g32`       | `8`                |
+| `g64`       | `16`               |
 
 ## Sensor Class
 ### Attributes:

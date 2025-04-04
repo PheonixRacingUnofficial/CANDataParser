@@ -2,79 +2,79 @@
 
 ## Sensor Names
 
-| Abbreviation  | Full Meaning                      |
-|--------------|----------------------------------|
-| bmuhbs       | BMU Heartbeat Sensor            |
-| packsoc      | Pack State of Charge Sensor     |
-| packbalsoc   | Pack Balance State of Charge   |
-| chargerctl   | Charger Control Info           |
-| prechargestat| Precharge Status               |
-| minmaxv      | Min / Max Cell Voltage         |
-| minmaxt      | Min / Max Cell Temperature     |
-| packinfo     | Battery Pack Info              |
-| packstatus   | Battery Pack Status            |
-| fanstatus    | Battery Pack Fan Status        |
-| packextinfo  | Extended Battery Pack Info     |
-| mppt1input   | MPPT1 Input                    |
-| mppt1output  | MPPT1 Output                   |
-| mppt1t       | MPPT1 Temperature              |
-| mppt1aps     | MPPT1 Auxiliary Power Supply   |
-| mppt1l       | MPPT1 Limits                   |
-| mppt1s       | MPPT1 Status                   |
-| mppt1pc      | MPPT1 Power Connector          |
-| mppt2input   | MPPT2 Input                    |
-| mppt2output  | MPPT2 Output                   |
-| mppt2t       | MPPT2 Temperature              |
-| mppt2aps     | MPPT2 Auxiliary Power Supply   |
-| mppt2l       | MPPT2 Limits                   |
-| mppt2s       | MPPT2 Status                   |
-| mppt2pc      | MPPT2 Power Connector          |
+| Abbreviation  | Full Meaning                 |
+|---------------|------------------------------|
+| bmuhbs        | BMU Heartbeat Sensor         |
+| packsoc       | Pack State of Charge Sensor  |
+| packbalsoc    | Pack Balance State of Charge |
+| chargerctl    | Charger Control Info         |
+| prechargestat | Precharge Status             |
+| minmaxv       | Min / Max Cell Voltage       |
+| minmaxt       | Min / Max Cell Temperature   |
+| packinfo      | Battery Pack Info            |
+| packstatus    | Battery Pack Status          |
+| fanstatus     | Battery Pack Fan Status      |
+| packextinfo   | Extended Battery Pack Info   |
+| mppt1i        | MPPT1 Input                  |
+| mppt1o        | MPPT1 Output                 |
+| mppt1t        | MPPT1 Temperature            |
+| mppt1aps      | MPPT1 Auxiliary Power Supply |
+| mppt1l        | MPPT1 Limits                 |
+| mppt1s        | MPPT1 Status                 |
+| mppt1pc       | MPPT1 Power Connector        |
+| mppt2i        | MPPT2 Input                  |
+| mppt2o        | MPPT2 Output                 |
+| mppt2t        | MPPT2 Temperature            |
+| mppt2aps      | MPPT2 Auxiliary Power Supply |
+| mppt2l        | MPPT2 Limits                 |
+| mppt2s        | MPPT2 Status                 |
+| mppt2pc       | MPPT2 Power Connector        |
 
 ## Sensor Data
 
-| Abbreviation        | Description                            |
-|---------------------|--------------------------------------|
-| hbid               | Device ID                            |
-| hbsn               | Serial Number                        |
-| soc                | State of Charge (Ah)                |
-| socp               | State of Charge Percentage (%)      |
-| balsoc             | Balance SoC (Ah)                    |
-| balsocp            | Balance SoC Percentage             |
-| cverr              | Charging Cell Voltage Error (mV)    |
-| ctmarg             | Charging Cell Temp Margin (°C)      |
-| dverr              | Discharge Cell Voltage Error (mV)   |
-| tpcap              | Total Pack Capacity (Ah)           |
-| pcs                | Precharge Contactor Status          |
-| pstate             | Precharge State                     |
-| csv                | Contactor Supply Voltage (V)       |
-| pts                | Precharge Timer Status              |
-| ptv                | Precharge Timer Value (s)          |
-| minv               | Minimum Cell Voltage                |
-| maxv               | Maximum Cell Voltage                |
-| cmuminv            | CMU with Minimum Voltage (V)       |
-| cellminv           | Cell with Minimum Voltage (V)      |
-| cmumaxv            | CMU with Maximum Voltage (V)       |
-| cellmaxv           | Cell with Maximum Voltage (V)      |
-| mint               | Minimum Cell Temperature (°C)      |
-| maxt               | Maximum Cell Temperature (°C)      |
-| cmumint            | CMU with Minimum Temperature (°C)  |
-| cellmint           | Cell with Minimum Temperature (°C) |
-| cmumaxt            | CMU with Maximum Temperature (°C)  |
-| cellmaxt           | Cell with Maximum Temperature (°C) |
-| pvoltage           | Pack Voltage (V)                   |
-| pcurrent           | Pack Current (A)                   |
-| bvthr              | Balance Voltage Threshold Rising (mV) |
-| bvthf              | Balance Voltage Threshold Falling (mV) |
-| ps                | Pack Status (deprecated)            |
-| cmucnt            | CMU Count                           |
-| bbuild            | BMU Firmware Build Number          |
-| fan0              | Fan 0 Speed (rpm)                   |
-| fan1              | Fan 1 Speed (rpm)                   |
-| curfancon         | Current Consumption Fans and Contactors (A) |
-| curcmu            | Current Consumption CMUs (A)       |
-| psbits            | Pack Status Bitfield (extended flags) |
-| bhwver            | BMU Hardware Version               |
-| bmodel            | BMU Model ID                        |
+| Abbreviation | Description                                 |
+|--------------|---------------------------------------------|
+| hbid         | Device ID                                   |
+| hbsn         | Serial Number                               |
+| soc          | State of Charge (Ah)                        |
+| socp         | State of Charge Percentage (%)              |
+| balsoc       | Balance SoC (Ah)                            |
+| balsocp      | Balance SoC Percentage                      |
+| cverr        | Charging Cell Voltage Error (mV)            |
+| ctmarg       | Charging Cell Temp Margin (°C)              |
+| dverr        | Discharge Cell Voltage Error (mV)           |
+| tpcap        | Total Pack Capacity (Ah)                    |
+| pcs          | Precharge Contactor Status                  |
+| pstate       | Precharge State                             |
+| csv          | Contactor Supply Voltage (V)                |
+| pts          | Precharge Timer Status                      |
+| ptv          | Precharge Timer Value (s)                   |
+| minv         | Minimum Cell Voltage                        |
+| maxv         | Maximum Cell Voltage                        |
+| cmuminv      | CMU with Minimum Voltage (V)                |
+| cellminv     | Cell with Minimum Voltage (V)               |
+| cmumaxv      | CMU with Maximum Voltage (V)                |
+| cellmaxv     | Cell with Maximum Voltage (V)               |
+| mint         | Minimum Cell Temperature (°C)               |
+| maxt         | Maximum Cell Temperature (°C)               |
+| cmumint      | CMU with Minimum Temperature (°C)           |
+| cellmint     | Cell with Minimum Temperature (°C)          |
+| cmumaxt      | CMU with Maximum Temperature (°C)           |
+| cellmaxt     | Cell with Maximum Temperature (°C)          |
+| pvoltage     | Pack Voltage (V)                            |
+| pcurrent     | Pack Current (A)                            |
+| bvthr        | Balance Voltage Threshold Rising (mV)       |
+| bvthf        | Balance Voltage Threshold Falling (mV)      |
+| ps           | Pack Status (deprecated)                    |
+| cmucnt       | CMU Count                                   |
+| bbuild       | BMU Firmware Build Number                   |
+| fan0         | Fan 0 Speed (rpm)                           |
+| fan1         | Fan 1 Speed (rpm)                           |
+| curfancon    | Current Consumption Fans and Contactors (A) |
+| curcmu       | Current Consumption CMUs (A)                |
+| psbits       | Pack Status Bitfield (extended flags)       |
+| bhwver       | BMU Hardware Version                        |
+| bmodel       | BMU Model ID                                |
 
 ### MPPT1 Data
 
