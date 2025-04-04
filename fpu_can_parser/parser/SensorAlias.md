@@ -1,106 +1,125 @@
-bmuhbs = BMU Heartbeat Sensor <br>
-packsoc	= Pack State of Charge Sensor <br>
-Abbreviation = Full Meaning <br>
-packbalsoc = Pack Balance State of Charge <br>
-chargerctl = Charger Control Info <br>
-prechargestat = Precharge Status <br>
-minmaxv = Min / Max Cell Voltage <br>
-minmaxt = Min / Max Cell Temperature <br>
-packinfo = Battery Pack Info <br>
-packstatus = Battery Pack Status <br>
-fanstatus = Battery Pack Fan Status <br>
-packextinfo = Extended Battery Pack Info <br>
-mppt1input = MPPT1 Input <br>
-mppt1output = MPPT1 Output <br>
-mppt1t = MPPT1 Temperature <br>
-mppt1aps = MPPT1 Auxiliary Power Supply <br>
-mppt1l = MPPT1 Limits <br>
-mppt1s = MPPT1 Status <br>
-mppt1pc = MPPT1 Power Connector <br>
-mppt2input = MPPT2 Input <br>
-mppt2output = MPPT2 Output <br>
-mppt2t = MPPT2 Temperature <br>
-mppt2aps = MPPT2 Auxiliary Power Supply <br>
-mppt2l = MPPT2 Limits <br>
-mppt2s = MPPT2 Status <br>
-mppt2pc = MPPT2 Power Connector <br>
+# Sensor Descriptor Alias
 
-hbid = Device ID <br>
-hbsn = Serial Number <br>
-soc	= State of Charge (Ah) <br>
-socp = State of Charge Percentage (%) <br>
-balsoc = Balance SoC (Ah) <br>
-balsocp = Balance SoC Percentage <br>
-cverr = Charging Cell Voltage Error (mV) <br>
-ctmarg = Charging Cell Temp Margin (°C) <br>
-dverr = Discharge Cell Voltage Error (mV) <br>
-tpcap = Total Pack Capacity (Ah) <br>
-pcs = Precharge Contactor Status <br>
-pstate = Precharge State <br>
-csv = Contactor Supply Voltage (V) <br>
-pts = Precharge Timer Status <br>
-ptv = Precharge Timer Value (s) <br>
-minv = Minimum Cell Voltage <br>
-maxv = Maximum Cell Voltage <br>
-cmuminv = CMU with Minimum Voltage (V) <br>
-cellminv = Cell with Minimum Voltage (V) <br>
-cmumaxv = CMU with Maximum Voltage (V) <br>
-cellmaxv = Cell with Maximum Voltage (V) <br>
-mint = Minimum Cell Temperature (°C) <br>
-maxt = Maximum Cell Temperature (°C) <br>
-cmumint = CMU with Minimum Temperature (°C) <br>
-cellmint = Cell with Minimum Temperature (°C) <br>
-cmumaxt = CMU with Maximum Temperature (°C) <br>
-cellmaxt = Cell with Maximum Temperature (°C) <br>
-pvoltage = Pack Voltage (V) <br>
-pcurrent = Pack Current (A) <br>
-bvthr = Balance Voltage Threshold Rising (mV) <br>
-bvthf = Balance Voltage Threshold Falling (mV) <br>
-ps = Pack Status (deprecated) <br>
-cmucnt = CMU Count <br>
-bbuild = BMU Firmware Build Number <br>
-fan0 = Fan 0 Speed (rpm) <br>
-fan1 = Fan 1 Speed (rpm) <br>
-curfancon = Current Consumption Fans and Contactors (A) <br>
-curcmu = Current Consumption CMUs (A) <br>
-psbits = Pack Status Bitfield (extended flags) <br>
-bhwver = BMU Hardware Version <br>
-bmodel = BMU Model ID <br>
-mppt1iv = MPPT1 Input Voltage (V) <br>
-mppt1ic = MPPT1 Input Current (A) <br>
-mppt1ov = MPPT1 Output Voltage (V) <br>
-mppt1oc = MPPT1 Output Current (A) <br>
-mppt1mt = MPPT1 Mosfet Temperature (°C) <br>
-mppt1ct = MPPT1 Control Temperature (°C) <br>
-mppt1_12v = MPPT1 12V Supply Voltage (V) <br>
-mppt1_3v = MPPT1 3V Supply Voltage (V) <br>
-mppt1mov = MPPT1 Max Output Voltage (V) <br>
-mppt1mic = MPPT1 Max Input Current (A) <br>
-mppt1canrxerrcnt = MPPT1 CAN RX Error Count <br>
-mppt1cantxerrcnt = MPPT1 CAN TX Error Count <br>
-mppt1cantxofcnt = MPPT1 CAN TX Overflow Count <br>
-mppt1errflg = MPPT1 Error Flag <br>
-mppt1limflg = MPPT1 Limit Flag <br>
-mppt1mode = MPPT1 Mode <br>
-mppt1tstcnt = MPPT1 Test Count <br>
-mppt1ovcon = MPPT1 Output Voltage Connector <br>
-mppt1ct = MPPT1 Connector Temp <br>
-mppt2iv = MPPT2 Input Voltage (V) <br>
-mppt2ic = MPPT2 Input Current (A) <br>
-mppt2ov = MPPT2 Output Voltage (V) <br>
-mppt2oc = MPPT2 Output Current (A) <br>
-mppt2mt = MPPT2 Mosfet Temperature (°C) <br>
-mppt2ct = MPPT2 Control Temperature (°C) <br>
-mppt2_12v = MPPT2 12V Supply Voltage (V) <br>
-mppt2_3v = MPPT2 3V Supply Voltage (V) <br>
-mppt2mov = MPPT2 Max Output Voltage (V) <br>
-mppt2mic = MPPT2 Max Input Current (A) <br>
-mppt2canrxerrcnt = MPPT2 CAN RX Error Count <br>
-mppt2cantxerrcnt = MPPT2 CAN TX Error Count <br>
-mppt2cantxofcnt = MPPT2 CAN TX Overflow Count <br>
-mppt2errflg = MPPT2 Error Flag <br>
-mppt2limflg = MPPT2 Limit Flag <br>
-mppt2mode = MPPT2 Mode <br>
-mppt2tstcnt = MPPT2 Test Count <br>
-mppt2ovcon = MPPT2 Output Voltage Connector <br>
-mppt2ct = MPPT2 Connector Temp <br>
+## Sensor Names
+
+| Abbreviation  | Full Meaning                      |
+|--------------|----------------------------------|
+| bmuhbs       | BMU Heartbeat Sensor            |
+| packsoc      | Pack State of Charge Sensor     |
+| packbalsoc   | Pack Balance State of Charge   |
+| chargerctl   | Charger Control Info           |
+| prechargestat| Precharge Status               |
+| minmaxv      | Min / Max Cell Voltage         |
+| minmaxt      | Min / Max Cell Temperature     |
+| packinfo     | Battery Pack Info              |
+| packstatus   | Battery Pack Status            |
+| fanstatus    | Battery Pack Fan Status        |
+| packextinfo  | Extended Battery Pack Info     |
+| mppt1input   | MPPT1 Input                    |
+| mppt1output  | MPPT1 Output                   |
+| mppt1t       | MPPT1 Temperature              |
+| mppt1aps     | MPPT1 Auxiliary Power Supply   |
+| mppt1l       | MPPT1 Limits                   |
+| mppt1s       | MPPT1 Status                   |
+| mppt1pc      | MPPT1 Power Connector          |
+| mppt2input   | MPPT2 Input                    |
+| mppt2output  | MPPT2 Output                   |
+| mppt2t       | MPPT2 Temperature              |
+| mppt2aps     | MPPT2 Auxiliary Power Supply   |
+| mppt2l       | MPPT2 Limits                   |
+| mppt2s       | MPPT2 Status                   |
+| mppt2pc      | MPPT2 Power Connector          |
+
+## Sensor Data
+
+| Abbreviation        | Description                            |
+|---------------------|--------------------------------------|
+| hbid               | Device ID                            |
+| hbsn               | Serial Number                        |
+| soc                | State of Charge (Ah)                |
+| socp               | State of Charge Percentage (%)      |
+| balsoc             | Balance SoC (Ah)                    |
+| balsocp            | Balance SoC Percentage             |
+| cverr              | Charging Cell Voltage Error (mV)    |
+| ctmarg             | Charging Cell Temp Margin (°C)      |
+| dverr              | Discharge Cell Voltage Error (mV)   |
+| tpcap              | Total Pack Capacity (Ah)           |
+| pcs                | Precharge Contactor Status          |
+| pstate             | Precharge State                     |
+| csv                | Contactor Supply Voltage (V)       |
+| pts                | Precharge Timer Status              |
+| ptv                | Precharge Timer Value (s)          |
+| minv               | Minimum Cell Voltage                |
+| maxv               | Maximum Cell Voltage                |
+| cmuminv            | CMU with Minimum Voltage (V)       |
+| cellminv           | Cell with Minimum Voltage (V)      |
+| cmumaxv            | CMU with Maximum Voltage (V)       |
+| cellmaxv           | Cell with Maximum Voltage (V)      |
+| mint               | Minimum Cell Temperature (°C)      |
+| maxt               | Maximum Cell Temperature (°C)      |
+| cmumint            | CMU with Minimum Temperature (°C)  |
+| cellmint           | Cell with Minimum Temperature (°C) |
+| cmumaxt            | CMU with Maximum Temperature (°C)  |
+| cellmaxt           | Cell with Maximum Temperature (°C) |
+| pvoltage           | Pack Voltage (V)                   |
+| pcurrent           | Pack Current (A)                   |
+| bvthr              | Balance Voltage Threshold Rising (mV) |
+| bvthf              | Balance Voltage Threshold Falling (mV) |
+| ps                | Pack Status (deprecated)            |
+| cmucnt            | CMU Count                           |
+| bbuild            | BMU Firmware Build Number          |
+| fan0              | Fan 0 Speed (rpm)                   |
+| fan1              | Fan 1 Speed (rpm)                   |
+| curfancon         | Current Consumption Fans and Contactors (A) |
+| curcmu            | Current Consumption CMUs (A)       |
+| psbits            | Pack Status Bitfield (extended flags) |
+| bhwver            | BMU Hardware Version               |
+| bmodel            | BMU Model ID                        |
+
+### MPPT1 Data
+
+| Abbreviation       | Description                           |
+|--------------------|-------------------------------------|
+| mppt1iv           | MPPT1 Input Voltage (V)             |
+| mppt1ic           | MPPT1 Input Current (A)             |
+| mppt1ov           | MPPT1 Output Voltage (V)            |
+| mppt1oc           | MPPT1 Output Current (A)            |
+| mppt1mt           | MPPT1 Mosfet Temperature (°C)       |
+| mppt1ct           | MPPT1 Control Temperature (°C)      |
+| mppt1_12v         | MPPT1 12V Supply Voltage (V)        |
+| mppt1_3v          | MPPT1 3V Supply Voltage (V)         |
+| mppt1mov          | MPPT1 Max Output Voltage (V)        |
+| mppt1mic          | MPPT1 Max Input Current (A)         |
+| mppt1canrxerrcnt  | MPPT1 CAN RX Error Count            |
+| mppt1cantxerrcnt  | MPPT1 CAN TX Error Count            |
+| mppt1cantxofcnt   | MPPT1 CAN TX Overflow Count         |
+| mppt1errflg       | MPPT1 Error Flag                    |
+| mppt1limflg       | MPPT1 Limit Flag                    |
+| mppt1mode         | MPPT1 Mode                           |
+| mppt1tstcnt       | MPPT1 Test Count                    |
+| mppt1ovcon        | MPPT1 Output Voltage Connector      |
+| mppt1ct           | MPPT1 Connector Temp                |
+
+### MPPT2 Data
+
+| Abbreviation       | Description                           |
+|--------------------|-------------------------------------|
+| mppt2iv           | MPPT2 Input Voltage (V)             |
+| mppt2ic           | MPPT2 Input Current (A)             |
+| mppt2ov           | MPPT2 Output Voltage (V)            |
+| mppt2oc           | MPPT2 Output Current (A)            |
+| mppt2mt           | MPPT2 Mosfet Temperature (°C)       |
+| mppt2ct           | MPPT2 Control Temperature (°C)      |
+| mppt2_12v         | MPPT2 12V Supply Voltage (V)        |
+| mppt2_3v          | MPPT2 3V Supply Voltage (V)         |
+| mppt2mov          | MPPT2 Max Output Voltage (V)        |
+| mppt2mic          | MPPT2 Max Input Current (A)         |
+| mppt2canrxerrcnt  | MPPT2 CAN RX Error Count            |
+| mppt2cantxerrcnt  | MPPT2 CAN TX Error Count            |
+| mppt2cantxofcnt   | MPPT2 CAN TX Overflow Count         |
+| mppt2errflg       | MPPT2 Error Flag                    |
+| mppt2limflg       | MPPT2 Limit Flag                    |
+| mppt2mode         | MPPT2 Mode                           |
+| mppt2tstcnt       | MPPT2 Test Count                    |
+| mppt2ovcon        | MPPT2 Output Voltage Connector      |
+| mppt2ct           | MPPT2 Connector Temp                |
