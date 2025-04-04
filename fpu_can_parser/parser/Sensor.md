@@ -3,12 +3,6 @@
 ## Overview
 This module defines the `Sensor` class, which represents a sensor with an ID, name code, data format, and description code. It also provides methods to parse sensor data based on its format and description.
 
-## Dependencies
-This script requires:
-- `re` for regular expression operations.
-- `typing` for type annotations.
-- `fpu_can_parser.parser.hex_helper` as `hh` for conversion functions.
-
 ## Data Format Codes
 A dictionary `data_format_code_dict` maps sensor data format codes to corresponding conversion functions or byte length values:
 
