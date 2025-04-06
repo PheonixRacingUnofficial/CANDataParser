@@ -34,8 +34,6 @@ class Parser:
 
         data = translate_can_format(data)
 
-
-        # try:
         timestamp = re.findall(r'\(([^)]+)\)', data)[0]
         data: str = data.split(' ')[2]
         sensor_id: str = hex(int(data[:3], 16))
@@ -51,11 +49,6 @@ class Parser:
         readable_time = f'{str(datetime.datetime.fromtimestamp(float(timestamp)))}'
 
         return readable_time, sensor_id, self.sensor_manager.pass_to_sensor(sensor_id_int, sensor_data)
-
-        # except Exception as e:
-        #     self.console.python_error(f"Unknown error happened; Stacktrace: {e.with_traceback()}")
-        #     return f"Error: {e.with_traceback()}"
-
 
 def translate_can_format(data: str) -> str:
     if data[0] == '(':

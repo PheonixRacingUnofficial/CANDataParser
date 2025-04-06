@@ -1,7 +1,6 @@
 import re
 from typing import Dict, List, Any
 
-import fpu_can_parser
 import fpu_can_parser.parser.hex_helper as hh
 
 # Length is equal to the number of bytes divided by 4
@@ -53,7 +52,6 @@ class Sensor:
         """
         parsed_data: Dict[str, Any] = {}
         input_data_pos_initial: int = 0
-        input_data_pos_final: int = 0
         data_sections: List[str] = []
         # Using the data format code, the input str needs to be split up into the correct number of bytes
         for i in range(len(self.sensor_data_format)):
