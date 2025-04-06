@@ -6,7 +6,7 @@ import threading
 
 import serial
 
-from fpu_can_parser.parser.Parser import Parser
+from fpu_can_parser.parser.parser import Parser
 from fpu_can_parser import can_receiver
 from fpu_can_parser.gui import gui as gui
 

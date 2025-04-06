@@ -3,7 +3,7 @@ import re
 from typing import Dict, Tuple
 
 from fpu_can_parser.parser.logger import Logger
-from fpu_can_parser.parser.SensorManager import SensorManager
+from fpu_can_parser.parser.sensor_manager import SensorManager
 
 class Parser:
 

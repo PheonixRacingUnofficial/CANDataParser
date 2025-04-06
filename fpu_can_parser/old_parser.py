@@ -6,7 +6,7 @@ from typing import Any
 from fpu_can_parser.parser import *
 from fpu_can_parser.parser.logger import Logger
 
-from fpu_can_parser.parser.SensorManager import SensorManager
+from fpu_can_parser.parser.sensor_manager import SensorManager
 
 sensor_manager = SensorManager(os.path.abspath('current_sensors_file.txt'))
 

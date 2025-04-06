@@ -1,7 +1,7 @@
 import os
 import re
 from typing import Dict
-from fpu_can_parser.parser.Sensor import Sensor
+from fpu_can_parser.parser.sensor import Sensor
 
 class SensorManager:
 

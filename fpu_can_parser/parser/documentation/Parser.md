@@ -34,7 +34,7 @@ All formats are normalized to a standard CAN string before parsing.
 You can use the `Parser` class by importing it and initializing with a sensor definition file:
 
 ```python
-from fpu_can_parser.parser.Parser import Parser
+from fpu_can_parser.parser.parser import Parser
 
 parser = Parser("path/to/sensor_file.txt", debug=True)
 parsed = parser.parse_can_line("(1687282000.123456) can0 300#05500000AB0D0000")

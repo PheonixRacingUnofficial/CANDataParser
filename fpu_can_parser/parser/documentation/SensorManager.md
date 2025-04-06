@@ -32,7 +32,7 @@ Example:
 To use the `SensorManager`, run the script and provide the path to a valid sensor file:
 
 ```sh
-python SensorManager.py
+python sensor_manager.py
 ```
 
 Alternatively, it can be imported and used programmatically:
