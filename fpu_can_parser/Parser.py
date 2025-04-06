@@ -10,6 +10,7 @@ from fpu_can_parser.parser.SensorManager import SensorManager
 
 sensor_manager = SensorManager(os.path.abspath('current_sensors_file.txt'))
 
+'''
 
 def parse_cmu_sensor(sensor_id: int, sensor_data: str, time: str, console) -> str:
     base_id = 0x301
@@ -46,6 +47,7 @@ def parse_cmu_sensor(sensor_id: int, sensor_data: str, time: str, console) -> st
 
     console.info(out)
     return out
+'''
 
 def parse_can_line(data: str, debug: bool, log: bool) -> dict[str, Any] | str:
     console: Logger = Logger(debug, log)
@@ -106,9 +108,11 @@ def parse_can_line(data: str, debug: bool, log: bool) -> dict[str, Any] | str:
 
         # CMU Sensor are parsed differently here due to the range of values that they can have
         # that all have the same exact code
+        '''
         if 0x301 <= sensor_id_int <= 0x3F3:
             console.debug("This should be a CMU sensor")
             return parse_cmu_sensor(sensor_id_int, sensor_data, out, console)
+        '''
 
         # print(f"Sensor ID: {hex(sensor_id_int)}; Sensor Data: {str(sensor_manager.pass_to_sensor(sensor_id_int, sensor_data))}")
         return str(sensor_manager.pass_to_sensor(sensor_id_int, sensor_data))

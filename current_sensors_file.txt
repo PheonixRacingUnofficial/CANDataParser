@@ -12,7 +12,7 @@
 0x3FB,packstatus,%ui16%ui16%ui8%ui8%ui16,%bvthr%bvthf%ps%cmucnt%bbuild
 0x3FC,fanstatus,%ui16%ui16%ui16%ui16,%fan0%fan1%curfancon%curcmu
 0x3FD,packextinfo,%b32%ui8%ui8%g16,%psbits%bhwver%bmodel%garbage
-#
+
 # MPPT1 Sensors (Ignoring Send Sensors)
 0x600,mppt1i,%f32%f32,%mppt1iv%mppt1ic
 0x601,mppt1o,%f32%f32,%mppt1ov%mppt1oc
@@ -21,7 +21,7 @@
 0x604,mppt1l,%f32%f32,%mppt1mov%mppt1mic
 0x605,mppt1s,%ui8%ui8%ui8%b8%b8%ui8%g8%ui8,%mmpt1canrxerrcnt%mppt1cantxerrcnt%mppt1cantxofcnt%mppt1errflg%mppt1limflg%mppt1mode%garbage%mppt1testcnt
 0x606,mppt1powcon,%f32%f32,%mppt1ovcon%mppt1ct
-#
+
 # MPPT2 Sensors (Ignoring Send Sensors)
 0x610,mppt2i,%f32%f32,%mppt2iv%mppt2ic
 0x611,mppt2o,%f32%f32,%mppt2ov%mppt2oc
@@ -30,6 +30,27 @@
 0x614,mppt2l,%f32%f32,%mppt2mov%mppt2mic
 0x615,mppt2s,%ui8%ui8%ui8%b8%b8%ui8%g8%ui8,%mmpt2canrxerrcnt%mppt2cantxerrcnt%mppt2cantxofcnt%mppt2errflg%mppt2limflg%mppt2mode%garbage%mppt2testcnt
 0x616,mppt2powcon,%f32%f32,%mppt2ovcon%mppt2ct
+
+# CMU Sensors
+# CMU 1 0x301-0x303
+0x301,cmu1s,%ui32%i16%i16,%cmu1sn%cmu1pbct%cmu1ct
+0x302,cmu1v1,%i16%i16%i16%i16,%cmu1v0%cmu1v1%cmu1v2%cmu1v3
+0x303,cmu1v2,%i16%i16%i16%i16,%cmu1v4%cmu1v5%cmu1v6%cmu1v7
+
+# CMU 2 0x304-0x306
+0x304,cmu2s,%ui32%i16%i16,%cmu2sn%cmu2pbct%cmu2ct
+0x305,cmu2v1,%i16%i16%i16%i16,%cmu2v0%cmu2v1%cmu2v2%cmu2v3
+0x306,cmu2v2,%i16%i16%i16%i16,%cmu2v4%cmu2v5%cmu2v6%cmu2v7
+
+# CMU 3 0x307-0x309
+0x307,cmu3s,%ui32%i16%i16,%cmu3sn%cmu3pbct%cmu3ct
+0x308,cmu3v1,%i16%i16%i16%i16,%cmu3v0%cmu3v1%cmu3v2%cmu3v3
+0x309,cmu3v2,%i16%i16%i16%i16,%cmu3v4%cmu3v5%cmu3v6%cmu3v7
+
+# CMU 4 0x30A-0x30C
+0x30A,cmu4s,%ui32%i16%i16,%cmu4sn%cmu4pbct%cmu4ct
+0x30B,cmu4v1,%i16%i16%i16%i16,%cmu4v0%cmu4v1%cmu4v2%cmu4v3
+0x30C,cmu4v2,%i16%i16%i16%i16,%cmu4v4%cmu4v5%cmu4v6%cmu4v7
 
 
 

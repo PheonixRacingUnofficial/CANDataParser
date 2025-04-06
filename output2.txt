@@ -23,18 +23,18 @@
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96823, 'pcurrent': -423}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
-2024-09-23 15:48:00.456301] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
-2024-09-23 15:48:00.456302] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
-2024-09-23 15:48:00.458205] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
-2024-09-23 15:48:00.458205] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
-2024-09-23 15:48:00.460165] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
-2024-09-23 15:48:00.460166] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.612V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
-2024-09-23 15:48:00.462109] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.0°C; Cell Temp: 23.7°C
-2024-09-23 15:48:00.462109] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
-2024-09-23 15:48:00.464110] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
-2024-09-23 15:48:00.476888] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
-2024-09-23 15:48:00.476889] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
-2024-09-23 15:48:00.478829] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+{'cmu2sn': 3787, 'cmu2pbct': 258, 'cmu2ct': 238}
+{'cmu2v0': 3608, 'cmu2v1': 3600, 'cmu2v2': 3607, 'cmu2v3': 3621}
+{'cmu2v4': 3607, 'cmu2v5': 3635, 'cmu2v6': 3597, 'cmu2v7': 3607}
+{'cmu3sn': 3793, 'cmu3pbct': 250, 'cmu3ct': 237}
+{'cmu3v0': 3606, 'cmu3v1': 3609, 'cmu3v2': 3606, 'cmu3v3': 3608}
+{'cmu3v4': 3609, 'cmu3v5': 3612, 'cmu3v6': 3611, 'cmu3v7': 3608}
+{'cmu4sn': 4063, 'cmu4pbct': 220, 'cmu4ct': 237}
+{'cmu4v0': 3610, 'cmu4v1': 3613, 'cmu4v2': 3608, 'cmu4v3': 3612}
+{'cmu4v4': 3612, 'cmu4v5': -32768, 'cmu4v6': -32768, 'cmu4v7': -32768}
+{'cmu1sn': 4690, 'cmu1pbct': 273, 'cmu1ct': 238}
+{'cmu1v0': 3608, 'cmu1v1': 3609, 'cmu1v2': 3607, 'cmu1v3': 3610}
+{'cmu1v4': 3607, 'cmu1v5': 3611, 'cmu1v6': -32768, 'cmu1v7': -32768}
 {'mmpt2canrxerrcnt': 0, 'mppt2cantxerrcnt': 0, 'mppt2cantxofcnt': 0, 'mppt2errflg': '00001000', 'mppt2limflg': '00000000', 'mppt2mode': 1, 'mppt2testcnt': 58}
 {'mmpt1canrxerrcnt': 0, 'mppt1cantxerrcnt': 0, 'mppt1cantxofcnt': 0, 'mppt1errflg': '00001000', 'mppt1limflg': '00000000', 'mppt1mode': 1, 'mppt1testcnt': 58}
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
@@ -86,18 +86,18 @@
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -409}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
-2024-09-23 15:48:01.344922] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.6°C
-2024-09-23 15:48:01.344923] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
-2024-09-23 15:48:01.346827] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
-2024-09-23 15:48:01.346827] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
-2024-09-23 15:48:01.348786] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
-2024-09-23 15:48:01.349836] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.613V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
-2024-09-23 15:48:01.349836] CMU Sensor 4; Serial Number: 4063; PCB Temp: 21.9°C; Cell Temp: 23.7°C
-2024-09-23 15:48:01.351668] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
-2024-09-23 15:48:01.352691] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
-2024-09-23 15:48:01.365526] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.4°C; Cell Temp: 23.8°C
-2024-09-23 15:48:01.365527] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
-2024-09-23 15:48:01.367507] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+{'cmu2sn': 3787, 'cmu2pbct': 258, 'cmu2ct': 236}
+{'cmu2v0': 3608, 'cmu2v1': 3600, 'cmu2v2': 3607, 'cmu2v3': 3621}
+{'cmu2v4': 3607, 'cmu2v5': 3635, 'cmu2v6': 3597, 'cmu2v7': 3607}
+{'cmu3sn': 3793, 'cmu3pbct': 250, 'cmu3ct': 237}
+{'cmu3v0': 3606, 'cmu3v1': 3609, 'cmu3v2': 3606, 'cmu3v3': 3608}
+{'cmu3v4': 3609, 'cmu3v5': 3613, 'cmu3v6': 3611, 'cmu3v7': 3608}
+{'cmu4sn': 4063, 'cmu4pbct': 219, 'cmu4ct': 237}
+{'cmu4v0': 3610, 'cmu4v1': 3613, 'cmu4v2': 3608, 'cmu4v3': 3612}
+{'cmu4v4': 3612, 'cmu4v5': -32768, 'cmu4v6': -32768, 'cmu4v7': -32768}
+{'cmu1sn': 4690, 'cmu1pbct': 274, 'cmu1ct': 238}
+{'cmu1v0': 3608, 'cmu1v1': 3609, 'cmu1v2': 3607, 'cmu1v3': 3610}
+{'cmu1v4': 3607, 'cmu1v5': 3611, 'cmu1v6': -32768, 'cmu1v7': -32768}
 {'mppt2ovcon': 113.53071594238281, 'mppt2ct': 24.332021713256836}
 {'mppt1ovcon': 113.43170166015625, 'mppt1ct': 24.391576766967773}
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
@@ -146,21 +146,21 @@
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
 {'mppt2ovcon': 113.6446304321289, 'mppt2ct': 24.333282470703125}
 {'mppt1ovcon': 113.53718566894531, 'mppt1ct': 24.39346694946289}
-2024-09-23 15:48:02.233543] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
-2024-09-23 15:48:02.233544] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
-2024-09-23 15:48:02.235454] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
-2024-09-23 15:48:02.235454] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
-2024-09-23 15:48:02.237582] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
+{'cmu2sn': 3787, 'cmu2pbct': 258, 'cmu2ct': 238}
+{'cmu2v0': 3608, 'cmu2v1': 3600, 'cmu2v2': 3607, 'cmu2v3': 3621}
+{'cmu2v4': 3607, 'cmu2v5': 3635, 'cmu2v6': 3597, 'cmu2v7': 3607}
+{'cmu3sn': 3793, 'cmu3pbct': 250, 'cmu3ct': 237}
+{'cmu3v0': 3606, 'cmu3v1': 3609, 'cmu3v2': 3606, 'cmu3v3': 3608}
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -426}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
-2024-09-23 15:48:02.238773] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.613V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
-2024-09-23 15:48:02.238774] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.0°C; Cell Temp: 23.7°C
-2024-09-23 15:48:02.240289] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
-2024-09-23 15:48:02.241328] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
-2024-09-23 15:48:02.254205] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
-2024-09-23 15:48:02.254205] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
-2024-09-23 15:48:02.256203] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+{'cmu3v4': 3609, 'cmu3v5': 3613, 'cmu3v6': 3611, 'cmu3v7': 3608}
+{'cmu4sn': 4063, 'cmu4pbct': 220, 'cmu4ct': 237}
+{'cmu4v0': 3610, 'cmu4v1': 3613, 'cmu4v2': 3608, 'cmu4v3': 3612}
+{'cmu4v4': 3612, 'cmu4v5': -32768, 'cmu4v6': -32768, 'cmu4v7': -32768}
+{'cmu1sn': 4690, 'cmu1pbct': 273, 'cmu1ct': 238}
+{'cmu1v0': 3608, 'cmu1v1': 3609, 'cmu1v2': 3607, 'cmu1v3': 3610}
+{'cmu1v4': 3607, 'cmu1v5': 3611, 'cmu1v6': -32768, 'cmu1v7': -32768}
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -421}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
@@ -207,21 +207,21 @@
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -419}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
-2024-09-23 15:48:03.122158] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
-2024-09-23 15:48:03.122159] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.621V
-2024-09-23 15:48:03.124161] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
-2024-09-23 15:48:03.124162] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
-2024-09-23 15:48:03.126034] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
-2024-09-23 15:48:03.126035] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.613V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
-2024-09-23 15:48:03.127959] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.0°C; Cell Temp: 23.7°C
-2024-09-23 15:48:03.127960] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
-2024-09-23 15:48:03.129979] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
-2024-09-23 15:48:03.143035] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
+{'cmu2sn': 3787, 'cmu2pbct': 258, 'cmu2ct': 238}
+{'cmu2v0': 3608, 'cmu2v1': 3600, 'cmu2v2': 3606, 'cmu2v3': 3621}
+{'cmu2v4': 3607, 'cmu2v5': 3635, 'cmu2v6': 3597, 'cmu2v7': 3607}
+{'cmu3sn': 3793, 'cmu3pbct': 250, 'cmu3ct': 237}
+{'cmu3v0': 3606, 'cmu3v1': 3609, 'cmu3v2': 3606, 'cmu3v3': 3608}
+{'cmu3v4': 3609, 'cmu3v5': 3613, 'cmu3v6': 3611, 'cmu3v7': 3608}
+{'cmu4sn': 4063, 'cmu4pbct': 220, 'cmu4ct': 237}
+{'cmu4v0': 3610, 'cmu4v1': 3613, 'cmu4v2': 3608, 'cmu4v3': 3612}
+{'cmu4v4': 3612, 'cmu4v5': -32768, 'cmu4v6': -32768, 'cmu4v7': -32768}
+{'cmu1sn': 4690, 'cmu1pbct': 273, 'cmu1ct': 238}
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -420}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
-2024-09-23 15:48:03.144215] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
-2024-09-23 15:48:03.144216] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+{'cmu1v0': 3608, 'cmu1v1': 3609, 'cmu1v2': 3607, 'cmu1v3': 3610}
+{'cmu1v4': 3607, 'cmu1v5': 3611, 'cmu1v6': -32768, 'cmu1v7': -32768}
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -424}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
@@ -268,18 +268,18 @@
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -417}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
-2024-09-23 15:48:04.010793] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.7°C; Cell Temp: 23.8°C
-2024-09-23 15:48:04.010795] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
-2024-09-23 15:48:04.012713] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
-2024-09-23 15:48:04.012714] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
-2024-09-23 15:48:04.014636] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
-2024-09-23 15:48:04.014638] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.613V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
-2024-09-23 15:48:04.016551] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.1°C; Cell Temp: 23.7°C
-2024-09-23 15:48:04.016553] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
-2024-09-23 15:48:04.018568] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
-2024-09-23 15:48:04.031484] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
-2024-09-23 15:48:04.031486] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
-2024-09-23 15:48:04.033452] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+{'cmu2sn': 3787, 'cmu2pbct': 257, 'cmu2ct': 238}
+{'cmu2v0': 3608, 'cmu2v1': 3600, 'cmu2v2': 3607, 'cmu2v3': 3621}
+{'cmu2v4': 3607, 'cmu2v5': 3635, 'cmu2v6': 3597, 'cmu2v7': 3607}
+{'cmu3sn': 3793, 'cmu3pbct': 250, 'cmu3ct': 237}
+{'cmu3v0': 3606, 'cmu3v1': 3609, 'cmu3v2': 3606, 'cmu3v3': 3608}
+{'cmu3v4': 3609, 'cmu3v5': 3613, 'cmu3v6': 3611, 'cmu3v7': 3608}
+{'cmu4sn': 4063, 'cmu4pbct': 221, 'cmu4ct': 237}
+{'cmu4v0': 3610, 'cmu4v1': 3613, 'cmu4v2': 3608, 'cmu4v3': 3612}
+{'cmu4v4': 3612, 'cmu4v5': -32768, 'cmu4v6': -32768, 'cmu4v7': -32768}
+{'cmu1sn': 4690, 'cmu1pbct': 273, 'cmu1ct': 238}
+{'cmu1v0': 3608, 'cmu1v1': 3609, 'cmu1v2': 3607, 'cmu1v3': 3610}
+{'cmu1v4': 3607, 'cmu1v5': 3611, 'cmu1v6': -32768, 'cmu1v7': -32768}
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -413}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
@@ -329,20 +329,20 @@
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -416}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
-2024-09-23 15:48:04.899406] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
-2024-09-23 15:48:04.899408] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
-2024-09-23 15:48:04.901331] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
-2024-09-23 15:48:04.901332] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
-2024-09-23 15:48:04.903277] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
-2024-09-23 15:48:04.903280] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.613V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
-2024-09-23 15:48:04.905205] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.0°C; Cell Temp: 23.8°C
-2024-09-23 15:48:04.905207] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
-2024-09-23 15:48:04.907215] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+{'cmu2sn': 3787, 'cmu2pbct': 258, 'cmu2ct': 238}
+{'cmu2v0': 3608, 'cmu2v1': 3600, 'cmu2v2': 3607, 'cmu2v3': 3621}
+{'cmu2v4': 3607, 'cmu2v5': 3635, 'cmu2v6': 3597, 'cmu2v7': 3607}
+{'cmu3sn': 3793, 'cmu3pbct': 250, 'cmu3ct': 237}
+{'cmu3v0': 3606, 'cmu3v1': 3609, 'cmu3v2': 3606, 'cmu3v3': 3608}
+{'cmu3v4': 3609, 'cmu3v5': 3613, 'cmu3v6': 3611, 'cmu3v7': 3608}
+{'cmu4sn': 4063, 'cmu4pbct': 220, 'cmu4ct': 238}
+{'cmu4v0': 3610, 'cmu4v1': 3613, 'cmu4v2': 3608, 'cmu4v3': 3612}
+{'cmu4v4': 3612, 'cmu4v5': -32768, 'cmu4v6': -32768, 'cmu4v7': -32768}
 {'mppt2iv': 61.87248611450195, 'mppt2ic': 0.016137873753905296}
-2024-09-23 15:48:04.920083] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
+{'cmu1sn': 4690, 'cmu1pbct': 273, 'cmu1ct': 238}
 {'mppt1iv': 54.955806732177734, 'mppt1ic': 0.017676575109362602}
-2024-09-23 15:48:04.921095] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
-2024-09-23 15:48:04.921097] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+{'cmu1v0': 3608, 'cmu1v1': 3609, 'cmu1v2': 3607, 'cmu1v3': 3610}
+{'cmu1v4': 3607, 'cmu1v5': 3611, 'cmu1v6': -32768, 'cmu1v7': -32768}
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -425}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
@@ -392,20 +392,20 @@
 {'balsoc': 0.0, 'balsocp': 0.0}
 {'fan0': 2640, 'fan1': 2730, 'curfancon': 930, 'curcmu': 33}
 {'psbits': '00000000000000000000000010000000', 'bhwver': 0, 'bmodel': 0}
-2024-09-23 15:48:05.788038] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
-2024-09-23 15:48:05.788040] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
-2024-09-23 15:48:05.789961] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.634V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
-2024-09-23 15:48:05.789963] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
-2024-09-23 15:48:05.791898] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
-2024-09-23 15:48:05.791900] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.612V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
-2024-09-23 15:48:05.793837] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.1°C; Cell Temp: 23.8°C
-2024-09-23 15:48:05.793838] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
-2024-09-23 15:48:05.795836] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+{'cmu2sn': 3787, 'cmu2pbct': 258, 'cmu2ct': 238}
+{'cmu2v0': 3608, 'cmu2v1': 3600, 'cmu2v2': 3607, 'cmu2v3': 3621}
+{'cmu2v4': 3607, 'cmu2v5': 3634, 'cmu2v6': 3597, 'cmu2v7': 3607}
+{'cmu3sn': 3793, 'cmu3pbct': 250, 'cmu3ct': 237}
+{'cmu3v0': 3606, 'cmu3v1': 3609, 'cmu3v2': 3606, 'cmu3v3': 3608}
+{'cmu3v4': 3609, 'cmu3v5': 3612, 'cmu3v6': 3611, 'cmu3v7': 3608}
+{'cmu4sn': 4063, 'cmu4pbct': 221, 'cmu4ct': 238}
+{'cmu4v0': 3610, 'cmu4v1': 3613, 'cmu4v2': 3608, 'cmu4v3': 3612}
+{'cmu4v4': 3612, 'cmu4v5': -32768, 'cmu4v6': -32768, 'cmu4v7': -32768}
 {'mppt2ov': 113.37456512451172, 'mppt2oc': 0.008705565705895424}
 {'mppt1ov': 113.23033905029297, 'mppt1oc': 0.008222391828894615}
-2024-09-23 15:48:05.808788] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
-2024-09-23 15:48:05.808790] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.61V
-2024-09-23 15:48:05.810751] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+{'cmu1sn': 4690, 'cmu1pbct': 273, 'cmu1ct': 238}
+{'cmu1v0': 3608, 'cmu1v1': 3609, 'cmu1v2': 3606, 'cmu1v3': 3610}
+{'cmu1v4': 3607, 'cmu1v5': 3611, 'cmu1v6': -32768, 'cmu1v7': -32768}
 {'minv': 3597, 'maxv': 3634, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -414}
 {'cverr': 416, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
@@ -447,20 +447,20 @@
 {'minv': 3597, 'maxv': 3634, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -417}
 {'cverr': 416, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
-2024-09-23 15:48:06.676650] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
-2024-09-23 15:48:06.676652] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
-2024-09-23 15:48:06.678574] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
-2024-09-23 15:48:06.678575] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
-2024-09-23 15:48:06.680513] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
-2024-09-23 15:48:06.680515] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.612V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
-2024-09-23 15:48:06.682457] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.0°C; Cell Temp: 23.8°C
-2024-09-23 15:48:06.682459] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
-2024-09-23 15:48:06.684458] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+{'cmu2sn': 3787, 'cmu2pbct': 258, 'cmu2ct': 238}
+{'cmu2v0': 3608, 'cmu2v1': 3600, 'cmu2v2': 3607, 'cmu2v3': 3621}
+{'cmu2v4': 3607, 'cmu2v5': 3635, 'cmu2v6': 3597, 'cmu2v7': 3607}
+{'cmu3sn': 3793, 'cmu3pbct': 250, 'cmu3ct': 237}
+{'cmu3v0': 3606, 'cmu3v1': 3609, 'cmu3v2': 3606, 'cmu3v3': 3608}
+{'cmu3v4': 3609, 'cmu3v5': 3612, 'cmu3v6': 3611, 'cmu3v7': 3608}
+{'cmu4sn': 4063, 'cmu4pbct': 220, 'cmu4ct': 238}
+{'cmu4v0': 3610, 'cmu4v1': 3613, 'cmu4v2': 3608, 'cmu4v3': 3612}
+{'cmu4v4': 3612, 'cmu4v5': -32768, 'cmu4v6': -32768, 'cmu4v7': -32768}
 {'mppt2mt': 25.696136474609375, 'mppt2ct': 32.085906982421875}
 {'mppt1mt': 25.69277000427246, 'mppt1ct': 27.81818199157715}
-2024-09-23 15:48:06.697419] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.8°C
-2024-09-23 15:48:06.697421] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
-2024-09-23 15:48:06.699388] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+{'cmu1sn': 4690, 'cmu1pbct': 273, 'cmu1ct': 238}
+{'cmu1v0': 3608, 'cmu1v1': 3609, 'cmu1v2': 3607, 'cmu1v3': 3610}
+{'cmu1v4': 3607, 'cmu1v5': 3611, 'cmu1v6': -32768, 'cmu1v7': -32768}
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -418}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
@@ -507,23 +507,23 @@
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
 {'mppt2mt': 25.7032527923584, 'mppt2ct': 32.09591293334961}
 {'mppt1mt': 25.69384765625, 'mppt1ct': 27.831945419311523}
-2024-09-23 15:48:07.565283] CMU Sensor 2; Serial Number: 3787; PCB Temp: 25.8°C; Cell Temp: 23.8°C
-2024-09-23 15:48:07.565284] CMU Sensor 2; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.6V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.621V
-2024-09-23 15:48:07.567184] CMU Sensor 2; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.635V; Cell 6 Voltage: 3.597V; Cell 7 Voltage: 3.607V
-2024-09-23 15:48:07.567187] CMU Sensor 3; Serial Number: 3793; PCB Temp: 25.0°C; Cell Temp: 23.7°C
+{'cmu2sn': 3787, 'cmu2pbct': 258, 'cmu2ct': 238}
+{'cmu2v0': 3608, 'cmu2v1': 3600, 'cmu2v2': 3607, 'cmu2v3': 3621}
+{'cmu2v4': 3607, 'cmu2v5': 3635, 'cmu2v6': 3597, 'cmu2v7': 3607}
+{'cmu3sn': 3793, 'cmu3pbct': 250, 'cmu3ct': 237}
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
 {'pvoltage': 96807, 'pcurrent': -425}
 {'cverr': 415, 'ctmarg': -212, 'dverr': -897, 'tpcap': 48}
-2024-09-23 15:48:07.569217] CMU Sensor 3; Cell 0 Voltage: 3.606V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.606V; Cell 3 Voltage: 3.608V
-2024-09-23 15:48:07.570423] CMU Sensor 3; Cell 4 Voltage: 3.609V; Cell 5 Voltage: 3.612V; Cell 6 Voltage: 3.611V; Cell 7 Voltage: 3.608V
+{'cmu3v0': 3606, 'cmu3v1': 3609, 'cmu3v2': 3606, 'cmu3v3': 3608}
+{'cmu3v4': 3609, 'cmu3v5': 3612, 'cmu3v6': 3611, 'cmu3v7': 3608}
 {'mppt2_12v': 10.92729663848877, 'mppt2_3v': 3.0257153511047363}
-2024-09-23 15:48:07.570426] CMU Sensor 4; Serial Number: 4063; PCB Temp: 22.0°C; Cell Temp: 23.8°C
+{'cmu4sn': 4063, 'cmu4pbct': 220, 'cmu4ct': 238}
 {'mppt1_12v': 11.059564590454102, 'mppt1_3v': 2.9834253787994385}
-2024-09-23 15:48:07.571520] CMU Sensor 4; Cell 0 Voltage: 3.61V; Cell 1 Voltage: 3.613V; Cell 2 Voltage: 3.608V; Cell 3 Voltage: 3.612V
-2024-09-23 15:48:07.573075] CMU Sensor 4; Cell 4 Voltage: 3.612V; Cell 5 Voltage: -32.768V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
-2024-09-23 15:48:07.586087] CMU Sensor 1; Serial Number: 4690; PCB Temp: 27.3°C; Cell Temp: 23.9°C
-2024-09-23 15:48:07.586089] CMU Sensor 1; Cell 0 Voltage: 3.608V; Cell 1 Voltage: 3.609V; Cell 2 Voltage: 3.607V; Cell 3 Voltage: 3.61V
-2024-09-23 15:48:07.588041] CMU Sensor 1; Cell 4 Voltage: 3.607V; Cell 5 Voltage: 3.611V; Cell 6 Voltage: -32.768V; Cell 7 Voltage: -32.768V
+{'cmu4v0': 3610, 'cmu4v1': 3613, 'cmu4v2': 3608, 'cmu4v3': 3612}
+{'cmu4v4': 3612, 'cmu4v5': -32768, 'cmu4v6': -32768, 'cmu4v7': -32768}
+{'cmu1sn': 4690, 'cmu1pbct': 273, 'cmu1ct': 239}
+{'cmu1v0': 3608, 'cmu1v1': 3609, 'cmu1v2': 3607, 'cmu1v3': 3610}
+{'cmu1v4': 3607, 'cmu1v5': 3611, 'cmu1v6': -32768, 'cmu1v7': -32768}
 {'mppt2mov': 113.4000015258789, 'mppt2mic': 7.0}
 {'mppt1mov': 113.4000015258789, 'mppt1mic': 7.0}
 {'minv': 3597, 'maxv': 3635, 'cmuminv': 2, 'cellminv': 6, 'cmumaxv': 2, 'cellmaxv': 5}
