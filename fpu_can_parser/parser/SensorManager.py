@@ -11,14 +11,6 @@ class SensorManager:
         self.loaded_sensors = get_sensors_from_file(os.path.abspath(sensor_file))
 
     def pass_to_sensor(self, sensor_id: int, data: str) -> Dict[str, str]:
-        """
-        This function passes the data to the sensor and returns the parsed data.
-
-        :param sensor_id: Sensor ID
-        :param data: Data to be parsed
-        :return: Parsed data
-        :rtype: Dict[str, str]
-        """
         if sensor_id not in self.loaded_sensors:
             print("WARNING: Sensor ID not found in loaded sensors")
             return {str(sensor_id): "No Sensor Found"}
@@ -76,15 +68,6 @@ def get_sensors_from_file(sensor_file) -> Dict[int, Sensor]:
 
 
 def verify_sensor(sensor_id, sensor_data_format_code, sensor_data_description_code):
-    """
-    This function verifies the sensor definition.
-
-    :param sensor_id: Sensor ID
-    :param sensor_data_format: Sensor data format
-    :param sensor_data_description_code: Sensor data description code
-
-    :raises ValueError: If the sensor definition is invalid
-    """
 
     # Ensure sensor data format and description code have the same number of parts
     sensor_data_format_parts = sensor_data_format_code.split('%')
