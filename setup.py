@@ -8,6 +8,7 @@ setup(
     author='FPU Pheonix Racing CS Team',
     license='GPL-3.0',
     packages=['fpu_can_parser'],
+    zip_safe=False,
 
     # modify this line to include the packages you want to install when you run `pip install fpu_can_parser`
     # if Colin can provide a list of packages, that would be great
@@ -19,3 +20,4 @@ setup(
         'WIP',
     ],
 )
+

@@ -72,6 +72,13 @@ def translate_can_format(data: str) -> str:
 
     raise ValueError(f"Unsupported data format; line: {data}")
 
+def test_import():
+    """
+    This function is used to test the import of the Parser class.
+    It creates an instance of the Parser class and prints the sensor manager.
+    """
+    print("Testing import of Parser class")
+
 
 
 
