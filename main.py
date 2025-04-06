@@ -6,7 +6,8 @@ import threading
 
 import serial
 
-from fpu_can_parser import can_receiver, Parser
+from fpu_can_parser.parser.Parser import Parser
+from fpu_can_parser import can_receiver
 from fpu_can_parser.gui import gui as gui
 
 data_queue = queue.Queue()
@@ -95,12 +96,16 @@ def run_file(is_debug: bool, is_log: bool) -> None:
     """ Read CAN data from a file and process it. """
     input_file_path = input("Enter the input file path: ")
     output_file_path = input("Enter the output file path: ")
+    parser = Parser('current_sensors_file.txt', is_debug, is_log)
+
     with open(output_file_path, 'w') as file_handle:
         with open(input_file_path, 'r') as file:
             for line in file:
-                return_data = Parser.parse_can_line(line, is_debug, is_log)
+                return_data = parser.parse_can_line(line)
                 # print(f"Parsed data: {return_data}")
-                file_handle.write(return_data + '\n')
+                if return_data is not None:
+                    file_handle.write(str(return_data) + '\n')
+
                 if type(return_data) == dict:
                     data_queue.put(return_data)
 
