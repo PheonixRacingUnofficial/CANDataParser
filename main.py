@@ -96,7 +96,7 @@ def run_file(is_debug: bool, is_log: bool) -> None:
     """ Read CAN data from a file and process it. """
     input_file_path = input("Enter the input file path: ")
     output_file_path = input("Enter the output file path: ")
-    parser = Parser('current_sensors_file.txt', is_debug, is_log)
+    parser = Parser('fpu_can_parser/parser/current_sensors_file.txt', is_debug, is_log)
 
     with open(output_file_path, 'w') as file_handle:
         with open(input_file_path, 'r') as file:
