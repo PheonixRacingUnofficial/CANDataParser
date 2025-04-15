@@ -14,6 +14,7 @@ setup(
     # if Colin can provide a list of packages, that would be great
     install_requires=['mpi4py>=2.0',
                       'numpy',
+                      'pytest',
                       ],
 
     classifiers=[
