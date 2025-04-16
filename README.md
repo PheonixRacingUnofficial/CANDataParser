@@ -1,96 +1,121 @@
-# CAN Network Parser
+# FPU CAN Parser
 
-## Description
-This Controller Area Network (CAN) Parser is reading CAN networks built for FPU's Solar Car.  
-It reads the packets sent by the components on board the vehicle and converts it to readable format.  
-This program currently populates with a Tkinter GUI that shows data  
-on screen for the user to see while driving.  
+## Overview
 
+**fpu\_can\_parser** is a Python module that parses and interprets CAN (Controller Area Network) data logs. It supports multiple log formats (Standard CAN, TRC, and PCAN) and uses customizable sensor definitions to convert raw hexadecimal data into structured sensor values.
 
-This software uses a Raspberry Pi connected by a PCAN adapter and an Arduino  
-connected via USB to read and display data. The Raspberry Pi handles the  
-CAN network and GUI display. The Arduino takes in a pulse from the  
-Electronic Speed Controller (ESC) and calculates speed. Then its passed  
-over USB connection to the Raspberry Pi and displayed on the GUI.
+This tool is especially useful for electric vehicle telemetry and other embedded systems that output CAN logs with unique sensor configurations.
 
-## Components and CAN ID
-### **Prohelion BMU:**  
-- CMU Base Id's: **0x301 <= SENSOR <= 0x3F3**
-- BMU Heartbeat Sensor: **0x300**
-- Pack State of Charge (SoC): **0x3F4**
-- Pack Balance SoC: **0x3F5**
-- Charger Control Info: **0x3F6**
-- Precharge Status: **0x3F7**
-- Min/Max Cell Voltage: **0x3F8**
-- Min/Max Cell Temp: **0x3F9**
-- Battery Pack Info: **0x3FA**
-- Battery Pack Status: **0x3FB**
-- Battery Pack Fan Status: **0x3FC**
-- Battery Pack Extended Info: **0x3FD**
-----------------------------------
-### **Solar Array:**  
-- MPPT1 Input: **0x600**
-- MPPT1 Output: **0x601**
-- MPPT1 Temp: **0x602**
-- MPPT1 Aux Power: **0x603**
-- MPPT1 Limits: **0x604**
-- MPPT1 Status: **0x605**
-- MPPT1 Power Connector: **0x606**
-- MPPT1 Mode (send): **0x608**
-- MPPT1 Max Output Voltage: **0x60A**
-- MPPT1 Max Input Current: **0x60B**
-----------------------------------
-- MPPT2 Input: **0x610**
-- MPPT2 Output: **0x611**
-- MPPT2 Temp: **0x612**
-- MPPT2 Aux Power: **0x613**
-- MPPT2 Limits: **0x614**
-- MPPT2 Status: **0x615**
-- MPPT2 Power Connector: **0x616**
-- MPPT2 Mode (send): **0x618**
-- MPPT2 Max Output Voltage: **0x61A**
-- MPPT2 Max Input Current: **0x61B**
+---
 
-## GUI
-The GUI currently shows on screen:  
-- Speed (Mph and Rpm)
-- State of Charge (SoC)
-- MPPT1 Input Voltage
-- MPPT1 Input Current
-- MPPT2 Input Voltage
-- MPPT2 Input Current
+## Installation
 
-## Installation/Setup
-Installation is intended to work on ***Raspberry Pi OS***  
-Copy all files into local directory: `git clone https://github.com/PheonixRacingUnofficial/CANDataParser.git`  
+Install directly from GitHub using `pip`:
 
+```bash
+pip install git+https://github.com/PheonixRacingUnofficial/CANDataParser
+```
 
-Create Virtual Environment: `python3 -m venv venv`  
-Activate Virtual Environment: `source venv/bin/activate`  
+---
 
+## Quick Start
 
-Install the requirements: `pip install -r requirements.txt`  
-***Bug: Need to individually install certain packages***  
-Python Can: `pip install python-can`  
-Serial: `pip install serial`  
+### 1. Create a Sensor Definitions File
 
+This file defines your sensor mappings and should look like this:
 
-Install **Tkinter:** `sudo apt install python3-tk`  
+```
+0x300,bmuhbs,%ui32%ui32,%hbid%hbsn
+```
 
-## How to Use
-To see most utility: `python3 main.py --help`  
-***CAN network setup*** `python3 main.py --setup`  
-***Check Status*** `python3 main.py --status`  
+Each line format:
 
+```
+<sensor_id>,<sensor_name_code>,<sensor_data_format>,<sensor_data_description_code>
+```
 
-Primary use: `python3 main.py --serial PORT`  
+Refer to [`Sensor.md`](Sensor.md) and [`SensorAlias.md`](SensorAlias.md) for more information on format and naming.
 
+---
 
-Replace "PORT" with the port that the CAN line is connected to  
-Ex: ACM0 *This is the port used with our specific setup*  
+### 2. Create a Parser and Use It
 
+```python
+from fpu_can_parser.parser import Parser
 
-To log the output: `python3 main.py --serial PORT --log`  
-or: `python3 main.py --serial PORT > log.txt`  
-Both commands simply log the would be terminal output  
-For more output: `python3 main.py --serial PORT --debug  
+# Create a parser with a path to your sensor definition file
+parser = Parser("path/to/sensor_file.txt", debug=True)
+
+# Parse CAN log lines one by one
+parsed = parser.parse_can_line("(1687282000.123456) can0 300#05500000AB0D0000")
+
+print(parsed)
+```
+
+**Example Output:**
+
+```python
+('2023-06-20 12:33:20.123456', '0x300', {'hbid': '550', 'hbsn': '3499'})
+```
+
+---
+
+## Architecture
+
+- [`Parser`](Parser.md): Handles CAN line format parsing, timestamp normalization, and sensor value decoding.
+- [`Sensor`](Sensor.md): Defines individual sensors, their format codes, and how to parse data for each.
+- [`SensorManager`](SensorManager.md): Loads and manages all defined sensors and routes CAN data appropriately.
+- [`SensorAlias`](SensorAlias.md): Provides definitions for abbreviations used in sensor names and data descriptions.
+
+---
+
+## Output Format
+
+Each call to `parser.parse_can_line()` returns:
+
+```python
+(datetime_string, sensor_id_string, sensor_data_dict)
+```
+
+For example:
+
+```python
+('2023-06-20 12:33:20.123456', '0x300', {'hbid': '550', 'hbsn': '3499'})
+```
+
+---
+
+## Unit Testing
+
+This module includes a comprehensive test suite built using Python's `unittest` framework.
+
+### Files:
+
+- `test_hex_helper.py`: Tests all `hex_helper` conversion functions (e.g., `hex_to_int8`, `hex_to_float`, `hex_to_bits`, etc.).
+- `test_parser.py`: Tests high-level integration of parsing from CAN, TRC, and PCAN lines, and validates behavior from `Sensor`, `SensorManager`, and `Parser` components.
+
+### Running Tests:
+
+Run all unit tests using:
+
+```bash
+python -m unittest discover
+```
+
+Or run individual files:
+
+```bash
+python -m unittest test/test_parser.py
+python -m unittest test/test_hex_helper.py
+```
+
+These tests verify correctness, error handling, and output formatting, and help ensure robust performance across the module.
+
+---
+
+## License and Contributing
+
+This project is open source under the [MIT License](https://opensource.org/licenses/MIT).
+
+Contributions are welcome! Feel free to fork, submit issues, or create pull requests to extend functionality or adapt to your custom sensor configurations.
+
