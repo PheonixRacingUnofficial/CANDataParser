@@ -34,7 +34,7 @@ Each line format:
 <sensor_id>,<sensor_name_code>,<sensor_data_format>,<sensor_data_description_code>
 ```
 
-Refer to [`Sensor.md`](Sensor.md) and [`SensorAlias.md`](SensorAlias.md) for more information on format and naming.
+Refer to [`Sensor.md`](fpu_can_parser/parser/documentation/Sensor.md) and [`SensorAlias.md`](fpu_can_parser/parser/documentation/SensorAlias.md) for more information on format and naming.
 
 ---
 
